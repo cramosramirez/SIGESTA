@@ -22,7 +22,7 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(aCODIPROVEEDOR As String, aCODIPROVEE As String, aCODISOCIO As String, aAPELLIDOS As String, aNOMBRES As String, aEDAD As String, aDIRECCION As String, aTELEFONO As String, aCELULAR As String, aDUI As String, aNIT As String, aCREDITFISCAL As String, aPROFESION As String, aNOMBRENIT As String, aAPODERADO As String, aDUI_APODERADO As String, aNIT_APODERADO As String, aUSER_CREA As Int32, aFECHA_CREA As DateTime, aUSER_ACT As Int32, aFECHA_ACT As DateTime, aFECHA_NAC As DateTime, aTIPO_CONTRIBUYENTE As Int32, aACTIVIDAD As String, aCODIBANCO As Int32, aNUM_CUENTA As String, aES_CTA_CORRIENTE As Boolean)
+    Public Sub New(aCODIPROVEEDOR As String, aCODIPROVEE As String, aCODISOCIO As String, aAPELLIDOS As String, aNOMBRES As String, aEDAD As String, aDIRECCION As String, aTELEFONO As String, aCELULAR As String, aDUI As String, aNIT As String, aCREDITFISCAL As String, aPROFESION As String, aNOMBRENIT As String, aAPODERADO As String, aDUI_APODERADO As String, aNIT_APODERADO As String, aUSER_CREA As Int32, aFECHA_CREA As DateTime, aUSER_ACT As Int32, aFECHA_ACT As DateTime, aFECHA_NAC As DateTime, aTIPO_CONTRIBUYENTE As Int32, aACTIVIDAD As String, aCODIBANCO As Int32, aNUM_CUENTA As String, aES_CTA_CORRIENTE As Boolean, aCODI_DEPTO As String, aCODI_MUNI As String, aCORREO As String, aID_TIPO_PERSONA As Int32)
         Me._CODIPROVEEDOR = aCODIPROVEEDOR
         Me._CODIPROVEE = aCODIPROVEE
         Me._CODISOCIO = aCODISOCIO
@@ -50,6 +50,10 @@
         Me._CODIBANCO = aCODIBANCO
         Me._NUM_CUENTA = aNUM_CUENTA
         Me._ES_CTA_CORRIENTE = aES_CTA_CORRIENTE
+        Me._CODI_DEPTO = aCODI_DEPTO
+        Me._CODI_MUNI = aCODI_MUNI
+        Me._CORREO = aCORREO
+        Me._ID_TIPO_PERSONA = aID_TIPO_PERSONA
     End Sub
 
 #Region " Properties "
@@ -663,8 +667,129 @@
         Set(ByVal Value As Boolean)
             _ES_CTA_CORRIENTEOld = Value
         End Set
-    End Property 
+    End Property
 
+    Private _CODI_DEPTO As String
+    <Column(Name:="Codi depto", Storage:="CODI_DEPTO", DBType:="CHAR(2)", Id:=False),
+     DataObjectField(False, False, True, 2)>
+    Public Property CODI_DEPTO() As String
+        Get
+            Return _CODI_DEPTO
+        End Get
+        Set(ByVal Value As String)
+            _CODI_DEPTO = Value
+            OnPropertyChanged("CODI_DEPTO")
+        End Set
+    End Property
+
+    Private _CODI_DEPTOOld As String
+    Public Property CODI_DEPTOOld() As String
+        Get
+            Return _CODI_DEPTOOld
+        End Get
+        Set(ByVal Value As String)
+            _CODI_DEPTOOld = Value
+        End Set
+    End Property
+
+    Private _fkCODI_DEPTO As MUNICIPIO
+    Public Property fkCODI_DEPTO() As MUNICIPIO
+        Get
+            Return _fkCODI_DEPTO
+        End Get
+        Set(ByVal Value As MUNICIPIO)
+            _fkCODI_DEPTO = Value
+        End Set
+    End Property
+
+    Private _CODI_MUNI As String
+    <Column(Name:="Codi muni", Storage:="CODI_MUNI", DBType:="CHAR(2)", Id:=False),
+     DataObjectField(False, False, True, 2)>
+    Public Property CODI_MUNI() As String
+        Get
+            Return _CODI_MUNI
+        End Get
+        Set(ByVal Value As String)
+            _CODI_MUNI = Value
+            OnPropertyChanged("CODI_MUNI")
+        End Set
+    End Property
+
+    Private _CODI_MUNIOld As String
+    Public Property CODI_MUNIOld() As String
+        Get
+            Return _CODI_MUNIOld
+        End Get
+        Set(ByVal Value As String)
+            _CODI_MUNIOld = Value
+        End Set
+    End Property
+
+    Private _fkCODI_MUNI As MUNICIPIO
+    Public Property fkCODI_MUNI() As MUNICIPIO
+        Get
+            Return _fkCODI_MUNI
+        End Get
+        Set(ByVal Value As MUNICIPIO)
+            _fkCODI_MUNI = Value
+        End Set
+    End Property
+
+    Private _CORREO As String
+    <Column(Name:="Correo", Storage:="CORREO", DBType:="NVARCHAR(400)", Id:=False),
+     DataObjectField(False, False, True, 400)>
+    Public Property CORREO() As String
+        Get
+            Return _CORREO
+        End Get
+        Set(ByVal Value As String)
+            _CORREO = Value
+            OnPropertyChanged("CORREO")
+        End Set
+    End Property
+
+    Private _CORREOOld As String
+    Public Property CORREOOld() As String
+        Get
+            Return _CORREOOld
+        End Get
+        Set(ByVal Value As String)
+            _CORREOOld = Value
+        End Set
+    End Property
+
+    Private _ID_TIPO_PERSONA As Int32
+    <Column(Name:="Id tipo persona", Storage:="ID_TIPO_PERSONA", DBType:="INT", Id:=False),
+     DataObjectField(False, False, True), Precision(Precision:=10, Scale:=255)>
+    Public Property ID_TIPO_PERSONA() As Int32
+        Get
+            Return _ID_TIPO_PERSONA
+        End Get
+        Set(ByVal Value As Int32)
+            _ID_TIPO_PERSONA = Value
+            OnPropertyChanged("ID_TIPO_PERSONA")
+        End Set
+    End Property
+
+    Private _ID_TIPO_PERSONAOld As Int32
+    Public Property ID_TIPO_PERSONAOld() As Int32
+        Get
+            Return _ID_TIPO_PERSONAOld
+        End Get
+        Set(ByVal Value As Int32)
+            _ID_TIPO_PERSONAOld = Value
+        End Set
+    End Property
+
+    Private _fkID_TIPO_PERSONA As TIPO_PERSONA
+    Public Property fkID_TIPO_PERSONA() As TIPO_PERSONA
+        Get
+            Return _fkID_TIPO_PERSONA
+        End Get
+        Set(ByVal Value As TIPO_PERSONA)
+            _fkID_TIPO_PERSONA = Value
+        End Set
+    End Property
 #End Region
 
 #Region " Relaciones "

@@ -322,7 +322,11 @@ Public Class dbPROVEEDOR
         strSQL.AppendLine(" PROVEEDOR.ACTIVIDAD, ")
         strSQL.AppendLine(" PROVEEDOR.CODIBANCO, ")
         strSQL.AppendLine(" PROVEEDOR.NUM_CUENTA, ")
-        strSQL.AppendLine(" PROVEEDOR.ES_CTA_CORRIENTE ")
+        strSQL.AppendLine(" PROVEEDOR.ES_CTA_CORRIENTE, ")
+        strSQL.AppendLine(" PROVEEDOR.CODI_DEPTO, ")
+        strSQL.AppendLine(" PROVEEDOR.CODI_MUNI, ")
+        strSQL.AppendLine(" PROVEEDOR.CORREO, ")
+        strSQL.AppendLine(" PROVEEDOR.ID_TIPO_PERSONA ")
         strSQL.AppendLine(" FROM PROVEEDOR ")
 
     End Sub

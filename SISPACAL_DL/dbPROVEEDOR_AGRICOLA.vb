@@ -326,8 +326,17 @@ Public Class dbPROVEEDOR_AGRICOLA
         strSQL.AppendLine(" PROVEEDOR_AGRICOLA.ZAFRA, ")
         strSQL.AppendLine(" PROVEEDOR_AGRICOLA.ES_PROVEE_VUELO, ")
         strSQL.AppendLine(" PROVEEDOR_AGRICOLA.ES_CASA_COMER, ")
-        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.NOMBRE_LEGAL ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.NOMBRE_LEGAL, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.APELLIDOS, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.DIRECCION, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.CODI_DEPTO, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.CODI_MUNI, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.CORREO, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.ID_TIPO_PERSONA, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.TELEFONO, ")
+        strSQL.AppendLine(" PROVEEDOR_AGRICOLA.ACTIVIDAD ")
         strSQL.AppendLine(" FROM PROVEEDOR_AGRICOLA ")
+
 
     End Sub
 

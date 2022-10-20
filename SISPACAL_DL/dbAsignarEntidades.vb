@@ -2599,6 +2599,14 @@ Friend Module dbAsignarEntidades
         e.ES_PROVEE_VUELO = Convert.ToBoolean(ObtenerValor(dr.Item(String.Format("{0}ES_PROVEE_VUELO", aliasTabla))))
         e.ES_CASA_COMER = Convert.ToBoolean(ObtenerValor(dr.Item(String.Format("{0}ES_CASA_COMER", aliasTabla))))
         e.NOMBRE_LEGAL = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NOMBRE_LEGAL", aliasTabla))))
+        e.APELLIDOS = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}APELLIDOS", aliasTabla))))
+        e.DIRECCION = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DIRECCION", aliasTabla))))
+        e.CODI_DEPTO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_DEPTO", aliasTabla))))
+        e.CODI_MUNI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_MUNI", aliasTabla))))
+        e.CORREO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CORREO", aliasTabla))))
+        e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla)), -1))
+        e.TELEFONO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TELEFONO", aliasTabla))))
+        e.ACTIVIDAD = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}ACTIVIDAD", aliasTabla))))
     End Sub
 
     Public Sub AsignarPRODUCTO(ByVal dr As IDataReader, ByRef e As PRODUCTO, Optional ByVal aliasTabla As String = "")
@@ -3353,6 +3361,13 @@ Friend Module dbAsignarEntidades
         e.FACTOR_PAGO = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}FACTOR_PAGO", aliasTabla)), -1))
         e.ID_TIPO_ROZA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_ROZA", aliasTabla))))
         e.ACTIVO = Convert.ToBoolean(ObtenerValor(dr.Item(String.Format("{0}ACTIVO", aliasTabla))))
+        e.DIRECCION = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DIRECCION", aliasTabla))))
+        e.CODI_DEPTO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_DEPTO", aliasTabla))))
+        e.CODI_MUNI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_MUNI", aliasTabla))))
+        e.CORREO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CORREO", aliasTabla))))
+        e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla)), -1))
+        e.TELEFONO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TELEFONO", aliasTabla))))
+        e.ACTIVIDAD = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}ACTIVIDAD", aliasTabla))))
     End Sub
 
 
@@ -4009,6 +4024,12 @@ Friend Module dbAsignarEntidades
         e.NUM_CUENTA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NUM_CUENTA", aliasTabla))))
         e.ES_CTA_CORRIENTE = Convert.ToBoolean(ObtenerValor(dr.Item(String.Format("{0}ES_CTA_CORRIENTE", aliasTabla))))
         e.PROFESION = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}PROFESION", aliasTabla))))
+        e.FECHA_NACIMIENTO = Convert.ToDateTime(ObtenerValor(dr.Item(String.Format("{0}FECHA_NACIMIENTO", aliasTabla))))
+        e.CODI_DEPTO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_DEPTO", aliasTabla))))
+        e.CODI_MUNI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_MUNI", aliasTabla))))
+        e.CORREO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CORREO", aliasTabla))))
+        e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla)), -1))
+        e.ACTIVIDAD = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}ACTIVIDAD", aliasTabla))))
     End Sub
 
 
@@ -4204,6 +4225,10 @@ Friend Module dbAsignarEntidades
         e.CODIBANCO = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}CODIBANCO", aliasTabla)), -1))
         e.NUM_CUENTA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NUM_CUENTA", aliasTabla))))
         e.ES_CTA_CORRIENTE = Convert.ToBoolean(ObtenerValor(dr.Item(String.Format("{0}ES_CTA_CORRIENTE", aliasTabla))))
+        e.CODI_DEPTO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_DEPTO", aliasTabla))))
+        e.CODI_MUNI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_MUNI", aliasTabla))))
+        e.CORREO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CORREO", aliasTabla))))
+        e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla)), -1))
     End Sub
 
 

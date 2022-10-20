@@ -394,7 +394,13 @@ Public Class dbPROVEEDOR_ROZA
         strSQL.AppendLine(" PROVEEDOR_ROZA.ES_CONTRIBUYENTE, ")
         strSQL.AppendLine(" PROVEEDOR_ROZA.FACTOR_PAGO, ")
         strSQL.AppendLine(" PROVEEDOR_ROZA.ID_TIPO_ROZA, ")
-        strSQL.AppendLine(" PROVEEDOR_ROZA.ACTIVO ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.ACTIVO, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.CODI_DEPTO, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.CODI_MUNI, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.CORREO, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.ID_TIPO_PERSONA, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.TELEFONO, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.ACTIVIDAD ")
         strSQL.AppendLine(" FROM PROVEEDOR_ROZA ")
 
     End Sub

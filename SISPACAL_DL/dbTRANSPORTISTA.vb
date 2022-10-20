@@ -358,7 +358,13 @@ Public Class dbTRANSPORTISTA
         strSQL.AppendLine(" TRANSPORTISTA.CODIBANCO, ")
         strSQL.AppendLine(" TRANSPORTISTA.NUM_CUENTA, ")
         strSQL.AppendLine(" TRANSPORTISTA.ES_CTA_CORRIENTE, ")
-        strSQL.AppendLine(" TRANSPORTISTA.PROFESION ")
+        strSQL.AppendLine(" TRANSPORTISTA.PROFESION, ")
+        strSQL.AppendLine(" TRANSPORTISTA.FECHA_NACIMIENTO, ")
+        strSQL.AppendLine(" TRANSPORTISTA.CODI_DEPTO, ")
+        strSQL.AppendLine(" TRANSPORTISTA.CODI_MUNI, ")
+        strSQL.AppendLine(" TRANSPORTISTA.CORREO, ")
+        strSQL.AppendLine(" TRANSPORTISTA.ID_TIPO_PERSONA, ")
+        strSQL.AppendLine(" TRANSPORTISTA.ACTIVIDAD ")
         strSQL.AppendLine(" FROM TRANSPORTISTA ")
 
     End Sub
