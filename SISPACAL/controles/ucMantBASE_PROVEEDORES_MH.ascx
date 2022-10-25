@@ -8,7 +8,9 @@
 			   <TD><uc1:ucBarraNavegacion id="ucBarraNavegacion1" runat="server"></uc1:ucBarraNavegacion></TD>
         </TR>
 		   <TR>
-		       <TD align="center" class="EncabezadoSecciones"><asp:Label id="lblTitulo" runat="server">BASE FISCAL PARA M.H.</asp:Label></TD>
+		       <TD align="center" class="EncabezadoSecciones"><asp:Label id="lblTitulo" runat="server">BASE FISCAL PARA M.H.</asp:Label>
+                <br />
+		       </TD>               
 		   </TR>
 	       <TR>
             <TD><uc1:ucListaBASE_PROVEEDORES_MH id="ucListaBASE_PROVEEDORES_MH1" runat="server"></uc1:ucListaBASE_PROVEEDORES_MH>

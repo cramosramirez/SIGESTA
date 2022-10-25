@@ -112,6 +112,7 @@
     <Compile Include="cBANCOS.vb" />
     <Compile Include="cBASCULA.Partial.vb" />
     <Compile Include="cBASCULA.vb" />
+    <Compile Include="cBASE_PROVEEDORES_MH.Partial.vb" />
     <Compile Include="cBASE_PROVEEDORES_MH.vb" />
     <Compile Include="cBITACORA_USUARIO.vb" />
     <Compile Include="cBRIX_SACAROSA.vb" />

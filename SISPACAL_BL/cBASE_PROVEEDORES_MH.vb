@@ -226,54 +226,7 @@ Public Class cBASE_PROVEEDORES_MH
         End Try
     End Function
 
-    ''' -----------------------------------------------------------------------------
-    ''' <summary>
-    ''' Función que Actualiza o Ingresa un registro de la Entidad que recibe de parámetro.
-    ''' </summary>
-    ''' <param name="aEntidad">Entidad que contiene los datos a Actualizar o Ingresar.</param>
-    ''' <remarks>La entidad ya debe estar inicializada. Si es una tabla de Muchos a Muchos
-    ''' este método unicamente actualiza el registro. Si no es una tabla de Muchos a Muchos
-    ''' puede Actualizar o insertar un registro, dependiendo si la llave única trae un valor
-    ''' de Cero(0) para ser autoincrementada por el método de la Clase de Acceso a Datos.</remarks>
-    ''' <history>
-    ''' 	[GenApp]	13/10/2022	Created
-    ''' </history>
-    ''' -----------------------------------------------------------------------------
-    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, False)> _
-    Public Function ActualizarBASE_PROVEEDORES_MH(ByVal aEntidad As BASE_PROVEEDORES_MH) As Integer
-        Try
-            Return mDb.Actualizar(aEntidad)
-        Catch ex as Exception
-            ExceptionManager.Publish(ex)
-            Return -1
-        End Try
-    End Function
 
-    ''' -----------------------------------------------------------------------------
-    ''' <summary>
-    ''' Función que Actualiza o Ingresa un registro de la Entidad que recibe de 
-    ''' parámetro; en el caso de que sea actualizar toma en cuenta el Tipo de 
-    ''' Concurrencia recibida de parametro.
-    ''' </summary>
-    ''' <param name="aEntidad">Entidad que contiene los datos a Actualizar o Ingresar.</param>
-    ''' <param name="aTipoConcurrencia">Tipo de Concurrencia del Registro a Actualizar</param>
-    ''' <remarks>La entidad ya debe estar inicializada. Si es una tabla de Muchos a Muchos
-    ''' este método unicamente actualiza el registro. Si no es una tabla de Muchos a Muchos
-    ''' puede Actualizar o insertar un registro, dependiendo si la llave única trae un valor
-    ''' de Cero(0) para ser autoincrementada por el método de la Clase de Acceso a Datos.</remarks>
-    ''' <history>
-    ''' 	[GenApp]	13/10/2022	Created
-    ''' </history>
-    ''' -----------------------------------------------------------------------------
-    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, False)> _
-    Public Function ActualizarBASE_PROVEEDORES_MH(ByVal aEntidad As BASE_PROVEEDORES_MH, ByVal aTipoConcurrencia As TipoConcurrencia) As Integer
-        Try
-            Return mDb.Actualizar(aEntidad, aTipoConcurrencia)
-        Catch ex as Exception
-            ExceptionManager.Publish(ex)
-            Return -1
-        End Try
-    End Function
 
     ''' -----------------------------------------------------------------------------
     ''' <summary>

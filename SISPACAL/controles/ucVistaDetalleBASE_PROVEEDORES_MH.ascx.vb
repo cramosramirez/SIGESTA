@@ -220,7 +220,7 @@ Partial Class controles_ucVistaDetalleBASE_PROVEEDORES_MH
             sError.AppendLine("* Ingrese el telefono de contacto")
         End If
         If Me.txtDIRECCION.Text.Trim = "" Then
-            sError.AppendLine("* Ingrese la dirección")
+            sError.AppendLine("* Ingrese la direccion")
         End If
         If Me.cbxDEPARTAMENTO.Value = Nothing Then
             sError.AppendLine("* Seleccione departamento")
@@ -257,8 +257,7 @@ Partial Class controles_ucVistaDetalleBASE_PROVEEDORES_MH
         mEntidad.ID_TIPO_PERSONA = Me.cbxTIPO_PERSONA.Value
 
         If mComponente.ActualizarBASE_PROVEEDORES_MH(mEntidad) <= 0 Then
-            Me.AsignarMensaje("Error al Guardar registro.", True, True)
-            Return "Error al Guardar registro."
+            Return mComponente.sError
         End If
         Me._nuevo = False
         If Not Me.ViewState("nuevo") Is Nothing Then Me.ViewState.Remove("nuevo")

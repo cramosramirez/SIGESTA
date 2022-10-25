@@ -118,6 +118,7 @@
     <Compile Include="dbBASCULA.Partial.vb" />
     <Compile Include="dbBASCULA.vb" />
     <Compile Include="dbBase.vb" />
+    <Compile Include="dbBASE_PROVEEDORES_MH.Partial.vb" />
     <Compile Include="dbBASE_PROVEEDORES_MH.vb" />
     <Compile Include="dbBITACORA_USUARIO.vb" />
     <Compile Include="dbBRIX_SACAROSA.vb" />
