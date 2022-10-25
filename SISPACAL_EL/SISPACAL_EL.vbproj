@@ -376,6 +376,7 @@
     <Compile Include="listas\ListaANTICIPO_CANA.vb" />
     <Compile Include="listas\ListaAPLICACION_DESCTO.vb" />
     <Compile Include="listas\ListaBANCOS.vb" />
+    <Compile Include="listas\ListaBASE_PROVEEDORES_MH.vb" />
     <Compile Include="listas\ListaBRIX_SACAROSA.vb" />
     <Compile Include="listas\ListaCANTON.vb" />
     <Compile Include="listas\ListaCARGADOR.vb" />
@@ -504,6 +505,7 @@
     <Compile Include="listas\ListaSUPERVISOR.vb" />
     <Compile Include="listas\ListaTARIFA.vb" />
     <Compile Include="listas\ListaTIPO_CANA.vb" />
+    <Compile Include="listas\ListaTIPO_PERSONA.vb" />
     <Compile Include="listas\ListaTIPO_PLANILLA.vb" />
     <Compile Include="listas\ListaTIPO_PLANILLA_DESCTO.vb" />
     <Compile Include="listas\ListaTIPO_PROVEEDOR.vb" />

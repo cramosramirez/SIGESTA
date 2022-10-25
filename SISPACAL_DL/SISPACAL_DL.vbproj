@@ -118,6 +118,7 @@
     <Compile Include="dbBASCULA.Partial.vb" />
     <Compile Include="dbBASCULA.vb" />
     <Compile Include="dbBase.vb" />
+    <Compile Include="dbBASE_PROVEEDORES_MH.vb" />
     <Compile Include="dbBITACORA_USUARIO.vb" />
     <Compile Include="dbBRIX_SACAROSA.vb" />
     <Compile Include="dbCANTON.Partial.vb" />
@@ -201,6 +202,7 @@
     <Compile Include="dbSOLIC_APLICA_LOTE.Partial.vb" />
     <Compile Include="dbSOLIC_APLICA_LOTE.vb" />
     <Compile Include="dbSOLIC_APLICA_VUELO.vb" />
+    <Compile Include="dbTIPO_PERSONA.vb" />
     <Compile Include="dbUtilidades.vb" />
     <Compile Include="dbZONA_CARGADORA.Partial.vb" />
     <Compile Include="dbZONA_CARGADORA.vb" />

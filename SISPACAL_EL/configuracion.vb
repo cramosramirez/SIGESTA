@@ -411,6 +411,11 @@ Namespace Enumeradores
         Motorista = 5
     End Enum
 
+    Public Enum TipoPersona
+        Natural = 1
+        Juridica = 2
+    End Enum
+
     Public Enum TipoLabFabVariable
         MedicionDirecta = 1
         Digitado = 2

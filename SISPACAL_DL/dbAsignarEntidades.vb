@@ -1,5 +1,36 @@
 Friend Module dbAsignarEntidades
 
+    Public Sub AsignarTIPO_PERSONA(ByVal dr As IDataReader, ByRef e As TIPO_PERSONA, Optional ByVal aliasTabla As String = "")
+        If IsNothing(e) Then
+            e = New TIPO_PERSONA
+        End If
+        If aliasTabla <> "" Then
+            aliasTabla = String.Format("{0}.", aliasTabla)
+        End If
+        e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla))))
+        e.DESCRIPCION = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DESCRIPCION", aliasTabla))))
+    End Sub
+    Public Sub AsignarBASE_PROVEEDORES_MH(ByVal dr As IDataReader, ByRef e As BASE_PROVEEDORES_MH, Optional ByVal aliasTabla As String = "")
+        If IsNothing(e) Then
+            e = New BASE_PROVEEDORES_MH
+        End If
+        If aliasTabla <> "" Then
+            aliasTabla = String.Format("{0}.", aliasTabla)
+        End If
+        e.ID_BASE_PROVEE = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_BASE_PROVEE", aliasTabla))))
+        e.DUI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DUI", aliasTabla))))
+        e.NIT = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NIT", aliasTabla))))
+        e.NOMBRES = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NOMBRES", aliasTabla))))
+        e.APELLIDOS = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}APELLIDOS", aliasTabla))))
+        e.TELEFONO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TELEFONO", aliasTabla))))
+        e.DIRECCION = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DIRECCION", aliasTabla))))
+        e.CODI_DEPTO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_DEPTO", aliasTabla))))
+        e.CODI_MUNI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_MUNI", aliasTabla))))
+        e.CORREO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CORREO", aliasTabla))))
+        e.NRC = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NRC", aliasTabla))))
+        e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla)), -1))
+        e.ACTIVIDAD = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}ACTIVIDAD", aliasTabla))))
+    End Sub
     Public Sub AsignarLOTES_COSECHA_GESTION(ByVal dr As IDataReader, ByRef e As LOTES_COSECHA_GESTION, Optional ByVal aliasTabla As String = "")
         If IsNothing(e) Then
             e = New LOTES_COSECHA_GESTION

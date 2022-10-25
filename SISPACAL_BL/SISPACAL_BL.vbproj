@@ -112,6 +112,7 @@
     <Compile Include="cBANCOS.vb" />
     <Compile Include="cBASCULA.Partial.vb" />
     <Compile Include="cBASCULA.vb" />
+    <Compile Include="cBASE_PROVEEDORES_MH.vb" />
     <Compile Include="cBITACORA_USUARIO.vb" />
     <Compile Include="cBRIX_SACAROSA.vb" />
     <Compile Include="cCANTON.Partial.vb" />
@@ -288,6 +289,7 @@
     <Compile Include="cTIPO_DESCUENTO.Partial.vb" />
     <Compile Include="cTIPO_DESCUENTO.vb" />
     <Compile Include="cTIPO_LECTURA.vb" />
+    <Compile Include="cTIPO_PERSONA.vb" />
     <Compile Include="cTIPO_PLANILLA.vb" />
     <Compile Include="cTIPO_PLANILLA_DESCTO.Partial.vb" />
     <Compile Include="cTIPO_PLANILLA_DESCTO.vb" />
