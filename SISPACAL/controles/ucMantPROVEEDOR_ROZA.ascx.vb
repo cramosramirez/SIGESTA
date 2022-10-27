@@ -1,5 +1,6 @@
 ﻿Imports SISPACAL.BL
 Imports SISPACAL.EL
+Imports SISPACAL.EL.Enumeradores
 ''' -----------------------------------------------------------------------------
 ''' Project	 : SISPACAL
 ''' Class	 : ucMantPROVEEDOR_ROZA
@@ -31,13 +32,13 @@ Partial Class controles_ucMantPROVEEDOR_ROZA
     ''' </history>
     ''' -----------------------------------------------------------------------------
     Public Sub InicializarLista()
-        Me.ucBarraNavegacion1.Navegacion = False
-        Me.ucBarraNavegacion1.PermitirAgregar = True
-        Me.ucBarraNavegacion1.PermitirEditar = False
-        Me.ucBarraNavegacion1.PermitirGuardar = False
-        Me.ucBarraNavegacion1.HabilitarEdicion(False)
+        Me.AsignarMensaje("", True, False)
+        Me.ucBarraNavegacion1.VerOpcion("Buscar", True)
+        Me.ucBarraNavegacion1.VerOpcion("Agregar", True)
+        Me.ucBarraNavegacion1.VerOpcion("Cancelar", False)
+        Me.ucBarraNavegacion1.VerOpcion("Guardar", False)
         Me.ucListaPROVEEDOR_ROZA1.Visible = True
-        Me.UcVistaDetallePROVEEDOR_ROZA1.Visible = False
+        Me.ucVistaDetallePROVEEDOR_ROZA1.Visible = False
         If Me.CargarDatos() <> 1 Then
             Me.AsignarMensaje("Error al Recuperar Lista", True, True)
         End If
@@ -55,12 +56,27 @@ Partial Class controles_ucMantPROVEEDOR_ROZA
     ''' </history>
     ''' -----------------------------------------------------------------------------
     Private Sub InicializarDetalle()
+        Me.AsignarMensaje("", True, False)
         Me.ucBarraNavegacion1.Navegacion = False
         Me.ucBarraNavegacion1.PermitirAgregar = False
-        Me.ucBarraNavegacion1.PermitirEditar = True
-        Me.ucBarraNavegacion1.HabilitarEdicion(True)
+        Me.ucBarraNavegacion1.VerOpcion("Buscar", False)
+        Me.ucBarraNavegacion1.VerOpcion("Agregar", False)
+        Me.ucBarraNavegacion1.VerOpcion("Cancelar", True)
+        Me.ucBarraNavegacion1.VerOpcion("Guardar", True)
         Me.ucListaPROVEEDOR_ROZA1.Visible = False
-        Me.UcVistaDetallePROVEEDOR_ROZA1.Visible = True
+        Me.ucVistaDetallePROVEEDOR_ROZA1.Visible = True
+    End Sub
+
+    Private Sub Inicializar()
+        Me.ucBarraNavegacion1.PermitirNavegacion = False
+        Me.ucBarraNavegacion1.PermitirAgregar = False
+        Me.ucBarraNavegacion1.PermitirEditar = False
+        Me.ucBarraNavegacion1.PermitirGuardar = False
+        Me.ucBarraNavegacion1.CrearOpcion("Buscar", "Buscar", False, IconoBarra.Buscar, "", "", True)
+        Me.ucBarraNavegacion1.CrearOpcion("Agregar", "Ingresar nuevo frente", False, IconoBarra.Generar, "", "", True)
+        Me.ucBarraNavegacion1.CrearOpcion("Cancelar", "Cancelar", False, IconoBarra.Cancelar, "", "", True)
+        Me.ucBarraNavegacion1.CrearOpcion("Guardar", "Guardar", True, IconoBarra.Guardar, "", "", True)
+        Me.ucBarraNavegacion1.CargarOpciones()
     End Sub
 #End Region
 
@@ -75,11 +91,11 @@ Partial Class controles_ucMantPROVEEDOR_ROZA
     ''' </history>
     ''' -----------------------------------------------------------------------------
     Public Function CargarDatos() As Integer
-        Try 
+        Try
             Return Me.CargarPROVEEDOR_ROZA()
-        Catch ex As Exception 
-            Return -1 
-        End Try 
+        Catch ex As Exception
+            Return -1
+        End Try
         Return 1
     End Function
 
@@ -91,37 +107,43 @@ Partial Class controles_ucMantPROVEEDOR_ROZA
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Introducir aquÃ­ el cÃ³digo de usuario para inicializar la pÃ¡gina
         If Not IsPostBack Then
+            Me.Inicializar()
             Me.InicializarLista()
         End If
     End Sub
 
-    Private Sub UcBarraNavegacion1_Agregar(ByVal sender As Object, ByVal e As System.EventArgs) Handles ucBarraNavegacion1.Agregar
-        Me.InicializarDetalle()
-        Me.UcVistaDetallePROVEEDOR_ROZA1.LimpiarControles()
-        Me.ucVistaDetallePROVEEDOR_ROZA1.ID_PROVEEDOR_ROZA = 0
-    End Sub
-
-    Private Sub ucBarraNavegacion1_Cancelar(ByVal sender As Object, ByVal e As System.EventArgs) Handles ucBarraNavegacion1.Cancelar
-        Me.InicializarLista()
-    End Sub
-
-    Private Sub ucBarraNavegacion1_Guardar(ByVal sender As Object, ByVal e As System.EventArgs) Handles ucBarraNavegacion1.Guardar
-        Dim sError As String
-        sError = Me.UcVistaDetallePROVEEDOR_ROZA1.Actualizar()
-        If sError <> "" Then
-            Return
-        End If
-        Me.InicializarLista()
-    End Sub
 
     Protected Sub ucListaPROVEEDOR_ROZA1_Editando(ByVal ID_PROVEEDOR_ROZA As Int32) Handles ucListaPROVEEDOR_ROZA1.Editando
         Me.InicializarDetalle()
-        Me.UcVistaDetallePROVEEDOR_ROZA1.ID_PROVEEDOR_ROZA = ID_PROVEEDOR_ROZA
+        Me.ucVistaDetallePROVEEDOR_ROZA1.ID_PROVEEDOR_ROZA = ID_PROVEEDOR_ROZA
     End Sub
 
-    Private Sub ucVistaDetallePROVEEDOR_ROZA1_ErrorEvent(ByVal errorMessage As String) Handles UcVistaDetallePROVEEDOR_ROZA1.ErrorEvent
-        'Mostrar mensaje de error contenido en errorMessage
-        Me.AsignarMensaje(errorMessage, True, True)
+    Private Sub ucBarraNavegacion1_OpcionSeleccionada(CommandName As String) Handles ucBarraNavegacion1.OpcionSeleccionada
+        Me.AsignarMensaje("", True, False)
+        Select Case CommandName
+            Case "Buscar"
+                Me.CargarPROVEEDOR_ROZA()
+
+            Case "Guardar"
+                Dim sError As String
+
+                sError = Me.ucVistaDetallePROVEEDOR_ROZA1.Actualizar()
+                If sError <> "" Then
+                    AsignarMensaje(sError, True, False)
+                    Return
+                End If
+                AsignarMensaje("", True, False)
+                Me.InicializarLista()
+                Me.ucListaPROVEEDOR_ROZA1.DataBind()
+
+            Case "Agregar"
+                Me.InicializarDetalle()
+                Me.ucVistaDetallePROVEEDOR_ROZA1.LimpiarControles()
+                Me.ucVistaDetallePROVEEDOR_ROZA1.ID_PROVEEDOR_ROZA = 0
+
+            Case "Cancelar"
+                Me.InicializarLista()
+        End Select
     End Sub
 
 End Class

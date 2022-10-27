@@ -22,7 +22,7 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(aID_PROVEEDOR_ROZA As Int32, aNOMBRE_PROVEEDOR_ROZA As String, aUSUARIO_CREA As String, aFECHA_CREA As DateTime, aUSUARIO_ACT As String, aFECHA_ACT As DateTime, aNIT As String, aDUI As String, aCREDITO_FISCAL As String, aES_CONTRIBUYENTE As Boolean, aFACTOR_PAGO As Decimal, aID_TIPO_ROZA As Int32, aACTIVO As Boolean, aDIRECCION As String, aCODI_DEPTO As String, aCODI_MUNI As String, aCORREO As String, aID_TIPO_PERSONA As Int32, aTELEFONO As String, aACTIVIDAD As String)
+    Public Sub New(aID_PROVEEDOR_ROZA As Int32, aNOMBRE_PROVEEDOR_ROZA As String, aUSUARIO_CREA As String, aFECHA_CREA As DateTime, aUSUARIO_ACT As String, aFECHA_ACT As DateTime, aNIT As String, aDUI As String, aCREDITO_FISCAL As String, aES_CONTRIBUYENTE As Boolean, aFACTOR_PAGO As Decimal, aID_TIPO_ROZA As Int32, aACTIVO As Boolean, aDIRECCION As String, aCODI_DEPTO As String, aCODI_MUNI As String, aCORREO As String, aID_TIPO_PERSONA As Int32, aTELEFONO As String, aACTIVIDAD As String, aAPELLIDOS As String, aCODIGO As String)
         Me._ID_PROVEEDOR_ROZA = aID_PROVEEDOR_ROZA
         Me._NOMBRE_PROVEEDOR_ROZA = aNOMBRE_PROVEEDOR_ROZA
         Me._USUARIO_CREA = aUSUARIO_CREA
@@ -43,6 +43,8 @@
         Me._ID_TIPO_PERSONA = aID_TIPO_PERSONA
         Me._TELEFONO = aTELEFONO
         Me._ACTIVIDAD = aACTIVIDAD
+        Me._APELLIDOS = aAPELLIDOS
+        Me._CODIGO = aCODIGO
     End Sub
 
 #Region " Properties "
@@ -537,6 +539,51 @@
         End Set
     End Property
 
+    Private _APELLIDOS As String
+    <Column(Name:="Apellidos", Storage:="APELLIDOS", DBType:="VARCHAR(100)", Id:=False),
+     DataObjectField(False, False, True, 100)>
+    Public Property APELLIDOS() As String
+        Get
+            Return _APELLIDOS
+        End Get
+        Set(ByVal Value As String)
+            _APELLIDOS = Value
+            OnPropertyChanged("APELLIDOS")
+        End Set
+    End Property
+
+    Private _APELLIDOSOld As String
+    Public Property APELLIDOSOld() As String
+        Get
+            Return _APELLIDOSOld
+        End Get
+        Set(ByVal Value As String)
+            _APELLIDOSOld = Value
+        End Set
+    End Property
+
+    Private _CODIGO As String
+    <Column(Name:="Codigo", Storage:="CODIGO", DBType:="VARCHAR(100)", Id:=False),
+     DataObjectField(False, False, True, 100)>
+    Public Property CODIGO() As String
+        Get
+            Return _CODIGO
+        End Get
+        Set(ByVal Value As String)
+            _CODIGO = Value
+            OnPropertyChanged("CODIGO")
+        End Set
+    End Property
+
+    Private _CODIGOOld As String
+    Public Property CODIGOOld() As String
+        Get
+            Return _CODIGOOld
+        End Get
+        Set(ByVal Value As String)
+            _CODIGOOld = Value
+        End Set
+    End Property
 #End Region
 
 #Region " Relaciones "

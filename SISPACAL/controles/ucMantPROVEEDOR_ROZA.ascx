@@ -20,7 +20,7 @@
     }    
 </style>
 <uc1:ucBarraNavegacion id="ucBarraNavegacion1" runat="server"></uc1:ucBarraNavegacion>
-<div class="centraTabla">  
+  
 <TABLE id="TableMant" cellSpacing="0" cellPadding="0" width="100%" border="0">
     <TBODY>	       
 		   <TR>
@@ -45,4 +45,3 @@
         </TR>
     </TBODY>
 </TABLE>
-</div>

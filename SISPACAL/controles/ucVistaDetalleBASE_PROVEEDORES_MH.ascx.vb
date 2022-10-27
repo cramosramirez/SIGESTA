@@ -275,6 +275,7 @@ Partial Class controles_ucVistaDetalleBASE_PROVEEDORES_MH
             Me.txtDUI.ClientEnabled = True
             Me.txtNIT.ClientEnabled = False
             Me.txtAPELLIDOS.ClientEnabled = True
+            Me.txtNIT.Text = ""
         ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Juridica Then
             Me.txtDUI.Text = ""
             Me.txtDUI.ClientEnabled = False

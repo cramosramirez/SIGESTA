@@ -1,5 +1,6 @@
 ﻿Imports SISPACAL.BL
 Imports SISPACAL.EL
+Imports SISPACAL.EL.Enumeradores
 ''' -----------------------------------------------------------------------------
 ''' Project	 : SISPACAL
 ''' Class	 : ucVistaDetallePROVEEDOR_ROZA
@@ -18,18 +19,21 @@ Imports SISPACAL.EL
 ''' -----------------------------------------------------------------------------
 Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
     Inherits ucBase
- 
-#Region"Propiedades"
+
+#Region "Propiedades"
 
     Private _ID_PROVEEDOR_ROZA As Int32
     Public Property ID_PROVEEDOR_ROZA() As Int32
         Get
-            Return Me.txtID_PROVEEDOR_ROZA.Text
+            If Me.ViewState("ID_PROVEEDOR_ROZA") IsNot Nothing Then
+                Return CInt(Me.ViewState("ID_PROVEEDOR_ROZA"))
+            Else
+                Return -1
+            End If
         End Get
         Set(ByVal Value As Int32)
-            Me._ID_PROVEEDOR_ROZA = Value
-            Me.txtID_PROVEEDOR_ROZA.Text = CStr(Value)
-            If Me._ID_PROVEEDOR_ROZA > 0 Then
+            Me.ViewState("ID_PROVEEDOR_ROZA") = Value
+            If Value > 0 Then
                 Me.CargarDatos()
             Else
                 Me.LimpiarControles()
@@ -39,176 +43,6 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
         End Set
     End Property
 
-    Public Property NOMBRE_PROVEEDOR_ROZA() As String
-        Get
-            Return Me.txtNOMBRE_PROVEEDOR_ROZA.Text
-        End Get
-        Set(ByVal value As String)
-            Me.txtNOMBRE_PROVEEDOR_ROZA.Text = value.ToString()
-        End Set
-    End Property
-
-    Public Property USUARIO_CREA() As String
-        Get
-            Return Me.txtUSUARIO_CREA.Text
-        End Get
-        Set(ByVal value As String)
-            Me.txtUSUARIO_CREA.Text = value.ToString()
-        End Set
-    End Property
-
-    Public Property FECHA_CREA() As DateTime
-        Get
-            Return Me.txtFECHA_CREA.Text
-        End Get
-        Set(ByVal value As DateTime)
-            Me.txtFECHA_CREA.Text = value.ToString("dd/MM/yyyy")
-        End Set
-    End Property
-
-    Public Property USUARIO_ACT() As String
-        Get
-            Return Me.txtUSUARIO_ACT.Text
-        End Get
-        Set(ByVal value As String)
-            Me.txtUSUARIO_ACT.Text = value.ToString()
-        End Set
-    End Property
-
-    Public Property FECHA_ACT() As DateTime
-        Get
-            Return Me.txtFECHA_ACT.Text
-        End Get
-        Set(ByVal value As DateTime)
-            Me.txtFECHA_ACT.Text = value.ToString("dd/MM/yyyy")
-        End Set
-    End Property
-
-    Public Property NIT() As String
-        Get
-            Return Me.txtNIT.Text
-        End Get
-        Set(ByVal value As String)
-            Me.txtNIT.Text = value.ToString()
-        End Set
-    End Property
-
-    Public Property DUI() As String
-        Get
-            Return Me.txtDUI.Text
-        End Get
-        Set(ByVal value As String)
-            Me.txtDUI.Text = value.ToString()
-        End Set
-    End Property
-
-    Public Property CREDITO_FISCAL() As String
-        Get
-            Return Me.txtCREDITO_FISCAL.Text
-        End Get
-        Set(ByVal value As String)
-            Me.txtCREDITO_FISCAL.Text = value.ToString()
-        End Set
-    End Property
-
-    Public Property ES_CONTRIBUYENTE() As Boolean
-        Get
-            Return Me.cbxES_CONTRIBUYENTE.Checked
-        End Get
-        Set(ByVal value As Boolean)
-            Me.cbxES_CONTRIBUYENTE.Checked = value
-        End Set
-    End Property
-
-    Public Property VerID_PROVEEDOR_ROZA() As Boolean
-        Get
-            Return Me.trID_PROVEEDOR_ROZA.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trID_PROVEEDOR_ROZA.Visible = value
-        End Set
-    End Property
-
-    Public Property VerNOMBRE_PROVEEDOR_ROZA() As Boolean
-        Get
-            Return Me.trNOMBRE_PROVEEDOR_ROZA.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trNOMBRE_PROVEEDOR_ROZA.Visible = value
-        End Set
-    End Property
-
-    Public Property VerUSUARIO_CREA() As Boolean
-        Get
-            Return Me.trUSUARIO_CREA.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trUSUARIO_CREA.Visible = value
-        End Set
-    End Property
-
-    Public Property VerFECHA_CREA() As Boolean
-        Get
-            Return Me.trFECHA_CREA.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trFECHA_CREA.Visible = value
-        End Set
-    End Property
-
-    Public Property VerUSUARIO_ACT() As Boolean
-        Get
-            Return Me.trUSUARIO_ACT.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trUSUARIO_ACT.Visible = value
-        End Set
-    End Property
-
-    Public Property VerFECHA_ACT() As Boolean
-        Get
-            Return Me.trFECHA_ACT.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trFECHA_ACT.Visible = value
-        End Set
-    End Property
-
-    Public Property VerNIT() As Boolean
-        Get
-            Return Me.trNIT.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trNIT.Visible = value
-        End Set
-    End Property
-
-    Public Property VerDUI() As Boolean
-        Get
-            Return Me.trDUI.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trDUI.Visible = value
-        End Set
-    End Property
-
-    Public Property VerCREDITO_FISCAL() As Boolean
-        Get
-            Return Me.trCREDITO_FISCAL.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trCREDITO_FISCAL.Visible = value
-        End Set
-    End Property
-
-    Public Property VerES_CONTRIBUYENTE() As Boolean
-        Get
-            Return Me.trES_CONTRIBUYENTE.Visible
-        End Get
-        Set(ByVal value As Boolean)
-            Me.trES_CONTRIBUYENTE.Visible = value
-        End Set
-    End Property
 
     Private _Enabled As Boolean = True
     Private _sError As String
@@ -222,7 +56,7 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
             Return _sError
         End Get
     End Property
- 
+
     Public Property Enabled() As Boolean
         Get
             Return Me._Enabled
@@ -259,27 +93,48 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
         Me.ViewState.Add("nuevo", Me._nuevo)
 
         Dim sError As New String("")
-        mEntidad = New PROVEEDOR_ROZA
-        mEntidad.ID_PROVEEDOR_ROZA = ID_PROVEEDOR_ROZA
- 
-        If mComponente.ObtenerPROVEEDOR_ROZA(mEntidad) <> 1 Then
-            RaiseEvent ErrorEvent("Error al obtener Registro.")
-            Return
+        Dim lEntidad As PROVEEDOR_ROZA = mComponente.ObtenerPROVEEDOR_ROZA(Me.ID_PROVEEDOR_ROZA)
+
+        If lEntidad IsNot Nothing Then
+            Me.cbxTIPO_PERSONA.Value = lEntidad.ID_TIPO_PERSONA
+            Me.txtDUI.Text = lEntidad.DUI
+            Me.txtNIT.Text = lEntidad.NIT
+            Me.txtNOMBRES.Text = lEntidad.NOMBRE_PROVEEDOR_ROZA
+            Me.txtAPELLIDOS.Text = lEntidad.APELLIDOS
+            Me.txtTELEFONO.Text = lEntidad.TELEFONO
+            Me.txtDIRECCION.Text = lEntidad.DIRECCION
+            Me.txtCORREO.Text = lEntidad.CORREO
+            Me.txtNRC.Text = lEntidad.CREDITO_FISCAL
+            Me.cbxDEPARTAMENTO.Value = lEntidad.CODI_DEPTO
+            Me.CargarMunicipios()
+            Me.cbxMUNICIPIO.Value = lEntidad.CODI_MUNI
+            Me.chkACTIVO.Checked = lEntidad.ACTIVO
+            Me.txtCODIGO.Text = lEntidad.CODIGO
         End If
-        Me.txtID_PROVEEDOR_ROZA.Text = mEntidad.ID_PROVEEDOR_ROZA.ToString()
-        Me.txtNOMBRE_PROVEEDOR_ROZA.Text = mEntidad.NOMBRE_PROVEEDOR_ROZA
-        Me.txtUSUARIO_CREA.Text = mEntidad.USUARIO_CREA
-        Me.txtFECHA_CREA.Text = IIf(Not mEntidad.FECHA_CREA = Nothing, Format(mEntidad.FECHA_CREA, "dd/MM/yyyy"), "")
-        Me.txtUSUARIO_ACT.Text = mEntidad.USUARIO_ACT
-        Me.txtFECHA_ACT.Text = IIf(Not mEntidad.FECHA_ACT = Nothing, Format(mEntidad.FECHA_ACT, "dd/MM/yyyy"), "")
-        Me.txtNIT.Text = mEntidad.NIT
-        Me.txtDUI.Text = mEntidad.DUI
-        Me.txtCREDITO_FISCAL.Text = mEntidad.CREDITO_FISCAL
-        Me.cbxES_CONTRIBUYENTE.Checked = mEntidad.ES_CONTRIBUYENTE
-        Me.txtFACTOR_PAGO.Text = mEntidad.FACTOR_PAGO.ToString("#,##0.000")
-        Me.chkACTIVO.Checked = mEntidad.ACTIVO
+        Me.cbxTIPO_PERSONA.Focus()
     End Sub
- 
+
+    Private Sub CargarMunicipios()
+        Me.odsMunicipio.SelectParameters("CODI_DEPTO").DefaultValue = cbxDEPARTAMENTO.Value
+        Me.odsMunicipio.SelectParameters("agregarVacio").DefaultValue = True
+        Me.odsMunicipio.SelectParameters("agregarTodos").DefaultValue = False
+        Me.odsMunicipio.SelectParameters("conPresencia").DefaultValue = False
+        Me.cbxMUNICIPIO.DataBind()
+        Me.cbxMUNICIPIO.Focus()
+    End Sub
+
+    Protected Sub txtDUI_ValueChanged(sender As Object, e As EventArgs) Handles txtDUI.ValueChanged
+        If Me.txtDUI.Text.Length = 9 Then
+            Me.txtNIT.Text = Utilerias.RellenarIzquierda(Me.txtDUI.Text.Trim, 14, "0")
+        Else
+            Me.txtNIT.Text = ""
+        End If
+    End Sub
+
+    Private Sub cbxDEPARTAMENTO_ValueChanged(sender As Object, e As EventArgs) Handles cbxDEPARTAMENTO.ValueChanged
+        Me.CargarMunicipios()
+    End Sub
+
     ''' -----------------------------------------------------------------------------
     ''' <summary>
     ''' FunciÃ³n que permite Habilitar/Deshabilitar el uso de los controles contenidos
@@ -291,17 +146,31 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
     ''' </history>
     ''' -----------------------------------------------------------------------------
     Private Sub HabilitarEdicion(ByVal edicion As Boolean)
-        Me.txtNOMBRE_PROVEEDOR_ROZA.Enabled = edicion
-        Me.txtUSUARIO_CREA.Enabled = edicion
-        Me.txtFECHA_CREA.Enabled = edicion
-        Me.txtUSUARIO_ACT.Enabled = edicion
-        Me.txtFECHA_ACT.Enabled = edicion
-        Me.txtNIT.Enabled = edicion
-        Me.txtDUI.Enabled = edicion
-        Me.txtCREDITO_FISCAL.Enabled = edicion
-        Me.cbxES_CONTRIBUYENTE.Enabled = edicion
-        Me.txtFACTOR_PAGO.Enabled = edicion
-        Me.chkACTIVO.Enabled = edicion
+        Me.cbxTIPO_PERSONA.ClientEnabled = Me._nuevo
+        If Me.cbxTIPO_PERSONA.Value = Nothing Then
+            Me.txtDUI.ClientEnabled = False
+            Me.txtNIT.ClientEnabled = False
+            Me.txtNOMBRES.ClientEnabled = edicion
+            Me.txtAPELLIDOS.ClientEnabled = False
+        ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Natural Then
+            Me.txtDUI.ClientEnabled = edicion
+            Me.txtNIT.ClientEnabled = False
+            Me.txtNOMBRES.ClientEnabled = edicion
+            Me.txtAPELLIDOS.ClientEnabled = edicion
+        ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Juridica Then
+            Me.txtDUI.ClientEnabled = False
+            Me.txtNIT.ClientEnabled = edicion
+            Me.txtNOMBRES.ClientEnabled = edicion
+            Me.txtAPELLIDOS.ClientEnabled = False
+        End If
+        Me.cbxDEPARTAMENTO.ClientEnabled = edicion
+        Me.cbxMUNICIPIO.ClientEnabled = edicion
+        Me.txtTELEFONO.ClientEnabled = edicion
+        Me.txtDIRECCION.ClientEnabled = edicion
+        Me.txtCORREO.ClientEnabled = edicion
+        Me.txtNRC.ClientEnabled = edicion
+        Me.txtCODIGO.ClientEnabled = edicion
+        Me.chkACTIVO.ClientEnabled = edicion
     End Sub
 
     ''' -----------------------------------------------------------------------------
@@ -318,19 +187,21 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
         Me._nuevo = True
         If Not Me.ViewState("nuevo") Is Nothing Then Me.ViewState.Remove("nuevo")
         Me.ViewState.Add("nuevo", Me._nuevo)
-        Me.txtNOMBRE_PROVEEDOR_ROZA.Text = ""
-        Me.txtUSUARIO_CREA.Text = ""
-        Me.txtFECHA_CREA.Text = ""
-        Me.txtUSUARIO_ACT.Text = ""
-        Me.txtFECHA_ACT.Text = ""
-        Me.txtNIT.Text = ""
+        Me.cbxTIPO_PERSONA.Value = Nothing
+        Me.cbxDEPARTAMENTO.Value = Nothing
+        Me.cbxMUNICIPIO.Value = Nothing
         Me.txtDUI.Text = ""
-        Me.txtCREDITO_FISCAL.Text = ""
-        Me.cbxES_CONTRIBUYENTE.Checked = False
-        Me.txtFACTOR_PAGO.Text = ""
+        Me.txtNIT.Text = ""
+        Me.txtNOMBRES.Text = ""
+        Me.txtAPELLIDOS.Text = ""
+        Me.txtTELEFONO.Text = ""
+        Me.txtDIRECCION.Text = ""
+        Me.txtCORREO.Text = ""
+        Me.txtNRC.Text = ""
         Me.chkACTIVO.Checked = True
+        Me.txtCODIGO.Text = ""
     End Sub
- 
+
     ''' -----------------------------------------------------------------------------
     ''' <summary>
     ''' FunciÃ³n que Guarda la informaciÃ³n del registro en la tabla PROVEEDOR_ROZA
@@ -347,42 +218,95 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
     ''' </history>
     ''' -----------------------------------------------------------------------------
     Public Function Actualizar() As String
-        Dim sError As New String("")
+        Dim sError As New StringBuilder("")
         Dim alDatos As New ArrayList
-        mEntidad = New PROVEEDOR_ROZA
+        Dim mEntidad As New PROVEEDOR_ROZA
 
-        If Not IsNumeric(Me.txtFACTOR_PAGO.Text) Then
-            AsignarMensaje("* Digite el factor de pago del rozador")
-            Return "Error"
+        If Me.cbxTIPO_PERSONA.Value = Nothing Then
+            sError.AppendLine("* Seleccione el tipo de persona")
+        Else
+            If Me.cbxTIPO_PERSONA.Value = TipoPersona.Natural Then
+                If Me.txtDUI.Text.Trim = "" OrElse Me.txtDUI.Text.Trim.Length <> 9 Then
+                    sError.AppendLine("* DUI no valido")
+                End If
+                If Me.txtNOMBRES.Text.Trim = "" Then
+                    sError.AppendLine("* Ingrese los nombres")
+                End If
+                If Me.txtAPELLIDOS.Text.Trim = "" Then
+                    sError.AppendLine("* Ingrese los apellidos")
+                End If
+            ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Juridica Then
+                If Me.txtNIT.Text.Trim = "" OrElse Me.txtNIT.Text.Trim.Length <> 14 Then
+                    sError.AppendLine("* NIT no valido")
+                End If
+                If Me.txtNOMBRES.Text.Trim = "" Then
+                    sError.AppendLine("* Ingrese el nombre de la entidad")
+                End If
+            End If
+        End If
+        If Me.txtTELEFONO.Text.Trim = "" Then
+            sError.AppendLine("* Ingrese el telefono de contacto")
+        End If
+        If Me.txtDIRECCION.Text.Trim = "" Then
+            sError.AppendLine("* Ingrese la direccion")
+        End If
+        If Me.cbxDEPARTAMENTO.Value = Nothing Then
+            sError.AppendLine("* Seleccione departamento")
+        End If
+        If Me.cbxMUNICIPIO.Value = Nothing Then
+            sError.AppendLine("* Seleccione municipio")
+        End If
+
+        If sError.ToString <> "" Then
+            Return sError.ToString
         End If
         If Me._nuevo Then
             mEntidad.ID_PROVEEDOR_ROZA = 0
+            mEntidad.ID_TIPO_ROZA = 21
+            mEntidad.FACTOR_PAGO = 1
             mEntidad.USUARIO_CREA = Me.ObtenerUsuario
             mEntidad.FECHA_CREA = cFechaHora.ObtenerFechaHora
             mEntidad.USUARIO_ACT = Me.ObtenerUsuario
             mEntidad.FECHA_ACT = cFechaHora.ObtenerFechaHora
         Else
-            mEntidad = (New cPROVEEDOR_ROZA).ObtenerPROVEEDOR_ROZA(CInt(Me.txtID_PROVEEDOR_ROZA.Text))
+            mEntidad.ID_PROVEEDOR_ROZA = Me.ID_PROVEEDOR_ROZA
             mEntidad.USUARIO_ACT = Me.ObtenerUsuario
             mEntidad.FECHA_ACT = cFechaHora.ObtenerFechaHora
         End If
-        mEntidad.NOMBRE_PROVEEDOR_ROZA = Me.txtNOMBRE_PROVEEDOR_ROZA.Text
-        mEntidad.NIT = Me.txtNIT.Text
-        mEntidad.DUI = Me.txtDUI.Text
-        mEntidad.CREDITO_FISCAL = Me.txtCREDITO_FISCAL.Text
-        mEntidad.ES_CONTRIBUYENTE = Me.cbxES_CONTRIBUYENTE.Checked
-        mEntidad.FACTOR_PAGO = Convert.ToDecimal(Me.txtFACTOR_PAGO.Text)
-        mEntidad.ID_TIPO_ROZA = 21
-        mEntidad.ACTIVO = chkACTIVO.Checked
-
-        If mComponente.ActualizarPROVEEDOR_ROZA(mEntidad) <> 1 Then
-            Me.AsignarMensaje("Error al Guardar registro.", True, True)
-            Return "Error al Guardar registro."
+        If Me.cbxTIPO_PERSONA.Value = TipoPersona.Natural Then
+            mEntidad.DUI = Me.txtDUI.Text
+            mEntidad.NIT = Utilerias.RellenarIzquierda(Me.txtDUI.Text.Trim, 14, "0")
+        ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Juridica Then
+            mEntidad.DUI = ""
+            mEntidad.NIT = Me.txtNIT.Text
         End If
-        Me.txtID_PROVEEDOR_ROZA.Text = mEntidad.ID_PROVEEDOR_ROZA.ToString()
+        mEntidad.DUI = Me.txtDUI.Text
+        mEntidad.NIT = Me.txtNIT.Text
+        mEntidad.NOMBRE_PROVEEDOR_ROZA = Me.txtNOMBRES.Text.Trim.ToUpper
+        mEntidad.APELLIDOS = Me.txtAPELLIDOS.Text.Trim.ToUpper
+        mEntidad.TELEFONO = Me.txtTELEFONO.Text
+        mEntidad.DIRECCION = Me.txtDIRECCION.Text.Trim.ToUpper
+        mEntidad.CODI_DEPTO = Me.cbxDEPARTAMENTO.Value
+        mEntidad.CODI_MUNI = Me.cbxMUNICIPIO.Value
+        mEntidad.CORREO = Me.txtCORREO.Text.Trim.ToLower
+        mEntidad.CREDITO_FISCAL = Me.txtNRC.Text.Trim
+        mEntidad.ID_TIPO_PERSONA = Me.cbxTIPO_PERSONA.Value
+        mEntidad.CODIGO = Me.txtCODIGO.Text.Trim.ToUpper
+        mEntidad.ACTIVO = Me.chkACTIVO.Checked
+
+        If Me.txtNRC.Text.Trim = "" Then
+            mEntidad.ES_CONTRIBUYENTE = False
+        Else
+            mEntidad.ES_CONTRIBUYENTE = True
+        End If
+
+        If mComponente.ActualizarPROVEEDOR_ROZA(mEntidad) <= 0 Then
+            Return mComponente.sError
+        End If
         Me._nuevo = False
         If Not Me.ViewState("nuevo") Is Nothing Then Me.ViewState.Remove("nuevo")
         Me.ViewState.Add("nuevo", Me._nuevo)
+        Me.ViewState("ID_PROVEEDOR_ROZA") = mEntidad.ID_PROVEEDOR_ROZA
         Return ""
     End Function
 End Class

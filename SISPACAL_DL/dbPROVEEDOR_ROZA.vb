@@ -400,7 +400,9 @@ Public Class dbPROVEEDOR_ROZA
         strSQL.AppendLine(" PROVEEDOR_ROZA.CORREO, ")
         strSQL.AppendLine(" PROVEEDOR_ROZA.ID_TIPO_PERSONA, ")
         strSQL.AppendLine(" PROVEEDOR_ROZA.TELEFONO, ")
-        strSQL.AppendLine(" PROVEEDOR_ROZA.ACTIVIDAD ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.ACTIVIDAD, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.APELLIDOS, ")
+        strSQL.AppendLine(" PROVEEDOR_ROZA.CODIGO ")
         strSQL.AppendLine(" FROM PROVEEDOR_ROZA ")
 
     End Sub

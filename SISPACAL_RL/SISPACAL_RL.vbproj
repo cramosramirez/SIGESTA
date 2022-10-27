@@ -2498,7 +2498,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comprobantes\ComprobanteRetencion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ComprobanteRetencion.vb</LastGenOutput>
+      <LastGenOutput>ComprobanteRetencion1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Comprobantes\CreditoFiscalServiciosIngenio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

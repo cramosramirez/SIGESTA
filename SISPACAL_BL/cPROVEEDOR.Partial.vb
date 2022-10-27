@@ -1,4 +1,6 @@
-﻿Partial Public Class cPROVEEDOR
+﻿Imports SISPACAL.EL.Enumeradores
+
+Partial Public Class cPROVEEDOR
 
 
     Public Function ObtenerCorrelativoProveedor() As Int32
@@ -11,10 +13,10 @@
         End Try
     End Function
 
-    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Select, False)> _
+    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Select, False)>
     Public Function ObtenerListaPorNombreCompleto(ByVal NOMBRE_PROVEEDOR As String) As listaPROVEEDOR
         Try
-            
+
             Return mDb.ObtenerListaPorNombreCompleto(NOMBRE_PROVEEDOR)
 
         Catch ex As Exception
@@ -140,7 +142,7 @@
                 Return "El numero de DUI del Representante legal no es valido"
             End If
         End If
-        If aEntidad.NIT <> String.Empty Then
+        If aEntidad.ID_TIPO_PERSONA = TipoPersona.Juridica AndAlso aEntidad.NIT <> String.Empty Then
             If Not Utilerias.EsNIT(aEntidad.NIT) Then
                 Return "El numero de NIT no es valido"
             End If
@@ -151,9 +153,6 @@
             End If
         End If
         If aEntidad.CODISOCIO = Utilerias.FormatoCODISOCIO(0) Then
-            'If aEntidad.NIT = "" Then
-            '    Return "El numero de NIT es obligatorio"
-            'End If
             If (aEntidad.TIPO_CONTRIBUYENTE = 1 OrElse aEntidad.TIPO_CONTRIBUYENTE = 2) AndAlso aEntidad.CREDITFISCAL = "" Then
                 Return "El No. de Registro de Contribuyente es obligatorio"
             End If
@@ -170,7 +169,7 @@
                 End If
             End If
 
-            If aEntidad.NIT <> "" AndAlso aEntidad.CODISOCIO = Utilerias.FormatoCODISOCIO(0) Then
+            If aEntidad.ID_TIPO_PERSONA = TipoPersona.Juridica AndAlso aEntidad.NIT <> "" AndAlso aEntidad.CODISOCIO = Utilerias.FormatoCODISOCIO(0) Then
                 lProveedores = Me.ObtenerListaPorNIT(aEntidad.NIT, True)
                 If lProveedores IsNot Nothing AndAlso lProveedores.Count > 0 Then
                     Return "Ya existe un proveedor con el mismo numero de NIT"
@@ -200,7 +199,7 @@
                     Next
                 End If
             End If
-            If aEntidad.NIT <> "" AndAlso aEntidad.CODISOCIO = Utilerias.FormatoCODISOCIO(0) Then
+            If aEntidad.ID_TIPO_PERSONA = TipoPersona.Juridica AndAlso aEntidad.NIT <> "" AndAlso aEntidad.CODISOCIO = Utilerias.FormatoCODISOCIO(0) Then
                 lProveedores = Me.ObtenerListaPorNIT(aEntidad.NIT, True)
                 If lProveedores IsNot Nothing Then
                     For Each lProveedor As PROVEEDOR In lProveedores

@@ -1,4 +1,6 @@
-﻿Partial Public Class cTRANSPORTISTA
+﻿Imports SISPACAL.EL.Enumeradores
+
+Partial Public Class cTRANSPORTISTA
 
 
     <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Select, False)>
@@ -65,7 +67,7 @@
                 Return "El numero de DUI no es valido"
             End If
         End If
-        If aEntidad.NIT <> String.Empty Then
+        If aEntidad.ID_TIPO_PERSONA = TipoPersona.Juridica AndAlso aEntidad.NIT <> String.Empty Then
             If Not Utilerias.EsNIT(aEntidad.NIT) Then
                 Return "El numero de NIT no es valido"
             End If
@@ -82,7 +84,7 @@
             End If
         Else
             Dim lTransportistas As listaTRANSPORTISTA
-            If aEntidad.NIT <> "" Then
+            If aEntidad.ID_TIPO_PERSONA = TipoPersona.Juridica AndAlso aEntidad.NIT <> "" Then
                 lTransportistas = Me.ObtenerListaPorNIT(aEntidad.NIT)
                 If lTransportistas IsNot Nothing Then
                     For Each lTransportista As TRANSPORTISTA In lTransportistas
@@ -109,7 +111,7 @@
     ''' 	[GenApp]	15/11/2014	Created
     ''' </history>
     ''' -----------------------------------------------------------------------------
-    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, False)> _
+    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, False)>
     Public Function ActualizarTRANSPORTISTA(ByVal aEntidad As TRANSPORTISTA) As Integer
         Try
             Return Me.ActualizarTRANSPORTISTA(aEntidad, TipoConcurrencia.Pesimistica)
@@ -135,7 +137,7 @@
     ''' 	[GenApp]	15/11/2014	Created
     ''' </history>
     ''' -----------------------------------------------------------------------------
-    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, False)> _
+    <System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, False)>
     Public Function ActualizarTRANSPORTISTA(ByVal aEntidad As TRANSPORTISTA, ByVal aTipoConcurrencia As TipoConcurrencia) As Integer
         Try
             Dim lRet As String = Validar(aEntidad.CODTRANSPORT = 0, aEntidad)

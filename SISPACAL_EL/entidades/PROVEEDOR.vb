@@ -118,8 +118,8 @@
     End Property 
 
     Private _APELLIDOS As String
-    <Column(Name:="Apellidos", Storage:="APELLIDOS", DbType:="CHAR(36)", Id:=False), _
-     DataObjectField(False, False, True, 36)> _
+    <Column(Name:="Apellidos", Storage:="APELLIDOS", DBType:="CHAR(150)", Id:=False),
+     DataObjectField(False, False, True, 150)>
     Public Property APELLIDOS() As String
         Get
             Return _APELLIDOS
@@ -141,8 +141,8 @@
     End Property 
 
     Private _NOMBRES As String
-    <Column(Name:="Nombres", Storage:="NOMBRES", DbType:="CHAR(36)", Id:=False), _
-     DataObjectField(False, False, True, 36)> _
+    <Column(Name:="Nombres", Storage:="NOMBRES", DBType:="CHAR(150)", Id:=False),
+     DataObjectField(False, False, True, 150)>
     Public Property NOMBRES() As String
         Get
             Return _NOMBRES
@@ -233,8 +233,8 @@
     End Property 
 
     Private _CELULAR As String
-    <Column(Name:="Celular", Storage:="CELULAR", DbType:="CHAR(8)", Id:=False), _
-     DataObjectField(False, False, True, 8)> _
+    <Column(Name:="Celular", Storage:="CELULAR", DBType:="CHAR(100)", Id:=False),
+     DataObjectField(False, False, True, 100)>
     Public Property CELULAR() As String
         Get
             Return _CELULAR

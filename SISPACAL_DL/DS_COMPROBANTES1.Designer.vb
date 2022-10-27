@@ -528,6 +528,10 @@ Partial Public Class DS_COMPROBANTES
         
         Private columnTELEFONO As Global.System.Data.DataColumn
         
+        Private columnDEPARTAMENTO As Global.System.Data.DataColumn
+        
+        Private columnMUNICIPIO As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -700,6 +704,22 @@ Partial Public Class DS_COMPROBANTES
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DEPARTAMENTOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDEPARTAMENTO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property MUNICIPIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMUNICIPIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -753,9 +773,11 @@ Partial Public Class DS_COMPROBANTES
                     ByVal RENTA As Decimal,  _
                     ByVal SUBTOTAL As Decimal,  _
                     ByVal DUI As String,  _
-                    ByVal TELEFONO As String) As COMPROBANTE_RETENCIONRow
+                    ByVal TELEFONO As String,  _
+                    ByVal DEPARTAMENTO As String,  _
+                    ByVal MUNICIPIO As String) As COMPROBANTE_RETENCIONRow
             Dim rowCOMPROBANTE_RETENCIONRow As COMPROBANTE_RETENCIONRow = CType(Me.NewRow,COMPROBANTE_RETENCIONRow)
-            Dim columnValuesArray() As Object = New Object() {CODIGOPROVEEDOR, NOMBRE_PROVEE_TRANS, FECHA_PAGO, REGISTRO, DIRECCION, NIT, VALOR, RETENCION_IVA, IVA, TOTAL, CONCEPTO, MONTO_LETRAS, TIPO, RENTA, SUBTOTAL, DUI, TELEFONO}
+            Dim columnValuesArray() As Object = New Object() {CODIGOPROVEEDOR, NOMBRE_PROVEE_TRANS, FECHA_PAGO, REGISTRO, DIRECCION, NIT, VALOR, RETENCION_IVA, IVA, TOTAL, CONCEPTO, MONTO_LETRAS, TIPO, RENTA, SUBTOTAL, DUI, TELEFONO, DEPARTAMENTO, MUNICIPIO}
             rowCOMPROBANTE_RETENCIONRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCOMPROBANTE_RETENCIONRow)
             Return rowCOMPROBANTE_RETENCIONRow
@@ -801,6 +823,8 @@ Partial Public Class DS_COMPROBANTES
             Me.columnSUBTOTAL = MyBase.Columns("SUBTOTAL")
             Me.columnDUI = MyBase.Columns("DUI")
             Me.columnTELEFONO = MyBase.Columns("TELEFONO")
+            Me.columnDEPARTAMENTO = MyBase.Columns("DEPARTAMENTO")
+            Me.columnMUNICIPIO = MyBase.Columns("MUNICIPIO")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -840,6 +864,10 @@ Partial Public Class DS_COMPROBANTES
             MyBase.Columns.Add(Me.columnDUI)
             Me.columnTELEFONO = New Global.System.Data.DataColumn("TELEFONO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTELEFONO)
+            Me.columnDEPARTAMENTO = New Global.System.Data.DataColumn("DEPARTAMENTO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDEPARTAMENTO)
+            Me.columnMUNICIPIO = New Global.System.Data.DataColumn("MUNICIPIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMUNICIPIO)
             Me.columnCODIGOPROVEEDOR.ReadOnly = true
             Me.columnNOMBRE_PROVEE_TRANS.ReadOnly = true
             Me.columnFECHA_PAGO.ReadOnly = true
@@ -857,6 +885,8 @@ Partial Public Class DS_COMPROBANTES
             Me.columnSUBTOTAL.ReadOnly = true
             Me.columnDUI.ReadOnly = true
             Me.columnTELEFONO.ReadOnly = true
+            Me.columnDEPARTAMENTO.ReadOnly = true
+            Me.columnMUNICIPIO.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1030,6 +1060,10 @@ Partial Public Class DS_COMPROBANTES
         Private columnDUI As Global.System.Data.DataColumn
         
         Private columnTELEFONO As Global.System.Data.DataColumn
+        
+        Private columnDEPARTAMENTO As Global.System.Data.DataColumn
+        
+        Private columnMUNICIPIO As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -1211,6 +1245,22 @@ Partial Public Class DS_COMPROBANTES
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DEPARTAMENTOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDEPARTAMENTO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property MUNICIPIOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMUNICIPIO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1265,9 +1315,11 @@ Partial Public Class DS_COMPROBANTES
                     ByVal TOTAL As Decimal,  _
                     ByVal MONTO_LETRAS As String,  _
                     ByVal DUI As String,  _
-                    ByVal TELEFONO As String) As FACTURACION_SERVICIOS_DEL__INGENIORow
+                    ByVal TELEFONO As String,  _
+                    ByVal DEPARTAMENTO As String,  _
+                    ByVal MUNICIPIO As String) As FACTURACION_SERVICIOS_DEL__INGENIORow
             Dim rowFACTURACION_SERVICIOS_DEL__INGENIORow As FACTURACION_SERVICIOS_DEL__INGENIORow = CType(Me.NewRow,FACTURACION_SERVICIOS_DEL__INGENIORow)
-            Dim columnValuesArray() As Object = New Object() {ID_CATORCENA, ID_TIPO_PLANILLA, CODIPROVEEDOR_TRANSPORTISTA, CODIGOPROVEEDOR, NOMBRE_PROVEE_TRANS, FECHA_PAGO, REGISTRO, DIRECCION, NIT, GIRO, ORDEN, CONCEPTO, VALOR, IVA, TOTAL, MONTO_LETRAS, DUI, TELEFONO}
+            Dim columnValuesArray() As Object = New Object() {ID_CATORCENA, ID_TIPO_PLANILLA, CODIPROVEEDOR_TRANSPORTISTA, CODIGOPROVEEDOR, NOMBRE_PROVEE_TRANS, FECHA_PAGO, REGISTRO, DIRECCION, NIT, GIRO, ORDEN, CONCEPTO, VALOR, IVA, TOTAL, MONTO_LETRAS, DUI, TELEFONO, DEPARTAMENTO, MUNICIPIO}
             rowFACTURACION_SERVICIOS_DEL__INGENIORow.ItemArray = columnValuesArray
             Me.Rows.Add(rowFACTURACION_SERVICIOS_DEL__INGENIORow)
             Return rowFACTURACION_SERVICIOS_DEL__INGENIORow
@@ -1314,6 +1366,8 @@ Partial Public Class DS_COMPROBANTES
             Me.columnMONTO_LETRAS = MyBase.Columns("MONTO_LETRAS")
             Me.columnDUI = MyBase.Columns("DUI")
             Me.columnTELEFONO = MyBase.Columns("TELEFONO")
+            Me.columnDEPARTAMENTO = MyBase.Columns("DEPARTAMENTO")
+            Me.columnMUNICIPIO = MyBase.Columns("MUNICIPIO")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1355,6 +1409,10 @@ Partial Public Class DS_COMPROBANTES
             MyBase.Columns.Add(Me.columnDUI)
             Me.columnTELEFONO = New Global.System.Data.DataColumn("TELEFONO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTELEFONO)
+            Me.columnDEPARTAMENTO = New Global.System.Data.DataColumn("DEPARTAMENTO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDEPARTAMENTO)
+            Me.columnMUNICIPIO = New Global.System.Data.DataColumn("MUNICIPIO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMUNICIPIO)
             Me.columnID_CATORCENA.AllowDBNull = false
             Me.columnID_TIPO_PLANILLA.AllowDBNull = false
             Me.columnCODIPROVEEDOR_TRANSPORTISTA.AllowDBNull = false
@@ -1370,6 +1428,8 @@ Partial Public Class DS_COMPROBANTES
             Me.columnMONTO_LETRAS.ReadOnly = true
             Me.columnDUI.ReadOnly = true
             Me.columnTELEFONO.ReadOnly = true
+            Me.columnDEPARTAMENTO.ReadOnly = true
+            Me.columnMUNICIPIO.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3801,6 +3861,38 @@ Partial Public Class DS_COMPROBANTES
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property DEPARTAMENTO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCOMPROBANTE_RETENCION.DEPARTAMENTOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DEPARTAMENTO' de la tabla 'COMPROBANTE_RETENCION' es DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCOMPROBANTE_RETENCION.DEPARTAMENTOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property MUNICIPIO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCOMPROBANTE_RETENCION.MUNICIPIOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MUNICIPIO' de la tabla 'COMPROBANTE_RETENCION' es DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCOMPROBANTE_RETENCION.MUNICIPIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsCODIGOPROVEEDORNull() As Boolean
             Return Me.IsNull(Me.tableCOMPROBANTE_RETENCION.CODIGOPROVEEDORColumn)
         End Function
@@ -4001,6 +4093,30 @@ Partial Public Class DS_COMPROBANTES
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetTELEFONONull()
             Me(Me.tableCOMPROBANTE_RETENCION.TELEFONOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDEPARTAMENTONull() As Boolean
+            Return Me.IsNull(Me.tableCOMPROBANTE_RETENCION.DEPARTAMENTOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDEPARTAMENTONull()
+            Me(Me.tableCOMPROBANTE_RETENCION.DEPARTAMENTOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsMUNICIPIONull() As Boolean
+            Return Me.IsNull(Me.tableCOMPROBANTE_RETENCION.MUNICIPIOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetMUNICIPIONull()
+            Me(Me.tableCOMPROBANTE_RETENCION.MUNICIPIOColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4279,6 +4395,38 @@ Partial Public Class DS_COMPROBANTES
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property DEPARTAMENTO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.DEPARTAMENTOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DEPARTAMENTO' de la tabla 'FACTURACION_SERVICIOS_DEL _ING"& _ 
+                            "ENIO' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.DEPARTAMENTOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property MUNICIPIO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.MUNICIPIOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'MUNICIPIO' de la tabla 'FACTURACION_SERVICIOS_DEL _INGENI"& _ 
+                            "O' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.MUNICIPIOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsCODIGOPROVEEDORNull() As Boolean
             Return Me.IsNull(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.CODIGOPROVEEDORColumn)
         End Function
@@ -4419,6 +4567,30 @@ Partial Public Class DS_COMPROBANTES
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetTELEFONONull()
             Me(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.TELEFONOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDEPARTAMENTONull() As Boolean
+            Return Me.IsNull(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.DEPARTAMENTOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDEPARTAMENTONull()
+            Me(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.DEPARTAMENTOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsMUNICIPIONull() As Boolean
+            Return Me.IsNull(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.MUNICIPIOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetMUNICIPIONull()
+            Me(Me.tableFACTURACION_SERVICIOS_DEL__INGENIO.MUNICIPIOColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -6459,6 +6631,8 @@ Namespace DS_COMPROBANTESTableAdapters
             tableMapping.ColumnMappings.Add("SUBTOTAL", "SUBTOTAL")
             tableMapping.ColumnMappings.Add("DUI", "DUI")
             tableMapping.ColumnMappings.Add("TELEFONO", "TELEFONO")
+            tableMapping.ColumnMappings.Add("DEPARTAMENTO", "DEPARTAMENTO")
+            tableMapping.ColumnMappings.Add("MUNICIPIO", "MUNICIPIO")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -6519,80 +6693,117 @@ Namespace DS_COMPROBANTESTableAdapters
                 "A R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT"& _ 
                 " R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPOR"& _ 
                 "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODI"& _ 
-                "PROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFRA CZ"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AN"& _ 
-                "D P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.RETE"& _ 
-                "NCION_IVA > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P.C"& _ 
-                "ODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P"& _ 
-                "C.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_C"& _ 
-                "OMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO"& _ 
-                "_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION ALL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN CAST(dbo.QuitarFormatoCODIPROVEED"& _ 
-                "OR(P.CODIPROVEEDOR_TRANSPORTISTA) AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 7 THEN CAST(dbo.QuitarFormatoCO"& _ 
-                "DIPROVEEDOR(P.CODIPROVEEDOR_TRANSPORTISTA) AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE CAST(P.CODIPROVEEDOR_T"& _ 
-                "RANSPORTISTA AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBRE_PROVEE_TRANS, (SELECT B."& _ 
-                "FECHA_PAGO FROM PLANILLA_BASE B WHERE B.ID_PLANILLA_BASE = P.ID_PLANILLA_BASE) A"& _ 
-                "S FECHA_PAGO,  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.CREDITFISCAL FR"& _ 
-                "OM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 T"& _ 
-                "HEN (SELECT R.CREDITO_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIP"& _ 
-                "ROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.CREDITO_FISCAL FROM TRANSPORTIST"& _ 
-                "A R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT "& _ 
-                "R.CREDITO_FISCAL FROM PROVEEDOR_ROZA R WHERE R.ID_PROVEEDOR_ROZA = P.CODIPROVEED"& _ 
-                "OR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_CARGA R "& _ 
-                "WHERE R.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.CRE"& _ 
-                "DITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA"& _ 
-                ")"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REGISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.DIRECCION F"& _ 
-                "ROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 "& _ 
-                "THEN (SELECT R.DIRECCION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVE"& _ 
-                "EDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.DIRECCION FROM TRANSPORTISTA R WHERE"& _ 
-                " R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN "& _ 
-                "''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPRO"& _ 
-                "VEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN "& _ 
-                "(SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORT"& _ 
-                "ISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPORT = P."& _ 
-                "CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT N.NIT FROM TRANSPORTISTA N WH"& _ 
-                "ERE N.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT "& _ 
-                "FROM PROVEEDOR_ROZA N WHERE N.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT N.NIT FROM PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA ="& _ 
-                " P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT N.NIT FROM PROVEEDOR N WHERE N.CO"& _ 
-                "DIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALOR, 0 AS RETENCIO"& _ 
-                "N_IVA, P.IVA, (P.VALOR + P.IVA) AS TOTAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 TH"& _ 
-                "EN 'Compra de ' + CAST(ROUND(P.AZUCAR_CATORCENA_REAL,2) AS VARCHAR) + ' libras d"& _ 
-                "e azucar, contenidas en ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Tons de "& _ 
-                "caña a precio inicial de US$ ' + CAST(Z.PRECIO_LIBRA_AZUCAR AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2"& _ 
-                " THEN 'Valor de flete de ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Tonelad"& _ 
-                "as de caña' + ' Corte # ' + CAST(CZ.CATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN 'Valor d"& _ 
-                "e flete de ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña' + "& _ 
-                "' Corte # ' + CAST(CZ.CATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN 'Compra de frente de r"& _ 
-                "oza para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WH"& _ 
-                "EN 4 THEN 'Valor de carga para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' T"& _ 
-                "oneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN 'Complemento al valor final de pago zafra ' + Z."& _ 
-                "NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 7 THEN 'Compensacion de $' + REPLACE(FORMAT(P.VALOR_UNIT_PAG"& _ 
-                "O,'0.00######'),',','.') + ' por tonelada en zafra ' + Z.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CO"& _ 
-                "NCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_a_Letras(P.VALOR + P.IVA,'US DOLARES') AS MONTO_LETRAS, @TI"& _ 
-                "PO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"0.00 AS RENTA, 0.00 AS SUBTOTAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1"& _ 
-                " THEN (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P"& _ 
-                ".CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM"& _ 
-                " TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9"& _ 
-                " THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT "& _ 
-                "= P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.FormatearDUI(R.DUI) FROM PR"& _ 
-                "OVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"C"& _ 
-                "ASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R"& _ 
-                ".CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TELEFONO"& _ 
-                " FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
-                "HEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODI"& _ 
-                "PROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODI"& _ 
-                "PROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CA"& _ 
-                "TORCENA_ZAFRA CZ, ZAFRA Z"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_ZA"& _ 
-                "FRA = Z.ID_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA ="& _ 
-                " @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 0 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COU"& _ 
-                "NT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC"& _ 
-                ".CODIPROVEEDOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLAN"& _ 
-                "ILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOC"& _ 
-                "TO_INI AND PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FI"& _ 
-                "N = -1) )"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"
+                "PROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 TH"& _ 
+                "EN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.COD"& _ 
+                "I_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_D"& _ 
+                "EPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR"& _ 
+                "_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D"& _ 
+                " WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.C"& _ 
+                "ODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DE"& _ 
+                "PARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPRO"& _ 
+                "VEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PL"& _ 
+                "ANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.COD"& _ 
+                "I_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.C"& _ 
+                "ODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT M.NO"& _ 
+                "MBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R"& _ 
+                ".CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPOR"& _ 
+                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI"& _ 
+                "_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CO"& _ 
+                "DIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT M.NOM"& _ 
+                "BRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R."& _ 
+                "CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTIST"& _ 
+                "A)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFRA CZ"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA "& _ 
+                "= CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA "& _ 
+                "= @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.RETENCION_IVA > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @T"& _ 
+                "IPO = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCEN"& _ 
+                "A = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPOR"& _ 
+                "TISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ("& _ 
+                " (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_I"& _ 
+                "NI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION ALL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TI"& _ 
+                "PO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN CAST(dbo.QuitarFormatoCODIPROVEEDOR(P.CODIPROVEEDOR_TR"& _ 
+                "ANSPORTISTA) AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 7 THEN CAST(dbo.QuitarFormatoCODIPROVEEDOR(P.CODIPRO"& _ 
+                "VEEDOR_TRANSPORTISTA) AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE CAST(P.CODIPROVEEDOR_TRANSPORTISTA AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBRE_PROVEE_TRANS, (SELECT B.FECHA_PAGO FROM PLANI"& _ 
+                "LLA_BASE B WHERE B.ID_PLANILLA_BASE = P.ID_PLANILLA_BASE) AS FECHA_PAGO,  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE"& _ 
+                " P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE "& _ 
+                "R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.CREDITO"& _ 
+                "_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTIST"& _ 
+                "A)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.CREDITO_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRANSP"& _ 
+                "ORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT R.CREDITO_FISCAL FROM"& _ 
+                " PROVEEDOR_ROZA R WHERE R.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
+                "HEN 4 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_CARGA R WHERE R.ID_PROVEEDOR_"& _ 
+                "CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.CREDITFISCAL FROM PROVEE"& _ 
+                "DOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REGISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHERE"& _ 
+                " R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.DIRECC"& _ 
+                "ION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.DIRECCION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.C"& _ 
+                "ODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.D"& _ 
+                "IRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT N.NIT FROM PR"& _ 
+                "OVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN ("& _ 
+                "SELECT N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPO"& _ 
+                "RTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPORT = "& _ 
+                "P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT FROM PROVEEDOR_ROZA N"& _ 
+                " WHERE N.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELEC"& _ 
+                "T N.NIT FROM PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRAN"& _ 
+                "SPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIP"& _ 
+                "ROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALOR, 0 AS RETENCION_IVA, P.IVA, (P.VALO"& _ 
+                "R + P.IVA) AS TOTAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN 'Compra de ' + CAS"& _ 
+                "T(ROUND(P.AZUCAR_CATORCENA_REAL,2) AS VARCHAR) + ' libras de azucar, contenidas "& _ 
+                "en ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Tons de caña a precio inicial"& _ 
+                " de US$ ' + CAST(Z.PRECIO_LIBRA_AZUCAR AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN 'Valor de flete"& _ 
+                " de ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña' + ' Corte"& _ 
+                " # ' + CAST(CZ.CATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN 'Valor de flete de ' + CAST(P"& _ 
+                ".TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña' + ' Corte # ' + CAST(CZ"& _ 
+                ".CATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN 'Compra de frente de roza para ' + CAST(P.T"& _ 
+                "ONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'Valor de c"& _ 
+                "arga para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
+                "HEN 6 THEN 'Complemento al valor final de pago zafra ' + Z.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 7"& _ 
+                " THEN 'Compensacion de $' + REPLACE(FORMAT(P.VALOR_UNIT_PAGO,'0.00######'),',','"& _ 
+                ".') + ' por tonelada en zafra ' + Z.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_"& _ 
+                "a_Letras(P.VALOR + P.IVA,'US DOLARES') AS MONTO_LETRAS, @TIPO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"0.00 AS "& _ 
+                "RENTA, 0.00 AS SUBTOTAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT dbo.For"& _ 
+                "matearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSP"& _ 
+                "ORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHER"& _ 
+                "E R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT dbo.For"& _ 
+                "matearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRA"& _ 
+                "NSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.COD"& _ 
+                "IPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILL"& _ 
+                "A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CO"& _ 
+                "DIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R"& _ 
+                " WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R."& _ 
+                "TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTIS"& _ 
+                "TA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPRO"& _ 
+                "VEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN "& _ 
+                "(SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_D"& _ 
+                "EPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
+                "WHEN 2 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPT"& _ 
+                "O = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TR"& _ 
+                "ANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WH"& _ 
+                "ERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODI"& _ 
+                "PROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPAR"& _ 
+                "TAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEE"& _ 
+                "DOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANI"& _ 
+                "LLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_D"& _ 
+                "EPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODI"& _ 
+                "PROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT M.NOMBR"& _ 
+                "E_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CO"& _ 
+                "DI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTIS"& _ 
+                "TA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DE"& _ 
+                "PTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIP"& _ 
+                "ROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT M.NOMBRE"& _ 
+                "_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.COD"& _ 
+                "I_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFRA CZ, ZAFRA Z"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATO"& _ 
+                "RCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_ZAFRA = Z.ID_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @I"& _ 
+                "D_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE"& _ 
+                " = 0 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE P"& _ 
+                "C.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P.CODIPROVE"& _ 
+                "EDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIP"& _ 
+                "O_COMPROB = 9 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_COMPROB_"& _ 
+                "CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO_FIN) O"& _ 
+                "R (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TIPO", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_CATORCENA", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6602,108 +6813,173 @@ Namespace DS_COMPROBANTESTableAdapters
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NO_DOCTO_FIN", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CAST(dbo.QuitarFormatoCODIPROVEEDOR(P.CODIPROVEEDOR_TRANSPORTISTA) AS IN"& _ 
-                "T) AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBRE_PROVEE_TRANS, A.FECHA_PAGO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PL"& _ 
-                "ANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEED"& _ 
-                "OR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.CREDITO_FISCAL FROM "& _ 
-                "TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 T"& _ 
-                "HEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_ROZA R WHERE R.ID_PROVEEDOR_ROZA = P"& _ 
-                ".CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT R.CREDITO_FISCAL FROM PROVEE"& _ 
-                "DOR_CARGA R WHERE R.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5"& _ 
-                " THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROV"& _ 
-                "EEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE"& _ 
-                " R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REGISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_T"& _ 
-                "IPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROV"& _ 
-                "EEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.DIRECCION FROM TR"& _ 
-                "ANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THE"& _ 
-                "N ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R"& _ 
-                ".CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT R.DIRECCIO"& _ 
-                "N FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END A"& _ 
-                "S DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT N.NIT FROM PROVEEDOR"& _ 
-                " N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT "& _ 
-                "N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT FROM PROVEEDOR_ROZA N WHERE N.ID_PROVEEDOR_ROZA = P"& _ 
-                ".CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'Valor de carga para ' + CAST(P.TONE"& _ 
-                "L_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT N.NIT "& _ 
-                "FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6"& _ 
-                " THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRA"& _ 
-                "NSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALOR, P.RETENCION_IVA, 0 AS IVA, (P.VALOR + P.RETENC"& _ 
-                "ION_IVA) AS TOTAL,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHEN P.ID_TIPO_PLANILLA = 5 THEN 'Valor retenido 1% I"& _ 
-                "VA DE ANTICIPO DE LIQUIDACION AL VALOR FINAL DE PAGO POR COMPRA DE CAÑA ZAFRA ' "& _ 
-                "+ P.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHEN P.ID_TIPO_PLANILLA = 6 THEN 'Valor retenido 1% IVA DE COM"& _ 
-                "PLEMENTO AL VALOR FINAL DE PAGO ZAFRA ' + P.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ELSE ('Valor retenido "& _ 
-                "1% IVA Corte # ' + CAST(CZ.CATORCENA AS VARCHAR) + ' ZAFRA ' + P.NOMBRE_ZAFRA) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_a_Letras(P.RETENCION_IVA,'US DOLARES') AS MONTO_L"& _ 
-                "ETRAS, @TIPO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT dbo.Formate"& _ 
-                "arDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTI"& _ 
-                "STA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R."& _ 
-                "CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT dbo.Formate"& _ 
-                "arDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPO"& _ 
-                "RTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPRO"& _ 
-                "VEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
-                "WHEN 1 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPR"& _ 
-                "OVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHE"& _ 
-                "RE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.TELE"& _ 
-                "FONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEED"& _ 
-                "OR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFRA CZ, PLANILL"& _ 
-                "A_BASE A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_CATORCENA = A.ID_CA"& _ 
-                "TORCENA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = A.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_C"& _ 
-                "ATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = "& _ 
-                "1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.RETENCION_IVA > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_C"& _ 
-                "OMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSP"& _ 
-                "ORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLAN"& _ 
-                "ILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_"& _ 
-                "CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO"& _ 
-                " <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"U"& _ 
-                "NION ALL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CAST(dbo.QuitarFormatoCODIPROVEEDOR(P.CODIPROVEEDOR_TRANSPO"& _ 
-                "RTISTA) AS INT) AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBRE_PROVEE_TRANS, A.FECHA_PAGO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE"& _ 
-                " P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE "& _ 
-                "R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.CREDITO"& _ 
-                "_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTIST"& _ 
-                "A)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_ROZA R WHERE R.ID_PROVE"& _ 
-                "EDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT R.CREDITO_FISCA"& _ 
-                "L FROM PROVEEDOR_CARGA R WHERE R.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTI"& _ 
-                "STA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR"& _ 
-                " = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT R.CREDITFISCAL FROM PROV"& _ 
-                "EEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REGISTRO,"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHE"& _ 
-                "RE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.DIRE"& _ 
-                "CCION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.DIRECCION FROM PROVEE"& _ 
-                "DOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELE"& _ 
-                "CT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPOR"& _ 
-                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT N.NIT F"& _ 
-                "ROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 "& _ 
-                "THEN (SELECT N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPORT = P.CODIPROVEEDOR_T"& _ 
-                "RANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT FROM PROVEEDOR_ROZA N WHERE N.ID_PROVE"& _ 
-                "EDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT N.NIT FROM PROV"& _ 
-                "EEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN"& _ 
-                " 5 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_T"& _ 
-                "RANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR"& _ 
-                " = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALOR, 0 AS RETENCION_IVA, P.IV"& _ 
-                "A, (P.VALOR + P.IVA) AS TOTAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN 'Compra "& _ 
-                "de ' + CAST(ROUND(P.AZUCAR_CATORCENA_REAL,2) AS VARCHAR) + ' libras de azucar, c"& _ 
-                "ontenidas en ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Tons de caña a prec"& _ 
-                "io inicial de US$ ' + CAST(Z.PRECIO_LIBRA_AZUCAR AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN 'Valo"& _ 
-                "r de flete de ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"& _ 
-                " + ' Corte # ' + CAST(CZ.CATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN 'Compra de frente d"& _ 
-                "e roza para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+            Me._commandCollection(1).CommandText = "DECLARE @TIPO INT,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"    @ID_CATORCENA INT,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"@ID_TIPO_PLANILLA INT,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"@ID_COMP"& _ 
+                "ROB_CONCE INT,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"@NO_DOCTO_INI INT,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"@NO_DOCTO_FIN INT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET @TIPO = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "SET @ID_CATORCENA = 91"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET @ID_TIPO_PLANILLA = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET @ID_COMPROB_CONCE = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SE"& _ 
+                "T @NO_DOCTO_INI = -1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET @NO_DOCTO_FIN = -1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CAST(dbo.QuitarFormatoC"& _ 
+                "ODIPROVEEDOR(P.CODIPROVEEDOR_TRANSPORTISTA) AS INT) AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBR"& _ 
+                "E_PROVEE_TRANS, A.FECHA_PAGO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R."& _ 
+                "CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTI"& _ 
+                "STA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.CREDITO_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRAN"& _ 
+                "SPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT R.CREDITO_FISCAL FR"& _ 
+                "OM PROVEEDOR_ROZA R WHERE R.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_CARGA R WHERE R.ID_PROVEEDO"& _ 
+                "R_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.CREDITFISCAL FR"& _ 
+                "OM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 T"& _ 
+                "HEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEE"& _ 
+                "DOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REGISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SEL"& _ 
+                "ECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPO"& _ 
+                "RTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.DIRECCION FROM TRANSPORTISTA R WHERE R.CODTRANSP"& _ 
+                "ORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 "& _ 
+                "THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDO"& _ 
+                "R_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODI"& _ 
+                "PROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PL"& _ 
+                "ANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CO"& _ 
+                "DIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT N.NIT FROM TRANSPORTISTA N WHER"& _ 
+                "E N.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT FR"& _ 
+                "OM PROVEEDOR_ROZA N WHERE N.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
                 ""&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'Valor de carga para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + "& _ 
-                "' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN 'Compra de ' + CAST(ROUND(P.AZUCAR_CATORCENA_"& _ 
-                "REAL,2) AS VARCHAR) + ' libras de azucar, contenidas en ' + CAST(P.TONEL_CANA_EN"& _ 
-                "TREGADA AS VARCHAR) + ' Tons de caña a precio inicial de US$ ' + LEFT(CAST(ROUND"& _ 
-                "(A.VALOR_UNIT_PAGO,14) AS VARCHAR),16)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN 'Complemento al valor final"& _ 
-                " de pago 13% ' + P.NOMBRE_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_a_Letras(P.VALOR"& _ 
-                " + P.IVA,'US DOLARES') AS MONTO_LETRAS, @TIPO AS TIPO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCEN"& _ 
-                "A_ZAFRA CZ, ZAFRA Z, PLANILLA_BASE A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"A"& _ 
-                "ND CZ.ID_CATORCENA = A.ID_CATORCENA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = A.ID_TIPO_PLANILLA"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_ZAFRA = Z.ID_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_T"& _ 
-                "IPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 0 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AN"& _ 
-                "D ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CA"& _ 
-                "TORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND P"& _ 
-                "C.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC."& _ 
-                "ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOC"& _ 
-                "TO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND"& _ 
-                " @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"
+                "' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPR"& _ 
+                "OVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT N.NIT FROM PROVEE"& _ 
+                "DOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALO"& _ 
+                "R, P.RETENCION_IVA, 0 AS IVA, (P.VALOR + P.RETENCION_IVA) AS TOTAL,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHEN"& _ 
+                " P.ID_TIPO_PLANILLA = 5 THEN 'Valor retenido 1% IVA DE ANTICIPO DE LIQUIDACION A"& _ 
+                "L VALOR FINAL DE PAGO POR COMPRA DE CAÑA ZAFRA ' + P.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHEN P.ID_TIP"& _ 
+                "O_PLANILLA = 6 THEN 'Valor retenido 1% IVA DE COMPLEMENTO AL VALOR FINAL DE PAGO"& _ 
+                " ZAFRA ' + P.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ELSE ('Valor retenido 1% IVA Corte # ' + CAST(CZ.CATO"& _ 
+                "RCENA AS VARCHAR) + ' ZAFRA ' + P.NOMBRE_ZAFRA) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_"& _ 
+                "a_Letras(P.RETENCION_IVA,'US DOLARES') AS MONTO_LETRAS, @TIPO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.I"& _ 
+                "D_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R W"& _ 
+                "HERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo."& _ 
+                "FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_"& _ 
+                "TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA"& _ 
+                " R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.For"& _ 
+                "matearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSP"& _ 
+                "ORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.TELEFONO "& _ 
+                "FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2"& _ 
+                " THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVE"& _ 
+                "EDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE"& _ 
+                " R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM "& _ 
+                "PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEF"& _ 
+                "ONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM"& _ 
+                " DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODI"& _ 
+                "PROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT D.NOMBR"& _ 
+                "E_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTIST"& _ 
+                "A R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT "& _ 
+                "(SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FR"& _ 
+                "OM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 T"& _ 
+                "HEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CO"& _ 
+                "DI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA"& _ 
+                ")"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_"& _ 
+                "DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDO"& _ 
+                "R_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN ("& _ 
+                "SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO "& _ 
+                "AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPR"& _ 
+                "OVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPI"& _ 
+                "O M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSP"& _ 
+                "ORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (S"& _ 
+                "ELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO A"& _ 
+                "ND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPRO"& _ 
+                "VEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO"& _ 
+                " M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEED"& _ 
+                "OR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELEC"& _ 
+                "T (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M"& _ 
+                ".CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROV"& _ 
+                "EEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFRA CZ, PLA"& _ 
+                "NILLA_BASE A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_CATORCENA = A.I"& _ 
+                "D_CATORCENA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = A.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @"& _ 
+                "ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENT"& _ 
+                "E = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.RETENCION_IVA > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANIL"& _ 
+                "LA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TR"& _ 
+                "ANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_"& _ 
+                "PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMP"& _ 
+                "ROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_D"& _ 
+                "OCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION ALL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CAST(dbo.QuitarFormatoCODIPROVEEDOR(P.CODIPROVEEDOR_T"& _ 
+                "RANSPORTISTA) AS INT) AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBRE_PROVEE_TRANS, A.FECHA_PAGO, "& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R "& _ 
+                "WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.C"& _ 
+                "REDITO_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSP"& _ 
+                "ORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_ROZA R WHERE R.ID"& _ 
+                "_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT R.CREDITO"& _ 
+                "_FISCAL FROM PROVEEDOR_CARGA R WHERE R.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRAN"& _ 
+                "SPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPRO"& _ 
+                "VEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT R.CREDITFISCAL FRO"& _ 
+                "M PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REG"& _ 
+                "ISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.DIRECCION FROM PROVEEDOR"& _ 
+                " R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT "& _ 
+                "R.DIRECCION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPOR"& _ 
+                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.DIRECCION FROM "& _ 
+                "PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN"& _ 
+                " (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TR"& _ 
+                "ANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT N"& _ 
+                ".NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
+                "HEN 2 THEN (SELECT N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPORT = P.CODIPROVE"& _ 
+                "EDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT FROM PROVEEDOR_ROZA N WHERE N.ID"& _ 
+                "_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT N.NIT FRO"& _ 
+                "M PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVE"& _ 
+                "EDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPRO"& _ 
+                "VEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALOR, 0 AS RETENCION_IVA"& _ 
+                ", P.IVA, (P.VALOR + P.IVA) AS TOTAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN 'C"& _ 
+                "ompra de ' + CAST(ROUND(P.AZUCAR_CATORCENA_REAL,2) AS VARCHAR) + ' libras de azu"& _ 
+                "car, contenidas en ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Tons de caña "& _ 
+                "a precio inicial de US$ ' + CAST(Z.PRECIO_LIBRA_AZUCAR AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN"& _ 
+                " 'Valor de flete de ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de"& _ 
+                " caña' + ' Corte # ' + CAST(CZ.CATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN 'Compra de fr"& _ 
+                "ente de roza para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de c"& _ 
+                "aña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'Valor de carga para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCH"& _ 
+                "AR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN 'Compra de ' + CAST(ROUND(P.AZUCAR_CATO"& _ 
+                "RCENA_REAL,2) AS VARCHAR) + ' libras de azucar, contenidas en ' + CAST(P.TONEL_C"& _ 
+                "ANA_ENTREGADA AS VARCHAR) + ' Tons de caña a precio inicial de US$ ' + LEFT(CAST"& _ 
+                "(ROUND(A.VALOR_UNIT_PAGO,14) AS VARCHAR),16)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN 'Complemento al valor"& _ 
+                " final de pago 13% ' + P.NOMBRE_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_a_Letras(P"& _ 
+                ".VALOR + P.IVA,'US DOLARES') AS MONTO_LETRAS, @TIPO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLA"& _ 
+                "NILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.COD"& _ 
+                "IPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearD"& _ 
+                "UI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTI"& _ 
+                "STA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R"& _ 
+                ".CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.FormatearDUI("& _ 
+                "R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.TELEFONO FROM PROVE"& _ 
+                "EDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SEL"& _ 
+                "ECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANS"& _ 
+                "PORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRAN"& _ 
+                "SPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR "& _ 
+                "R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE"& _ 
+                " P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAME"& _ 
+                "NTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR "& _ 
+                "= P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT D.NOMBRE_DEPTO FR"& _ 
+                "OM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE "& _ 
+                "R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT D."& _ 
+                "NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEED"& _ 
+                "OR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELEC"& _ 
+                "T (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) "& _ 
+                "FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9"& _ 
+                " THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R."& _ 
+                "CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPOR"& _ 
+                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SE"& _ 
+                "LECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI"& _ 
+                "_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TR"& _ 
+                "ANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE "& _ 
+                "M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R "& _ 
+                "WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SEL"& _ 
+                "ECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_"& _ 
+                "MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRA"& _ 
+                "NSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M"& _ 
+                ".CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE"& _ 
+                " R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT "& _ 
+                "M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI"& _ 
+                " = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRAN"& _ 
+                "SPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFRA CZ, ZAFRA Z, PLAN"& _ 
+                "ILLA_BASE A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_CATORCENA = A.ID"& _ 
+                "_CATORCENA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = A.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_ZAFRA = Z.ID_"& _ 
+                "ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_P"& _ 
+                "LANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 0 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM "& _ 
+                "PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEE"& _ 
+                "DOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID"& _ 
+                "_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.I"& _ 
+                "D_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND P"& _ 
+                "C.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
+                ") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TIPO", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_CATORCENA", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6829,76 +7105,134 @@ Namespace DS_COMPROBANTESTableAdapters
                 "'Valor retenido 1% POR INCENTIVO A LOS PRODUCTORES DE CAÑA ZAFRA ' + P.NOMBRE_ZA"& _ 
                 "FRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ELSE ('Valor retenido 1% IVA Corte # ' + CAST(CZ.CATORCENA AS VARCHAR) + ' "& _ 
                 "ZAFRA ' + P.NOMBRE_ZAFRA) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_a_Letras(P.RETENCION_I"& _ 
-                "VA,'US DOLARES') AS MONTO_LETRAS, @TIPO AS TIPO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFR"& _ 
-                "A CZ, PLANILLA_BASE B"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_PLANILL"& _ 
-                "A_BASE = B.ID_PLANILLA_BASE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_"& _ 
-                "PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.RETENCION_IVA > "& _ 
-                "0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID"& _ 
-                "_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P.CODIPROVEEDOR"& _ 
-                "_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_CO"& _ 
-                "MPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_COMPROB_CONCE"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@N"& _ 
-                "O_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION ALL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CAS"& _ 
-                "T(dbo.QuitarFormatoCODIPROVEEDOR(P.CODIPROVEEDOR_TRANSPORTISTA) AS INT) AS CODIG"& _ 
-                "OPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBRE_PROVEE_TRANS, B.FECHA_PAGO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANI"& _ 
-                "LLA in(1,5,6,7,8) THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVE"& _ 
-                "EDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 2 THEN (SELECT"& _ 
-                " R.CREDITO_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TR"& _ 
-                "ANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 3 THEN (SELECT R.CREDITO_FISCAL FROM PR"& _ 
-                "OVEEDOR_ROZA R WHERE R.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN"& _ 
-                " P.ID_TIPO_PLANILLA = 4 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_CARGA R WHE"& _ 
-                "RE R.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REGISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE"& _ 
-                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA in(1,5,6,7,8) THEN (SELECT R.DIRECCION FROM PROVEEDO"& _ 
-                "R R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLAN"& _ 
-                "ILLA = 2 THEN (SELECT R.DIRECCION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P."& _ 
-                "CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_T"& _ 
-                "IPO_PLANILLA = 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA in("& _ 
-                "1,5,6,7,8) THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPRO"& _ 
-                "VEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 2 THEN (SELECT N.NIT FROM TRAN"& _ 
-                "SPORTISTA N WHERE N.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TI"& _ 
-                "PO_PLANILLA = 3 THEN (SELECT N.NIT FROM PROVEEDOR_ROZA N WHERE N.ID_PROVEEDOR_RO"& _ 
-                "ZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 4 THEN (SELECT N"& _ 
-                ".NIT FROM PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPO"& _ 
-                "RTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALOR, 0 AS RETENCION_IVA, P.IVA, (P.VALOR + P.IVA) AS TO"& _ 
-                "TAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN 'Compra de ' + CAST(ROUND(P.AZUCAR"& _ 
-                "_CATORCENA_REAL,2) AS VARCHAR) + ' libras de azucar, contenidas en ' + CAST(P.TO"& _ 
-                "NEL_CANA_ENTREGADA AS VARCHAR) + ' Tons de caña a precio inicial de US$ ' + CAST"& _ 
-                "(Z.PRECIO_LIBRA_AZUCAR AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN 'Valor de flete de ' + CAST(P.T"& _ 
-                "ONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña' + ' Corte # ' + CAST(CZ.C"& _ 
-                "ATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN 'Compra de frente de roza para ' + CAST(P.TON"& _ 
-                "EL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'Valor de car"& _ 
-                "ga para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHE"& _ 
-                "N 5 THEN 'Compra de ' + CAST(ROUND(P.AZUCAR_CATORCENA_REAL,2) AS VARCHAR) + ' li"& _ 
-                "bras de azucar, contenidas en ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' To"& _ 
-                "ns de caña a precio inicial de US$ ' + LEFT(CAST(ROUND(B.VALOR_UNIT_PAGO,14) AS "& _ 
-                "VARCHAR),16)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN 'Complemento al valor final de pago 13% ' + P.NOMBRE_"& _ 
-                "ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 7 THEN 'COMPENSACION EN CORTE # ' + CAST(CZ.CATORCENA AS VARCHAR) "& _ 
-                "+ ' DE $ ' + CAST(CAST(P.VALOR_UNIT_PAGO AS NUMERIC(6,3)) AS VARCHAR) + ' POR TO"& _ 
-                "NELADA ZAFRA ' + P.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 8 THEN 'INCENTIVO A LOS PRODUCTORES DE C"& _ 
-                "AÑA ZAFRA ' + P.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_a_Letras(P.VALOR + "& _ 
-                "P.IVA,'US DOLARES') AS MONTO_LETRAS, @TIPO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
-                "HEN 1 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDO"& _ 
-                "R = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearDUI(R.DUI)"& _ 
-                " FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
-                "HEN 9 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANS"& _ 
-                "PORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.FormatearDUI(R.DUI) FR"& _ 
-                "OM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DU"& _ 
-                "I,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WH"& _ 
-                "ERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TEL"& _ 
-                "EFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P"& _ 
-                ".CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R"& _ 
-                ".CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA "& _ 
-                "P, CATORCENA_ZAFRA CZ, ZAFRA Z, PLANILLA_BASE B"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.ID_CA"& _ 
-                "TORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND B.ID_PLANILLA_BASE = P.ID_PLANILLA_BASE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_ZAFRA = Z.ID_ZA"& _ 
-                "FRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_PLA"& _ 
-                "NILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 0 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PL"& _ 
-                "ANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDO"& _ 
-                "R_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_T"& _ 
-                "IPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_C"& _ 
-                "OMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.N"& _ 
-                "O_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") "& _ 
-                "> 0"
+                "VA,'US DOLARES') AS MONTO_LETRAS, @TIPO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN"& _ 
+                " 1 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR ="& _ 
+                " P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearDUI(R.DUI) FR"& _ 
+                "OM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN"& _ 
+                " 9 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPOR"& _ 
+                "T = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.FormatearDUI(R.DUI) FROM "& _ 
+                "PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE"& _ 
+                " R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TELEFO"& _ 
+                "NO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CO"& _ 
+                "DIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CO"& _ 
+                "DIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_P"& _ 
+                "LANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE "& _ 
+                "D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROV"& _ 
+                "EEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAME"& _ 
+                "NTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPO"& _ 
+                "RT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT D.NOMBRE_DEPTO"& _ 
+                " FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R"& _ 
+                ".CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT D."& _ 
+                "NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEED"& _ 
+                "OR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELEC"& _ 
+                "T (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) "& _ 
+                "FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END "& _ 
+                "AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT M.NOMBR"& _ 
+                "E_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CO"& _ 
+                "DI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO"& _ 
+                " = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODT"& _ 
+                "RANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT M.NOMBRE"& _ 
+                "_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.COD"& _ 
+                "I_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO "& _ 
+                "= R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVE"& _ 
+                "EDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT M.NOMBRE_MUN"& _ 
+                "I FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MU"& _ 
+                "NI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "END AS MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA P, CATORCENA_ZAFRA CZ, PLANILLA_BASE B"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P."& _ 
+                "ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_PLANILLA_BASE = B.ID_PLANILLA_BASE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AN"& _ 
+                "D P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"A"& _ 
+                "ND P.ES_CONTRIBUYENTE = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.RETENCION_IVA > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT "& _ 
+                "COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND"& _ 
+                " PC.CODIPROVEEDOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_P"& _ 
+                "LANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E"& _ 
+                "' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_D"& _ 
+                "OCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_"& _ 
+                "FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION ALL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CAST(dbo.QuitarFormatoCODIPROVEEDO"& _ 
+                "R(P.CODIPROVEEDOR_TRANSPORTISTA) AS INT) AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"P.NOMBRE_PROVEE_TR"& _ 
+                "ANS, B.FECHA_PAGO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA in(1,5,6,7,8) THEN (SELECT "& _ 
+                "R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPOR"& _ 
+                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 2 THEN (SELECT R.CREDITO_FISCAL FROM TRANSPOR"& _ 
+                "TISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_P"& _ 
+                "LANILLA = 3 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_ROZA R WHERE R.ID_PROVE"& _ 
+                "EDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 4 THEN (S"& _ 
+                "ELECT R.CREDITO_FISCAL FROM PROVEEDOR_CARGA R WHERE R.ID_PROVEEDOR_CARGA = P.COD"& _ 
+                "IPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS REGISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA in("& _ 
+                "1,5,6,7,8) THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.C"& _ 
+                "ODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 2 THEN (SELECT R.DIRECCI"& _ 
+                "ON FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
+                "WHEN P.ID_TIPO_PLANILLA = 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END A"& _ 
+                "S DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA in(1,5,6,7,8) THEN (SELECT N.NIT F"& _ 
+                "ROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P."& _ 
+                "ID_TIPO_PLANILLA = 2 THEN (SELECT N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPOR"& _ 
+                "T = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 3 THEN (SELECT N."& _ 
+                "NIT FROM PROVEEDOR_ROZA N WHERE N.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTI"& _ 
+                "STA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA = 4 THEN (SELECT N.NIT FROM PROVEEDOR_CARGA N WHE"& _ 
+                "RE N.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS NIT, P.VALOR, 0"& _ 
+                " AS RETENCION_IVA, P.IVA, (P.VALOR + P.IVA) AS TOTAL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN 'Compra de ' + CAST(ROUND(P.AZUCAR_CATORCENA_REAL,2) AS VARCHAR) "& _ 
+                "+ ' libras de azucar, contenidas en ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) "& _ 
+                "+ ' Tons de caña a precio inicial de US$ ' + CAST(Z.PRECIO_LIBRA_AZUCAR AS VARCH"& _ 
+                "AR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN 'Valor de flete de ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR)"& _ 
+                " + ' Toneladas de caña' + ' Corte # ' + CAST(CZ.CATORCENA AS VARCHAR)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 T"& _ 
+                "HEN 'Compra de frente de roza para ' + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) +"& _ 
+                " ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'Valor de carga para ' + CAST(P.TONEL_CANA_E"& _ 
+                "NTREGADA AS VARCHAR) + ' Toneladas de caña'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN 'Compra de ' + CAST(RO"& _ 
+                "UND(P.AZUCAR_CATORCENA_REAL,2) AS VARCHAR) + ' libras de azucar, contenidas en '"& _ 
+                " + CAST(P.TONEL_CANA_ENTREGADA AS VARCHAR) + ' Tons de caña a precio inicial de "& _ 
+                "US$ ' + LEFT(CAST(ROUND(B.VALOR_UNIT_PAGO,14) AS VARCHAR),16)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN 'Com"& _ 
+                "plemento al valor final de pago 13% ' + P.NOMBRE_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 7 THEN 'COMPENSAC"& _ 
+                "ION EN CORTE # ' + CAST(CZ.CATORCENA AS VARCHAR) + ' DE $ ' + CAST(CAST(P.VALOR_"& _ 
+                "UNIT_PAGO AS NUMERIC(6,3)) AS VARCHAR) + ' POR TONELADA ZAFRA ' + P.NOMBRE_ZAFRA"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 8 THEN 'INCENTIVO A LOS PRODUCTORES DE CAÑA ZAFRA ' + P.NOMBRE_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "END AS CONCEPTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"dbo.fNumero_a_Letras(P.VALOR + P.IVA,'US DOLARES') AS MONTO_LE"& _ 
+                "TRAS, @TIPO AS TIPO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT dbo.Formatea"& _ 
+                "rDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTIS"& _ 
+                "TA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.C"& _ 
+                "ODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT dbo.Formatea"& _ 
+                "rDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPOR"& _ 
+                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROV"& _ 
+                "EEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
+                "HEN 1 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPRO"& _ 
+                "VEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHER"& _ 
+                "E R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.TELEF"& _ 
+                "ONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDO"& _ 
+                "R_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELE"& _ 
+                "CT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO)"& _ 
+                " FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN "& _ 
+                "2 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R"& _ 
+                ".CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPO"& _ 
+                "RTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D"& _ 
+                ".CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVE"& _ 
+                "EDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMEN"& _ 
+                "TO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR ="& _ 
+                " P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT D.NOMBRE_DEPTO FRO"& _ 
+                "M DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R"& _ 
+                ".CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_"& _ 
+                "TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHER"& _ 
+                "E M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WH"& _ 
+                "ERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELE"& _ 
+                "CT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_M"& _ 
+                "UNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_T"& _ 
+                "RANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE"& _ 
+                " M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHE"& _ 
+                "RE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELEC"& _ 
+                "T M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MU"& _ 
+                "NI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANS"& _ 
+                "PORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.C"& _ 
+                "ODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHE"& _ 
+                "RE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANI"& _ 
+                "LLA P, CATORCENA_ZAFRA CZ, ZAFRA Z, PLANILLA_BASE B"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE P.ID_CATORCENA = CZ.I"& _ 
+                "D_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND B.ID_PLANILLA_BASE = P.ID_PLANILLA_BASE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND CZ.ID_ZAFRA = Z.I"& _ 
+                "D_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO"& _ 
+                "_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = 0 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND @TIPO = 2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FRO"& _ 
+                "M PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROV"& _ 
+                "EEDOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P."& _ 
+                "ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 9"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC."& _ 
+                "ID_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND "& _ 
+                "PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TIPO", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_CATORCENA", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6987,14 +7321,40 @@ Namespace DS_COMPROBANTESTableAdapters
                 "WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.T"& _ 
                 "ELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTIST"& _ 
                 "A)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROV"& _ 
-                "EEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA_BASE B, PLANILLA P "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "B.ID_PLANILLA_BASE = P.ID_PLANILLA_BASE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AN"& _ 
-                "D P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = @ES_CONTRIBUY"& _ 
-                "ENTE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA "& _ 
-                "= P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTI"& _ 
-                "STA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 10"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( "& _ 
-                "(PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_IN"& _ 
-                "I = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"
+                "EEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"END AS TELEFONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN "& _ 
+                "(SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_D"& _ 
+                "EPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEP"& _ 
+                "TO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_T"& _ 
+                "RANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D "& _ 
+                "WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CO"& _ 
+                "DIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DE"& _ 
+                "PARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPRO"& _ 
+                "VEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT D.NOMBRE_"& _ 
+                "DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA "& _ 
+                "R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNI"& _ 
+                "CIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PR"& _ 
+                "OVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN "& _ 
+                "(SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO"& _ 
+                " AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CO"& _ 
+                "DIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUN"& _ 
+                "ICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM P"& _ 
+                "ROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN"& _ 
+                " (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPT"& _ 
+                "O AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODI"& _ 
+                "PROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNIC"& _ 
+                "IPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRA"& _ 
+                "NSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS MUNI"& _ 
+                "CIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM PLANILLA_BASE B, PLANILLA P "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE B.ID_PLANILLA_BASE = P.ID_PLANIL"& _ 
+                "LA_BASE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_"& _ 
+                "PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND P.ES_CONTRIBUYENTE = @ES_CONTRIBUYENTE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FRO"& _ 
+                "M PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROV"& _ 
+                "EEDOR_TRANSPORTISTA = P.CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P."& _ 
+                "ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_TIPO_COMPROB = 10"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P"& _ 
+                "C.ID_COMPROB_CONCE = @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AN"& _ 
+                "D PC.NO_DOCTO <= @NO_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_CATORCENA", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_CATORCENA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_TIPO_PLANILLA", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_TIPO_PLANILLA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7398,6 +7758,8 @@ Namespace DS_COMPROBANTESTableAdapters
             tableMapping.ColumnMappings.Add("MONTO_LETRAS", "MONTO_LETRAS")
             tableMapping.ColumnMappings.Add("DUI", "DUI")
             tableMapping.ColumnMappings.Add("TELEFONO", "TELEFONO")
+            tableMapping.ColumnMappings.Add("DEPARTAMENTO", "DEPARTAMENTO")
+            tableMapping.ColumnMappings.Add("MUNICIPIO", "MUNICIPIO")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -7433,67 +7795,91 @@ Namespace DS_COMPROBANTESTableAdapters
                 "UNT(1) FROM CREDITO_ENCA E WHERE E.ID_CREDITO_ENCA = D.ID_CREDITO_ENCA AND E.ID_"& _ 
                 "PROVEE <> 4 AND D.ID_TIPO_DESCTO = 3) = 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&") T"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE T.ID_CATORCE"& _ 
                 "NA = E.ID_CATORCENA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND T.ID_TIPO_PLANILLA = E.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(9)&"AND T.CODIPROVEEDOR_TRANSPORTISTA = E.CODIPROVEEDOR_TRANSPORTISTA"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"),'US DOLARES') AS MONTO_LETRAS, DUI, TELEFONO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"("&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"P.I"& _ 
-                "D_CATORCENA, P.ID_TIPO_PLANILLA, P.CODIPROVEEDOR_TRANSPORTISTA,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN "& _ 
-                "P.ID_TIPO_PLANILLA IN(1,5,6) THEN CAST(dbo.QuitarFormatoCODIPROVEEDOR(P.CODIPROV"& _ 
-                "EEDOR_TRANSPORTISTA) AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE CAST(P.CODIPROVEEDOR_TRANSPORTISTA AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"P.NOMBRE_PROVEE_TRANS, CZ.FECHA_PAGO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_T"& _ 
-                "IPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODI"& _ 
-                "PROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.CREDITO_FISC"& _ 
-                "AL FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_ROZA R WHERE R.ID_PROVEEDOR"& _ 
-                "_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT N.CREDITO_FISCAL F"& _ 
-                "ROM PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPORTISTA"& _ 
-                ")"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR ="& _ 
-                " P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT R.CREDITFISCAL FROM PROVE"& _ 
-                "EDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS REGISTRO,"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.DIRECCION FROM PROVEEDOR R W"& _ 
-                "HERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.D"& _ 
-                "IRECCION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTIS"& _ 
-                "TA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.DIRECCION FROM "& _ 
-                "PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THE"& _ 
-                "N (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_T"& _ 
-                "RANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELE"& _ 
-                "CT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT N.NIT FROM TRANSPORTISTA N WHERE N.CODTRANSPORT = P.CODI"& _ 
-                "PROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT FROM PROVEEDOR_ROZA N WHER"& _ 
-                "E N.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT N."& _ 
-                "NIT FROM PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA = P.CODIPROVEEDOR_TRANSPOR"& _ 
-                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.C"& _ 
-                "ODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE "& _ 
-                "N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS NIT,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_"& _ 
-                "PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN 'PROVEEDOR DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN 'TRANSPORTE'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN "& _ 
-                "3 THEN 'ROZA DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'PROVEEDOR DE CARGA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN 'PROVEE"& _ 
-                "DOR DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN 'PROVEEDOR DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS GIRO, P.ID_PLANILLA_BAS"& _ 
-                "E,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"AND T.CODIPROVEEDOR_TRANSPORTISTA = E.CODIPROVEEDOR_TRANSPORTISTA"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"),'US DOLARES') AS MONTO_LETRAS, DUI, TELEFONO, DEPARTAMENTO, MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"("&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"P.ID_CATORCENA, P.ID_TIPO_PLANILLA, P.CODIPROVEEDOR_TRANSP"& _ 
+                "ORTISTA,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN P.ID_TIPO_PLANILLA IN(1,5,6) THEN CAST(dbo.QuitarFormat"& _ 
+                "oCODIPROVEEDOR(P.CODIPROVEEDOR_TRANSPORTISTA) AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE CAST(P.CODIPROVEED"& _ 
+                "OR_TRANSPORTISTA AS INT)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS CODIGOPROVEEDOR,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"P.NOMBRE_PROVEE_TRANS, CZ.F"& _ 
+                "ECHA_PAGO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.CREDITFISCAL FROM"& _ 
                 " PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 TH"& _ 
-                "EN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P"& _ 
-                ".CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT dbo.FormatearDUI(R.DUI) "& _ 
-                "FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN "& _ 
-                "6 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = "& _ 
-                "P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1"& _ 
-                " THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDO"& _ 
-                "R_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R."& _ 
-                "CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.TELEFONO"& _ 
-                " FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
-                "HEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODI"& _ 
-                "PROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.COD"& _ 
-                "IPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS TELEFONO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"FROM PLANILLA P,"& _ 
-                " CATORCENA_ZAFRA CZ"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P.ID_CATORCE"& _ 
-                "NA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P.ES_CONT"& _ 
-                "RIBUYENTE = @ES_CONTRIBUYENTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P"& _ 
-                ".CODIPROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND"& _ 
-                " PC.ID_TIPO_COMPROB in(1,2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE ="& _ 
-                " @ID_COMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO"& _ 
-                "_DOCTO_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&") E,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"("&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT D.ID_CATORCENA, D.ID_TIPO_PLANILLA, D.CODIPROVEEDOR_TRANSPORTISTA, GD.OR"& _ 
-                "DEN, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"TD.CUENTA_DESCRIPCION AS CONCEPTO, D.MONTO_DESCUENTO AS VALOR, D.IVA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
-                "FROM DESCUENTOS_PLANILLA D, TIPO_DESCUENTO TD, GRUPO_DESCUENTOS GD  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE D.I"& _ 
-                "D_TIPO_DESCTO = TD.ID_TIPO_DESCTO "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND TD.ID_GRUPO_DESC = GD.ID_GRUPO_DESC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
-                "AND D.ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND D.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND GD.ID_GRUPO_DESC IN(1,2,3,10)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND TD.NOMBRE_TIPO_DESCTO <> 'FERTILIZAN"& _ 
-                "TE JIBOA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND TD.ID_TIPO_DESCTO <> 32"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&") D"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE E.ID_CATORCENA = D.ID_CATORC"& _ 
-                "ENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AND E.ID_TIPO_PLANILLA = D.ID_TIPO_PLANILLA AND "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"E.CODIPROVEEDOR_TRANSPOR"& _ 
-                "TISTA = D.CODIPROVEEDOR_TRANSPORTISTA"
+                "EN (SELECT R.CREDITO_FISCAL FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPR"& _ 
+                "OVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT R.CREDITO_FISCAL FROM PROVEEDOR_RO"& _ 
+                "ZA R WHERE R.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ("& _ 
+                "SELECT N.CREDITO_FISCAL FROM PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA = P.CO"& _ 
+                "DIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT R.CREDITFISCAL FROM PROVEEDOR "& _ 
+                "R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT "& _ 
+                "R.CREDITFISCAL FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPOR"& _ 
+                "TISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS REGISTRO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.DIR"& _ 
+                "ECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.DIRECCION FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P."& _ 
+                "CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN ''"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN "& _ 
+                "(SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRA"& _ 
+                "NSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT R.DIRECCION FROM PROVEEDOR R WHERE R.CODIPROV"& _ 
+                "EEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS DIRECCION,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLAN"& _ 
+                "ILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT N.NIT FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.COD"& _ 
+                "IPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT N.NIT FROM TRANSPORTISTA N WHER"& _ 
+                "E N.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN (SELECT N.NIT F"& _ 
+                "ROM PROVEEDOR_ROZA N WHERE N.ID_PROVEEDOR_ROZA = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN (SELECT N.NIT FROM PROVEEDOR_CARGA N WHERE N.ID_PROVEEDOR_CARGA ="& _ 
+                " P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT N.NIT FROM PROVEEDOR N WH"& _ 
+                "ERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT N.NI"& _ 
+                "T FROM PROVEEDOR N WHERE N.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END "& _ 
+                "AS NIT,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN 'PROVEEDOR DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 T"& _ 
+                "HEN 'TRANSPORTE'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 3 THEN 'ROZA DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 4 THEN 'PROVEEDOR DE CARG"& _ 
+                "A'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN 'PROVEEDOR DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN 'PROVEEDOR DE CAÑA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END A"& _ 
+                "S GIRO, P.ID_PLANILLA_BASE,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT dbo"& _ 
+                ".FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TR"& _ 
+                "ANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM TRANSPORTISTA R"& _ 
+                " WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN (SELECT"& _ 
+                " dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDO"& _ 
+                "R_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT dbo.FormatearDUI(R.DUI) FROM PROVEEDOR R"& _ 
+                " WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS DUI,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.I"& _ 
+                "D_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIP"& _ 
+                "ROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT R.TELEFONO FROM"& _ 
+                " TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN "& _ 
+                "5 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROV"& _ 
+                "EEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHER"& _ 
+                "E R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE (SELECT R.TELEFONO FRO"& _ 
+                "M PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS TE"& _ 
+                "LEFONO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 1 THEN (SELECT (SELECT D.NOMBRE_DEPTO"& _ 
+                " FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R"& _ 
+                ".CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT D"& _ 
+                ".NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSP"& _ 
+                "ORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 5 THEN ("& _ 
+                "SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DE"& _ 
+                "PTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
+                "WHEN 6 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPT"& _ 
+                "O = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANS"& _ 
+                "PORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 9 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHER"& _ 
+                "E D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.COD"& _ 
+                "IPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS DEPARTAMENTO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE P.ID_TIPO_PLANILLA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"W"& _ 
+                "HEN 1 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R"& _ 
+                ".CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDO"& _ 
+                "R = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 2 THEN (SELECT (SELECT M.NOMBRE_MUNI "& _ 
+                "FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI"& _ 
+                ") FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)& _ 
+                "WHEN 5 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = "& _ 
+                "R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEED"& _ 
+                "OR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN 6 THEN (SELECT (SELECT M.NOMBRE_MUNI"& _ 
+                " FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUN"& _ 
+                "I) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WH"& _ 
+                "EN 9 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R."& _ 
+                "CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSP"& _ 
+                "ORT = P.CODIPROVEEDOR_TRANSPORTISTA)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS MUNICIPIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"FROM PLANILLA P, CATOR"& _ 
+                "CENA_ZAFRA CZ"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE P.ID_CATORCENA = CZ.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P.ID_CATORCENA = @"& _ 
+                "ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND P.ES_CONTRIBUYE"& _ 
+                "NTE = @ES_CONTRIBUYENTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ("&Global.Microsoft.VisualBasic.ChrW(9)&"SELECT COUNT(1) FROM PLANILLA_COMPROB PC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHE"& _ 
+                "RE PC.ID_CATORCENA = P.ID_CATORCENA AND PC.CODIPROVEEDOR_TRANSPORTISTA = P.CODIP"& _ 
+                "ROVEEDOR_TRANSPORTISTA AND PC.ID_TIPO_PLANILLA = P.ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID"& _ 
+                "_TIPO_COMPROB in(1,2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ESTADO = 'E' "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND PC.ID_COMPROB_CONCE = @ID_C"& _ 
+                "OMPROB_CONCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"AND ( (PC.NO_DOCTO >= @NO_DOCTO_INI AND PC.NO_DOCTO <= @NO_DOCTO"& _ 
+                "_FIN) OR (@NO_DOCTO_INI = -1 AND @NO_DOCTO_FIN = -1) )"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&") > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&") E,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"("&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"SELEC"& _ 
+                "T D.ID_CATORCENA, D.ID_TIPO_PLANILLA, D.CODIPROVEEDOR_TRANSPORTISTA, GD.ORDEN, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"TD.CUENTA_DESCRIPCION AS CONCEPTO, D.MONTO_DESCUENTO AS VALOR, D.IVA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"FROM D"& _ 
+                "ESCUENTOS_PLANILLA D, TIPO_DESCUENTO TD, GRUPO_DESCUENTOS GD  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE D.ID_TIPO"& _ 
+                "_DESCTO = TD.ID_TIPO_DESCTO "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND TD.ID_GRUPO_DESC = GD.ID_GRUPO_DESC "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND D."& _ 
+                "ID_CATORCENA = @ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND D.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA"&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AN"& _ 
+                "D GD.ID_GRUPO_DESC IN(1,2,3,10)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND TD.NOMBRE_TIPO_DESCTO <> 'FERTILIZANTE JIB"& _ 
+                "OA'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND TD.ID_TIPO_DESCTO <> 32"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&") D"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE E.ID_CATORCENA = D.ID_CATORCENA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "AND E.ID_TIPO_PLANILLA = D.ID_TIPO_PLANILLA AND "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"E.CODIPROVEEDOR_TRANSPORTISTA "& _ 
+                "= D.CODIPROVEEDOR_TRANSPORTISTA"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_CATORCENA", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_TIPO_PLANILLA", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

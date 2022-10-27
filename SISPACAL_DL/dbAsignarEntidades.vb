@@ -3399,6 +3399,8 @@ Friend Module dbAsignarEntidades
         e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla)), -1))
         e.TELEFONO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TELEFONO", aliasTabla))))
         e.ACTIVIDAD = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}ACTIVIDAD", aliasTabla))))
+        e.APELLIDOS = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}APELLIDOS", aliasTabla))))
+        e.CODIGO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODIGO", aliasTabla))))
     End Sub
 
 
