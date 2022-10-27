@@ -1,5 +1,6 @@
 ﻿Imports SISPACAL.BL
 Imports SISPACAL.EL
+Imports SISPACAL.EL.Enumeradores
 Imports DevExpress.Web
 ''' -----------------------------------------------------------------------------
 ''' Project	 : SISPACAL
@@ -19,8 +20,59 @@ Imports DevExpress.Web
 ''' -----------------------------------------------------------------------------
 Partial Class controles_ucVistaDetallePROVEEDOR
     Inherits ucBase
- 
-#Region"Propiedades"
+#Region "CargaCatalogos"
+
+    'Private Sub ObtenerProveedor()
+    '    Me.txtNOMBRE_PROVEEDOR.Text = ""
+    '    If Me.txtCODIPROVEE_ML.Text <> "" AndAlso Utilerias.EsNumeroEntero(Me.txtCODIPROVEE_ML.Text) Then
+    '        If Me.txtCODISOCIO_ML.Text = "" Then
+    '            Dim lCodiprovee As String = Utilerias.FormatoCODIPROVEE(Me.txtCODIPROVEE_ML.Text) + Utilerias.FormatoCODISOCIO(0)
+    '            Dim lProveedor As PROVEEDOR = (New cPROVEEDOR).ObtenerPROVEEDOR(lCodiprovee)
+    '            If lProveedor IsNot Nothing Then
+    '                Me.txtNOMBRE_PROVEEDOR.Text = lProveedor.NOMBRES + " " + lProveedor.APELLIDOS
+    '            End If
+    '        Else
+    '            Dim lCodiprovee As String = Utilerias.FormatoCODIPROVEE(Me.txtCODIPROVEE_ML.Text) + Utilerias.FormatoCODISOCIO(Me.txtCODISOCIO_ML.Text)
+    '            Dim lProveedor As PROVEEDOR = (New cPROVEEDOR).ObtenerPROVEEDOR(lCodiprovee)
+    '            If lProveedor IsNot Nothing Then
+    '                Me.txtNOMBRE_PROVEEDOR.Text = lProveedor.NOMBRES + " " + lProveedor.APELLIDOS
+    '            End If
+    '        End If
+    '    End If
+    'End Sub
+
+    Public Property NombreFormLayoutCliente() As String
+        Get
+            Return Me.ucVistaDetallePROVEEDORLayout.ClientInstanceName
+        End Get
+        Set(ByVal value As String)
+            Me.ucVistaDetallePROVEEDORLayout.ClientInstanceName = value
+        End Set
+    End Property
+
+    'Public Property VisibleEnCliente As Boolean
+    '    Set(value As Boolean)
+    '        Dim gl As LayoutGroup = Me.ucVistaDetallePROVEEDORLayout.FindItemOrGroupByName("lgVistaDetalleMAESTRO_LOTES")
+    '        If gl IsNot Nothing Then
+    '            gl.ClientVisible = value
+    '        End If
+    '    End Set
+    '    Get
+    '        Dim gl As LayoutGroup = Me.ucVistaDetallePROVEEDORLayout.FindItemOrGroupByName("lgVistaDetalleMAESTRO_LOTES")
+    '        If gl IsNot Nothing Then Return gl.ClientVisible
+    '        Return True
+    '    End Get
+    'End Property
+    'Private Sub CargarMunicipios()
+    '    Me.odsMunicipio.SelectParameters("CODI_DEPTO").DefaultValue = cbxDEPARTAMENTO_V.Value
+    '    Me.odsMunicipio.SelectParameters("agregarVacio").DefaultValue = True
+    '    Me.odsMunicipio.SelectParameters("agregarTodos").DefaultValue = False
+    '    Me.odsMunicipio.SelectParameters("conPresencia").DefaultValue = False
+    '    Me.cbxMUNICIPIO_V.DataBind()
+    '    Me.cbxMUNICIPIO_V.Focus()
+    'End Sub
+#End Region
+#Region "Propiedades"
 
     Private _CODIPROVEEDOR As String
     Public Property CODIPROVEEDOR() As String
@@ -147,6 +199,31 @@ Partial Class controles_ucVistaDetallePROVEEDOR
             Me.txtNOMBRENIT_V.Text = value.ToString()
         End Set
     End Property
+    Public Property ID_TIPO_PERSONA() As Integer
+        Get
+            Return Me.cbxTIPO_PERSONA_V.Value
+        End Get
+        Set(ByVal value As Integer)
+            Me.cbxTIPO_PERSONA_V.Text = value
+        End Set
+    End Property
+    Public Property CODI_DEPTO() As Integer
+        Get
+            Return Me.cbxDEPARTAMENTO_V.Value
+        End Get
+        Set(ByVal value As Integer)
+            Me.cbxDEPARTAMENTO_V.Value = value
+        End Set
+    End Property
+    Public Property CODI_MUNICIPIO() As Integer
+        Get
+            Return Me.cbxMUNICIPIO_V.Value
+        End Get
+        Set(ByVal value As Integer)
+            Me.cbxMUNICIPIO_V.Value = value
+        End Set
+    End Property
+
 
     'Public Property APODERADO() As String
     '    Get
@@ -310,7 +387,9 @@ Partial Class controles_ucVistaDetallePROVEEDOR
             RaiseEvent ErrorEvent("Error al obtener Registro.")
             Return
         End If
+
         Me.txtCODIPROVEEDOR_V.Text = mEntidad.CODIPROVEEDOR
+
         Me.txtCODIPROVEE_V.Text = mEntidad.CODIPROVEE
         Me.txtAPELLIDOS_V.Text = mEntidad.APELLIDOS.Trim
         Me.txtNOMBRES_V.Text = mEntidad.NOMBRES.Trim
@@ -330,6 +409,15 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Me.rdbTIPO_CONTRIBUYENTE_V.Value = mEntidad.TIPO_CONTRIBUYENTE
         Me.txtNRC_V.Text = mEntidad.CREDITFISCAL
         Me.dteFECHA_NACIMIENTO_V.Date = mEntidad.FECHA_NAC
+
+        Me.cbxTIPO_PERSONA_V.Value = mEntidad.ID_TIPO_PERSONA
+        Me.cbxDEPARTAMENTO_V.Value = mEntidad.CODI_DEPTO
+        Me.CargarMunicipios()
+        Me.cbxMUNICIPIO_V.Value = mEntidad.CODI_MUNI
+        Me.txtCorreo_V.Value = mEntidad.CORREO
+
+
+
         If mEntidad.FECHA_NAC <> #12:00:00 AM# Then
             Me.txtEDAD_V.Text = Utilerias.ObtenerEdad(mEntidad.FECHA_NAC, cFechaHora.ObtenerFecha)
         Else
@@ -342,6 +430,7 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         End If
         Me.txtNUM_CUENTA.Text = mEntidad.NUM_CUENTA
         Me.chkES_CTA_CORRIENTE.Checked = mEntidad.ES_CTA_CORRIENTE
+        Me.ConfigurarTipoPersona()
     End Sub
 
     ''' -----------------------------------------------------------------------------
@@ -356,14 +445,26 @@ Partial Class controles_ucVistaDetallePROVEEDOR
     ''' -----------------------------------------------------------------------------
     Private Sub HabilitarEdicion(ByVal edicion As Boolean)
         Me.txtCODIPROVEE_V.ClientEnabled = Me.hfucVistaDetallePROVEEDOR("nuevo") AndAlso edicion
-        Me.txtAPELLIDOS_V.ClientEnabled = edicion
-        Me.txtNOMBRES_V.ClientEnabled = edicion
-        Me.txtDIRECCION_V.ClientEnabled = False
+        Me.cbxTIPO_PERSONA_V.ClientEnabled = Me._nuevo
+        If Me.cbxTIPO_PERSONA_V.Value = Nothing Then
+            Me.txtDUI_V.ClientEnabled = False
+            Me.txtNIT_V.ClientEnabled = False
+            Me.txtNOMBRES_V.ClientEnabled = edicion
+            Me.txtAPELLIDOS_V.ClientEnabled = False
+        ElseIf Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Natural Then
+            Me.txtDUI_V.ClientEnabled = edicion
+            Me.txtNIT_V.ClientEnabled = False
+            Me.txtNOMBRES_V.ClientEnabled = edicion
+            Me.txtAPELLIDOS_V.ClientEnabled = edicion
+        ElseIf Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Juridica Then
+            Me.txtDUI_V.ClientEnabled = False
+            Me.txtNIT_V.ClientEnabled = edicion
+            Me.txtNOMBRES_V.ClientEnabled = edicion
+            Me.txtAPELLIDOS_V.ClientEnabled = False
+        End If
         Me.txtDIRECCION_V.ClientEnabled = edicion
         Me.txtTELEFONO_V.ClientEnabled = edicion
         Me.txtCELULAR_V.ClientEnabled = edicion
-        Me.txtDUI_V.ClientEnabled = edicion
-        Me.txtNIT_V.ClientEnabled = edicion
         Me.txtNOMBRE_REPRESENTANTE_V.ClientEnabled = edicion
         Me.txtDUI_REPRESENTANTE_V.ClientEnabled = edicion
         Me.txtNIT_REPRESENTANTE_V.ClientEnabled = edicion
@@ -420,6 +521,10 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Me.cbxBANCO_PAGO_CTA.Value = Nothing
         Me.txtNUM_CUENTA.Text = ""
         Me.chkES_CTA_CORRIENTE.Checked = False
+        Me.cbxTIPO_PERSONA_V.Value = ""
+        Me.cbxDEPARTAMENTO_V.Value = ""
+        Me.cbxMUNICIPIO_V.Value = ""
+        Me.txtCorreo_V.Text = ""
     End Sub
 
     ''' -----------------------------------------------------------------------------
@@ -478,12 +583,15 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         mEntidad.DUI = Me.txtDUI_V.Text
         mEntidad.NIT = Me.txtNIT_V.Text
         mEntidad.FECHA_NAC = Me.dteFECHA_NACIMIENTO_V.Date
+
         If (Me.txtNOMBRE_REPRESENTANTE_V.Text <> "" AndAlso Me.txtDUI_REPRESENTANTE_V.Text = "") Then
             Return "Ingrese el DUI del Representante Legal"
         End If
+
         If Me.txtNOMBRE_REPRESENTANTE_V.Text = "" AndAlso (Me.txtDUI_REPRESENTANTE_V.Text <> "" OrElse Me.txtNIT_REPRESENTANTE_V.Text <> "") Then
             Return "Ingrese el Nombre del Representante Legal"
         End If
+
         mEntidad.CREDITFISCAL = Me.txtEDAD_V.Text
         mEntidad.PROFESION = Me.txtPROFESION_V.Text.ToUpper
         mEntidad.NOMBRENIT = Me.txtNOMBRENIT_V.Text.ToUpper
@@ -499,8 +607,14 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Else
             mEntidad.CODIBANCO = -1
         End If
+
         mEntidad.NUM_CUENTA = Me.txtNUM_CUENTA.Text.Trim
         mEntidad.ES_CTA_CORRIENTE = Me.chkES_CTA_CORRIENTE.Checked
+
+        mEntidad.CODI_DEPTO = Me.cbxDEPARTAMENTO_V.Value
+        mEntidad.CODI_MUNI = Me.cbxMUNICIPIO_V.Value
+        mEntidad.CORREO = Me.txtCorreo_V.Value
+        mEntidad.ID_TIPO_PERSONA = Me.cbxTIPO_PERSONA_V.Value
 
         If (Me.rdbTIPO_CONTRIBUYENTE_V.Value = 1 OrElse Me.rdbTIPO_CONTRIBUYENTE_V.Value = 2) AndAlso (Me.txtNRC_V.Value Is Nothing OrElse Me.txtNRC_V.Value = "") Then
             Return "Ingrese el Numero de Registro de Contribuyente"
@@ -530,5 +644,42 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Else
             Me.txtNRC_V.ClientEnabled = True
         End If
+    End Sub
+    Protected Sub cbxTIPO_PERSONA_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTIPO_PERSONA_V.SelectedIndexChanged
+        Me.ConfigurarTipoPersona()
+    End Sub
+
+    Private Sub ConfigurarTipoPersona()
+        If Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Natural Then
+            Me.txtDUI_V.ClientEnabled = True
+            Me.txtNIT_V.ClientEnabled = False
+            Me.txtAPELLIDOS_V.ClientEnabled = True
+            Me.txtNIT_V.Text = ""
+        ElseIf Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Juridica Then
+            Me.txtDUI_V.Text = ""
+            Me.txtDUI_V.ClientEnabled = False
+            Me.txtNIT_V.ClientEnabled = True
+            Me.txtAPELLIDOS_V.Text = ""
+            Me.txtAPELLIDOS_V.ClientEnabled = False
+        End If
+    End Sub
+    Private Sub CargarMunicipios()
+        Me.odsMunicipio.SelectParameters("CODI_DEPTO").DefaultValue = cbxDEPARTAMENTO_V.Value
+        Me.odsMunicipio.SelectParameters("agregarVacio").DefaultValue = True
+        Me.odsMunicipio.SelectParameters("agregarTodos").DefaultValue = False
+        Me.odsMunicipio.SelectParameters("conPresencia").DefaultValue = False
+        Me.cbxMUNICIPIO_V.DataBind()
+        Me.cbxMUNICIPIO_V.Focus()
+    End Sub
+
+    Protected Sub txtDUI_ValueChanged(sender As Object, e As EventArgs) Handles txtDUI_V.ValueChanged
+        If Me.txtDUI_V.Text.Length = 9 Then
+            Me.txtNIT_V.Text = Utilerias.RellenarIzquierda(Me.txtDUI_V.Text.Trim, 14, "0")
+        Else
+            Me.txtNIT_V.Text = ""
+        End If
+    End Sub
+    Protected Sub cbxDEPARTAMENTO_V_ValueChanged(sender As Object, e As EventArgs) Handles cbxDEPARTAMENTO_V.ValueChanged
+        Me.CargarMunicipios()
     End Sub
 End Class

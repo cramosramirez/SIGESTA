@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+SISPACAL/Web.config
+SISPACAL/Web.config
+*.config

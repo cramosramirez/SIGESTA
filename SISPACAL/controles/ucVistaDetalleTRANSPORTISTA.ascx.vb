@@ -1,23 +1,24 @@
 ﻿Imports SISPACAL.BL
 Imports SISPACAL.EL
+Imports SISPACAL.EL.Enumeradores
 Imports DevExpress.Web
 
-''' -----------------------------------------------------------------------------
-''' Project	 : SISPACAL
-''' Class	 : ucVistaDetalleTRANSPORTISTA
-''' 
-''' -----------------------------------------------------------------------------
-''' <summary>
-''' Clase del Control de Usuario para mostrar en tiempo de edicion un registro
-''' de la tabla TRANSPORTISTA
-''' </summary>
-''' <remarks>
-''' Generado con GenApp V1.9.7.0, CarÃ­as y Asociados, (info@cariasyasociados.com)
-''' </remarks>
-''' <history>
-''' 	[GenApp]	15/11/2014	Created
-''' </history>
-''' -----------------------------------------------------------------------------
+' -----------------------------------------------------------------------------
+' Project	 : SISPACAL
+' Class	 : ucVistaDetalleTRANSPORTISTA
+' 
+' -----------------------------------------------------------------------------
+' <summary>
+' Clase del Control de Usuario para mostrar en tiempo de edicion un registro
+' de la tabla TRANSPORTISTA
+' </summary>
+' <remarks>
+' Generado con GenApp V1.9.7.0, CarÃ­as y Asociados, (info@cariasyasociados.com)
+' </remarks>
+' <history>
+' 	[GenApp]	15/11/2014	Created
+' </history>
+' -----------------------------------------------------------------------------
 Partial Class controles_ucVistaDetalleTRANSPORTISTA
     Inherits ucBase
 
@@ -67,37 +68,37 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
 
     Public Property NOMBRE_COMPLETO() As String
         Get
-            Return Me.txtNOMBRE_COMPLETO.Text
+            Return Me.txtNOMBRES_T.Text
         End Get
         Set(ByVal value As String)
-            Me.txtNOMBRE_COMPLETO.Text = value.ToString()
+            Me.txtNOMBRES_T.Text = value.ToString()
         End Set
     End Property
 
     Public Property NIT() As String
         Get
-            Return Me.txtNIT.Text
+            Return Me.txtNIT_T.Text
         End Get
         Set(ByVal value As String)
-            Me.txtNIT.Text = value.ToString()
+            Me.txtNIT_T.Text = value.ToString()
         End Set
     End Property
 
     Public Property CREDITO_FISCAL() As String
         Get
-            Return Me.txtCREDITO_FISCAL.Text
+            Return Me.txtNRC_T.Text
         End Get
         Set(ByVal value As String)
-            Me.txtCREDITO_FISCAL.Text = value.ToString()
+            Me.txtNRC_T.Text = value.ToString()
         End Set
     End Property
 
     Public Property TELEFONO() As String
         Get
-            Return Me.txtTELEFONO.Text
+            Return Me.txtTELEFONO_T.Text
         End Get
         Set(ByVal value As String)
-            Me.txtTELEFONO.Text = value.ToString()
+            Me.txtTELEFONO_T.Text = value.ToString()
         End Set
     End Property
 
@@ -112,20 +113,20 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
 
     Public Property DIRECCION() As String
         Get
-            Return Me.txtDIRECCION.Text
+            Return Me.txtDIRECCION_T.Text
         End Get
         Set(ByVal value As String)
-            Me.txtDIRECCION.Text = value.ToString()
+            Me.txtDIRECCION_T.Text = value.ToString()
         End Set
     End Property
 
 
     Public Property DUI() As String
         Get
-            Return Me.txtDUI.Text
+            Return Me.txtDUI_T.Text
         End Get
         Set(ByVal value As String)
-            Me.txtDUI.Text = value.ToString()
+            Me.txtDUI_T.Text = value.ToString()
         End Set
     End Property
 
@@ -197,16 +198,16 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         If Not Me.ViewState("nuevo") Is Nothing Then Me._nuevo = Me.ViewState("nuevo")
     End Sub
 
-    ''' -----------------------------------------------------------------------------
-    ''' <summary>
-    ''' FunciÃ³n que Carga la informaciÃ³n del registro de la tabla TRANSPORTISTA
-    ''' </summary>
-    ''' <remarks>
-    ''' </remarks>
-    ''' <history>
-    ''' 	[GenApp]	15/11/2014	Created
-    ''' </history>
-    ''' -----------------------------------------------------------------------------
+    '' -----------------------------------------------------------------------------
+    '' <summary>
+    '' FunciÃ³n que Carga la informaciÃ³n del registro de la tabla TRANSPORTISTA
+    '' </summary>
+    '' <remarks>
+    '' </remarks>
+    '' <history>
+    '' 	[GenApp]	15/11/2014	Created
+    '' </history>
+    '' -----------------------------------------------------------------------------
     Private Sub CargarDatos()
 
         Me._nuevo = False
@@ -221,14 +222,25 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
             RaiseEvent ErrorEvent("Error al obtener Registro.")
             Return
         End If
+
         Me.speCODTRANSPORT.Text = mEntidad.CODTRANSPORT.ToString()
-        Me.txtNOMBRE_COMPLETO.Text = mEntidad.NOMBRES
-        Me.txtNIT.Text = mEntidad.NIT
-        Me.txtCREDITO_FISCAL.Text = mEntidad.CREDITO_FISCAL
-        Me.txtTELEFONO.Text = mEntidad.TELEFONO
+
+        Me.cbxTIPO_PERSONA_T.Value = mEntidad.ID_TIPO_PERSONA
+
+
+        Me.txtDUI_T.Text = mEntidad.DUI
+        Me.txtNIT_T.Text = mEntidad.NIT
+        Me.txtNOMBRES_T.Text = mEntidad.NOMBRES
+        Me.txtAPELLIDOS_T.Text = mEntidad.APELLIDOS
+        Me.txtDIRECCION_T.Text = mEntidad.DIRECCION
+        Me.cbxDEPARTAMENTO_T.Value = mEntidad.CODI_DEPTO
+        Me.CargarMunicipios()
+        Me.cbxMUNICIPIO_T.Value = mEntidad.CODI_MUNI
+        Me.txtNRC_T.Text = mEntidad.CREDITO_FISCAL
+        Me.txtTELEFONO_T.Text = mEntidad.TELEFONO
         Me.txtNOMBRE_CH.Text = mEntidad.NOMBRE_CH
-        Me.txtDIRECCION.Text = mEntidad.DIRECCION
-        Me.txtDUI.Text = mEntidad.DUI
+        Me.txtCORREO_T.Text = mEntidad.CORREO
+
         Me.txtNOCUENTA.Text = mEntidad.NOCUENTA
         If mEntidad.COD_SIGASI = -1 Then Me.speCOD_SIGASI.Value = Nothing Else Me.speCOD_SIGASI.Value = mEntidad.COD_SIGASI
         If mEntidad.COD_COMBUST = -1 Then Me.speCOD_COMBUST.Value = Nothing Else Me.speCOD_COMBUST.Value = mEntidad.COD_COMBUST
@@ -239,7 +251,7 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         End If
         Me.txtNUM_CUENTA.Text = mEntidad.NUM_CUENTA
         Me.chkES_CTA_CORRIENTE.Checked = mEntidad.ES_CTA_CORRIENTE
-        Me.txtPROFESION.Text = mEntidad.PROFESION
+        Me.txtPROFESION_T.Text = mEntidad.PROFESION
 
         Me.LISTA_TRANSPORTE = (New cTRANSPORTE).ObtenerListaPorTRANSPORTISTA(Me.CODTRANSPORT)
         If Me.LISTA_TRANSPORTE IsNot Nothing AndAlso Me.LISTA_TRANSPORTE.Count > 0 Then
@@ -254,90 +266,116 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         Me.txtREMOLQUE.Text = ""
         Me.txtMARCA.Text = ""
         Me.speCAPACIDAD.Value = Nothing
+
+        Me.ConfigurarTipoPersona()
     End Sub
 
-    ''' -----------------------------------------------------------------------------
-    ''' <summary>
-    ''' FunciÃ³n que permite Habilitar/Deshabilitar el uso de los controles contenidos
-    ''' </summary>
-    ''' <remarks>
-    ''' </remarks>
-    ''' <history>
-    ''' 	[GenApp]	15/11/2014	Created
-    ''' </history>
-    ''' -----------------------------------------------------------------------------
+    '' -----------------------------------------------------------------------------
+    '' <summary>
+    '' FunciÃ³n que permite Habilitar/Deshabilitar el uso de los controles contenidos
+    '' </summary>
+    '' <remarks>
+    '' </remarks>
+    '' <history>
+    '' 	[GenApp]	15/11/2014	Created
+    '' </history>
+    '' -----------------------------------------------------------------------------
     Private Sub HabilitarEdicion(ByVal edicion As Boolean)
-        'Dim layout As LayoutItemBase
+        Dim layout As LayoutItemBase
         Me.speCODTRANSPORT.ClientEnabled = Me._nuevo
-        Me.txtNOMBRE_COMPLETO.ClientEnabled = edicion
-        Me.txtNIT.ClientEnabled = edicion
-        Me.txtCREDITO_FISCAL.Enabled = edicion
-        Me.txtTELEFONO.ClientEnabled = edicion
+        Me.cbxTIPO_PERSONA_T.ClientEnabled = Me._nuevo
+        If Me.cbxTIPO_PERSONA_T.Value = Nothing Then
+            Me.txtDUI_T.ClientEnabled = False
+            Me.txtNIT_T.ClientEnabled = False
+            Me.txtNOMBRES_T.ClientEnabled = edicion
+            Me.txtAPELLIDOS_T.ClientEnabled = False
+        ElseIf Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Natural Then
+            Me.txtDUI_T.ClientEnabled = edicion
+            Me.txtNIT_T.ClientEnabled = False
+            Me.txtNOMBRES_T.ClientEnabled = edicion
+            Me.txtAPELLIDOS_T.ClientEnabled = edicion
+        ElseIf Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Juridica Then
+            Me.txtDUI_T.ClientEnabled = False
+            Me.txtNIT_T.ClientEnabled = edicion
+            Me.txtNOMBRES_T.ClientEnabled = edicion
+            Me.txtAPELLIDOS_T.ClientEnabled = False
+        End If
+        Me.txtNOMBRES_T.ClientEnabled = edicion
+        Me.txtNRC_T.Enabled = edicion
+        Me.txtTELEFONO_T.ClientEnabled = edicion
         Me.txtNOMBRE_CH.ClientEnabled = edicion
-        Me.txtDIRECCION.ClientEnabled = edicion
-        Me.txtDUI.ClientEnabled = edicion
+        Me.txtDIRECCION_T.ClientEnabled = edicion
         Me.txtNOCUENTA.ClientEnabled = edicion
         Me.speCOD_SIGASI.ClientEnabled = edicion
         Me.speCOD_COMBUST.ClientEnabled = edicion
         Me.cbxBANCO_PAGO_CTA.ClientEnabled = edicion
         Me.txtNUM_CUENTA.ClientEnabled = edicion
         Me.chkES_CTA_CORRIENTE.ClientEnabled = edicion
-        Me.txtPROFESION.ClientEnabled = edicion
+        Me.txtPROFESION_T.ClientEnabled = edicion
     End Sub
 
-    ''' -----------------------------------------------------------------------------
-    ''' <summary>
-    ''' FunciÃ³n que Configura si es un registro nuevo el cargado
-    ''' </summary>
-    ''' <remarks>
-    ''' </remarks>
-    ''' <history>
-    ''' 	[GenApp]	15/11/2014	Created
-    ''' </history>
-    ''' -----------------------------------------------------------------------------
+    '' -----------------------------------------------------------------------------
+    '' <summary>
+    '' FunciÃ³n que Configura si es un registro nuevo el cargado
+    '' </summary>
+    '' <remarks>
+    '' </remarks>
+    '' <history>
+    '' 	[GenApp]	15/11/2014	Created
+    '' </history>
+    '' -----------------------------------------------------------------------------
     Private Sub Nuevo()
         Me._nuevo = True
         If Not Me.ViewState("nuevo") Is Nothing Then Me.ViewState.Remove("nuevo")
         Me.ViewState.Add("nuevo", Me._nuevo)
         Me.speCODTRANSPORT.Text = ""
-        Me.txtNOMBRE_COMPLETO.Text = ""
-        Me.txtNIT.Text = ""
-        Me.txtCREDITO_FISCAL.Text = ""
-        Me.txtTELEFONO.Text = ""
+        Me.cbxTIPO_PERSONA_T.Value = Nothing
+        Me.txtDUI_T.Text = ""
+        Me.txtNIT_T.Text = ""
+        Me.txtNOMBRES_T.Text = ""
+        Me.txtAPELLIDOS_T.Text = ""
+        Me.txtDIRECCION_T.Text = ""
+        Me.cbxDEPARTAMENTO_T.Value = Nothing
+        Me.cbxMUNICIPIO_T.Value = Nothing
+        Me.txtTELEFONO_T.Text = ""
+        Me.txtNRC_T.Text = ""
+        Me.txtCORREO_T.Text = ""
+        Me.txtPROFESION_T.Text = ""
         Me.txtNOMBRE_CH.Text = ""
-        Me.txtDIRECCION.Text = ""
-        Me.txtDUI.Text = ""
-        Me.txtNOCUENTA.Text = (New cTRANSPORTISTA).ObtenerCorrelativoCtaContable
-        Me.speCOD_COMBUST.Value = Nothing
-        Me.speCOD_SIGASI.Value = Nothing
         Me.cbxBANCO_PAGO_CTA.Value = Nothing
         Me.txtNUM_CUENTA.Text = ""
         Me.chkES_CTA_CORRIENTE.Checked = False
+        Me.txtNOCUENTA.Text = (New cTRANSPORTISTA).ObtenerCorrelativoCtaContable
+        Me.speCOD_COMBUST.Value = Nothing
+        Me.speCOD_SIGASI.Value = Nothing
+
+
         Me.txtPLACA.Text = ""
         Me.cbxTIPO_TRANSPORTE.Value = Nothing
         Me.txtREMOLQUE.Text = ""
         Me.txtMARCA.Text = ""
         Me.speCAPACIDAD.Value = Nothing
-        Me.txtPROFESION.Text = ""
+
         Me.LISTA_TRANSPORTE = New listaTRANSPORTE
         Me.CargarDetalleTransporte()
+        Me.ConfigurarTipoPersona()
     End Sub
 
-    ''' -----------------------------------------------------------------------------
-    ''' <summary>
-    ''' FunciÃ³n que Guarda la informaciÃ³n del registro en la tabla TRANSPORTISTA
-    ''' </summary>
-    ''' <returns>
-    ''' ""                              : Si no existe error
-    ''' "Error al Guardar registro."    : Si existe error al momento de Guardar el 
-    '''                                   Registro en la base de datos
-    ''' </returns>
-    ''' <remarks>
-    ''' </remarks>
-    ''' <history>
-    ''' 	[GenApp]	15/11/2014	Created
-    ''' </history>
-    ''' -----------------------------------------------------------------------------
+    '' -----------------------------------------------------------------------------
+    '' <summary>
+    '' FunciÃ³n que Guarda la informaciÃ³n del registro en la tabla TRANSPORTISTA
+    '' </summary>
+    '' <returns>
+    '' ""                              : Si no existe error
+    '' "Error al Guardar registro."    : Si existe error al momento de Guardar el 
+    ''                                   Registro en la base de datos
+    '' </returns>
+    '' <remarks>
+    '' </remarks>
+    '' <history>
+    '' 	[GenApp]	15/11/2014	Created
+    '' </history>
+    '' -----------------------------------------------------------------------------
     Public Function Actualizar() As String
         Dim sError As New String("")
         Dim alDatos As New ArrayList
@@ -364,10 +402,10 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
             mEntidad.NOCUENTA = Me.txtNOCUENTA.Text
         End If
 
-        If Me.txtDIRECCION.Text.Trim = "" Then
+        If Me.txtDIRECCION_T.Text.Trim = "" Then
             Return "Ingrese la direccion de residencia"
         End If
-        If Me.txtPROFESION.Text.Trim = "" Then
+        If Me.txtPROFESION_T.Text.Trim = "" Then
             Return "Ingrese la Profesion/oficio"
         End If
         If Me.cbxBANCO_PAGO_CTA.Value IsNot Nothing AndAlso Me.txtNUM_CUENTA.Text.Trim = "" Then
@@ -376,19 +414,20 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         If Me.cbxBANCO_PAGO_CTA.Value Is Nothing AndAlso Me.txtNUM_CUENTA.Text.Trim <> "" Then
             Return "Seleccione el Banco del pago a cuenta"
         End If
-
         mEntidad.ACTIVO = True
-        mEntidad.NOMBRES = Me.txtNOMBRE_COMPLETO.Text.ToUpper
-        mEntidad.APELLIDOS = Nothing
-        mEntidad.NIT = Me.txtNIT.Text
-        If Me.txtCREDITO_FISCAL.Text.Trim = "" Then mEntidad.CREDITO_FISCAL = Nothing Else mEntidad.CREDITO_FISCAL = Me.txtCREDITO_FISCAL.Text
-        mEntidad.TELEFONO = Me.txtTELEFONO.Text
+        mEntidad.ID_TIPO_PERSONA = Me.cbxTIPO_PERSONA_T.Value
+        mEntidad.DUI = Me.txtDUI_T.Text
+        mEntidad.NIT = Me.txtNIT_T.Text
+        mEntidad.NOMBRES = Me.txtNOMBRES_T.Text.ToUpper
+        mEntidad.APELLIDOS = Me.txtAPELLIDOS_T.Text.ToUpper
+        mEntidad.DIRECCION = Me.txtDIRECCION_T.Text.ToUpper
+        mEntidad.CODI_DEPTO = Me.cbxDEPARTAMENTO_T.Value
+        mEntidad.CODI_MUNI = Me.cbxMUNICIPIO_T.Value
+        mEntidad.TELEFONO = Me.txtTELEFONO_T.Text
+        If Me.txtNRC_T.Text.Trim = "" Then mEntidad.CREDITO_FISCAL = Nothing Else mEntidad.CREDITO_FISCAL = Me.txtNRC_T.Text
+        mEntidad.CORREO = Me.txtCORREO_T.Text
+        mEntidad.PROFESION = Me.txtPROFESION_T.Text.Trim.ToUpper
         mEntidad.NOMBRE_CH = Me.txtNOMBRE_CH.Text.ToUpper
-        mEntidad.DIRECCION = Me.txtDIRECCION.Text.ToUpper
-        mEntidad.DUI = Me.txtDUI.Text
-        If Me.speCOD_SIGASI.Value Is Nothing Then mEntidad.COD_SIGASI = -1 Else mEntidad.COD_SIGASI = Me.speCOD_SIGASI.Value
-        If Me.speCOD_COMBUST.Value Is Nothing Then mEntidad.COD_COMBUST = -1 Else mEntidad.COD_COMBUST = Me.speCOD_COMBUST.Value
-
         If Me.cbxBANCO_PAGO_CTA.Value IsNot Nothing Then
             mEntidad.CODIBANCO = Me.cbxBANCO_PAGO_CTA.Value
         Else
@@ -396,7 +435,10 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         End If
         mEntidad.NUM_CUENTA = Me.txtNUM_CUENTA.Text.Trim
         mEntidad.ES_CTA_CORRIENTE = Me.chkES_CTA_CORRIENTE.Checked
-        mEntidad.PROFESION = Me.txtPROFESION.Text.Trim.ToUpper
+
+
+        If Me.speCOD_SIGASI.Value Is Nothing Then mEntidad.COD_SIGASI = -1 Else mEntidad.COD_SIGASI = Me.speCOD_SIGASI.Value
+        If Me.speCOD_COMBUST.Value Is Nothing Then mEntidad.COD_COMBUST = -1 Else mEntidad.COD_COMBUST = Me.speCOD_COMBUST.Value
 
         If mComponente.ActualizarTRANSPORTISTA(mEntidad) < 0 Then
             Return "Error al Guardar registro. " + mComponente.sError
@@ -453,10 +495,10 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         Return ""
     End Function
 
-    Protected Sub txtNOMBRE_COMPLETO_ValueChanged(sender As Object, e As System.EventArgs) Handles txtNOMBRE_COMPLETO.ValueChanged
-        Me.txtNOMBRE_COMPLETO.Text = Me.txtNOMBRE_COMPLETO.Text.ToUpper
-        Me.txtNOMBRE_CH.Text = Me.txtNOMBRE_COMPLETO.Text
-        Me.txtDIRECCION.Focus()
+    Protected Sub txtNOMBRES_T_ValueChanged(sender As Object, e As System.EventArgs) Handles txtNOMBRES_T.ValueChanged
+        Me.txtNOMBRES_T.Text = Me.txtNOMBRES_T.Text.ToUpper
+        Me.txtNOMBRE_CH.Text = Me.txtNOMBRES_T.Text
+        Me.txtDIRECCION_T.Focus()
     End Sub
 
     Protected Sub btnAgregarTransporte_Click(sender As Object, e As EventArgs) Handles btnAgregarTransporte.Click
@@ -504,11 +546,11 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         Me.LISTA_TRANSPORTE.Add(lEntidad)
         Me.CargarDetalleTransporte()
 
-        Me.txtPLACA.Text = ""
-        Me.cbxTIPO_TRANSPORTE.Value = Nothing
-        Me.txtREMOLQUE.Text = ""
-        Me.txtMARCA.Text = ""
-        Me.speCAPACIDAD.Value = Nothing
+        'Me.txtPLACA.Text = ""
+        'Me.cbxTIPO_TRANSPORTE.Value = Nothing
+        'Me.txtREMOLQUE.Text = ""
+        'Me.txtMARCA.Text = ""
+        'Me.speCAPACIDAD.Value = Nothing
     End Sub
 
     Private Function ObtenerIdTrans(ByVal lista As listaTRANSPORTE) As Int32
@@ -520,4 +562,43 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         Next
         Return (Id + 1)
     End Function
+    Protected Sub cbxTIPO_PERSONA_T_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTIPO_PERSONA_T.SelectedIndexChanged
+        Me.ConfigurarTipoPersona()
+    End Sub
+
+    Private Sub ConfigurarTipoPersona()
+        If Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Natural Then
+            Me.txtDUI_T.ClientEnabled = True
+            Me.txtNIT_T.ClientEnabled = False
+            Me.txtAPELLIDOS_T.ClientEnabled = True
+            Me.txtNIT_T.Text = ""
+
+        ElseIf Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Juridica Then
+            Me.txtDUI_T.Text = ""
+
+            Me.txtDUI_T.ClientEnabled = False
+            Me.txtNIT_T.ClientEnabled = True
+            Me.txtAPELLIDOS_T.Text = ""
+            Me.txtAPELLIDOS_T.ClientEnabled = False
+        End If
+    End Sub
+    Private Sub CargarMunicipios()
+        Me.odsMunicipio.SelectParameters("CODI_DEPTO").DefaultValue = cbxDEPARTAMENTO_T.Value
+        Me.odsMunicipio.SelectParameters("agregarVacio").DefaultValue = True
+        Me.odsMunicipio.SelectParameters("agregarTodos").DefaultValue = False
+        Me.odsMunicipio.SelectParameters("conPresencia").DefaultValue = False
+        Me.cbxMUNICIPIO_T.DataBind()
+        Me.cbxMUNICIPIO_T.Focus()
+    End Sub
+
+    Protected Sub txtDUI_ValueChanged(sender As Object, e As EventArgs) Handles txtDUI_T.ValueChanged
+        If Me.txtDUI_T.Text.Length = 9 Then
+            Me.txtNIT_T.Text = Utilerias.RellenarIzquierda(Me.txtDUI_T.Text.Trim, 14, "0")
+        Else
+            Me.txtNIT_T.Text = ""
+        End If
+    End Sub
+    Protected Sub cbxDEPARTAMENTO_V_ValueChanged(sender As Object, e As EventArgs) Handles cbxDEPARTAMENTO_T.ValueChanged
+        Me.CargarMunicipios()
+    End Sub
 End Class
