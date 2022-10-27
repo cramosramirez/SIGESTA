@@ -886,6 +886,12 @@ Partial Class controles_ucListaPROVEEDOR
                     e.Value = lEntidad.NOMBRE_BANCO
                 End If
             End If
+        ElseIf e.Column.FieldName = "MUNICIPIO" Then
+            Dim lEntidad As MUNICIPIO = (New cMUNICIPIO).ObtenerMUNICIPIO(e.GetListSourceFieldValue("CODI_DEPTO"), e.GetListSourceFieldValue("CODI_MUNI"))
+            If lEntidad IsNot Nothing Then e.Value = lEntidad.NOMBRE_MUNI
+        ElseIf e.Column.FieldName = "DEPARTAMENTO" Then
+            Dim lEntidad As DEPARTAMENTO = (New cDEPARTAMENTO).ObtenerDEPARTAMENTO(e.GetListSourceFieldValue("CODI_DEPTO"))
+            If lEntidad IsNot Nothing Then e.Value = lEntidad.NOMBRE_DEPTO
         End If
     End Sub
 End Class

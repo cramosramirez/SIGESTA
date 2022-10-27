@@ -168,21 +168,7 @@ Partial Class controles_ucMantBASE_PROVEEDORES_MH
                 Me.ucListaBASE_PROVEEDORES_MH1.DataBind()
 
             Case "GenerarExcel"
-                'If Me.ucCriteriosProveedor1.ZAFRA = -1 Then
-                '    AsignarMensaje("Seleccione una zafra", False, True, False)
-                '    Return
-                'End If
-                'Dim lZafra As ZAFRA = (New cZAFRA).ObtenerZAFRA(Me.ucCriteriosProveedor1.ZAFRA)
-                'Dim strNombreArchivo As String = ""
-                'Dim strZafra As String = ""
-
-                'If lZafra IsNot Nothing Then
-                '    strZafra = "ZAFRA " + lZafra.NOMBRE_ZAFRA
-                'End If
-                'If Me.MostrarProveedoresConContrato Then strNombreArchivo = "Productores con contrato " Else strNombreArchivo = "Productores y socios "
-
-                'Dim dt As DataTable = (New cPROVEEDOR).ReporteExcelConsultaProductoresPorZafra(Me.ucCriteriosProveedor1.ZAFRA, Me.MostrarProveedoresConContrato)
-                'Me.ExportToExcel(dt, Trim(strNombreArchivo & strZafra) & " " & Now.ToString("dd/MM/yyyy hh.mm.ss") & ".xls")
+                Me.ucListaBASE_PROVEEDORES_MH1.ExportarExcel()
 
             Case "GuardarCerrar"
                 Dim sError As String = ""

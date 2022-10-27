@@ -44,15 +44,18 @@
         <dx:GridViewDataTextColumn FieldName="CODIPROVEEDOR" ReadOnly="True" Visible="false" VisibleIndex="2" Caption="Codiproveedor" />
         <dx:GridViewDataTextColumn FieldName="CODIPROVEE" VisibleIndex="3" Caption="Cod Provee" />
         <dx:GridViewDataTextColumn FieldName="CODISOCIO" VisibleIndex="4" Caption="Cod Socio" />
-        <dx:GridViewDataTextColumn FieldName="APELLIDOS" VisibleIndex="5" Caption="Apellidos" />
-        <dx:GridViewDataTextColumn FieldName="NOMBRES" VisibleIndex="6" Caption="Nombres" />
+         <dx:GridViewDataTextColumn FieldName="NOMBRES" VisibleIndex="5" Caption="Nombres" />
+        <dx:GridViewDataTextColumn FieldName="APELLIDOS" VisibleIndex="6" Caption="Apellidos" />       
+        <dx:GridViewDataTextColumn FieldName="DIRECCION" VisibleIndex="8" Caption="Direccion" />
+        <dx:GridViewDataTextColumn FieldName="MUNICIPIO" VisibleIndex="8" Caption="Municipio" UnboundType="String" />
+        <dx:GridViewDataTextColumn FieldName="DEPARTAMENTO" VisibleIndex="8" Caption="Departamento" UnboundType="String" />
         <dx:GridViewDataTextColumn FieldName="EDAD" Visible="false" VisibleIndex="7" Caption="Edad" />
-        <dx:GridViewDataTextColumn FieldName="DIRECCION" Visible="false" VisibleIndex="8" Caption="Direccion" />
+        
         <dx:GridViewDataTextColumn FieldName="TELEFONO" VisibleIndex="9" Caption="Telefono" />
         <dx:GridViewDataTextColumn FieldName="CELULAR" Visible="false" VisibleIndex="10" Caption="Celular" />
         <dx:GridViewDataTextColumn FieldName="DUI" VisibleIndex="11" Caption="DUI" />
         <dx:GridViewDataTextColumn FieldName="NIT" VisibleIndex="12" Caption="NIT" />
-        <dx:GridViewDataTextColumn FieldName="CREDITFISCAL" VisibleIndex="13" Caption="NRC" />
+        <dx:GridViewDataTextColumn FieldName="CREDITFISCAL" VisibleIndex="13" Caption="NRC" />        
         <dx:GridViewDataTextColumn FieldName="PROFESION" Visible="false" VisibleIndex="14" Caption="Profesion" />
         <dx:GridViewDataTextColumn FieldName="NOMBRENIT" Visible="false" VisibleIndex="15" Caption="Nombrenit" />
         <dx:GridViewDataTextColumn FieldName="APODERADO" Visible="false" VisibleIndex="16" Caption="Apoderado" />

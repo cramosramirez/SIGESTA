@@ -44,6 +44,7 @@
     <Settings ShowFilterRow="True"  ShowHeaderFilterButton="True" />
     <SettingsBehavior EnableRowHotTrack="True" AllowFocusedRow="True"  />    
 </dx:ASPxGridView>
+<dx:ASPxGridViewExporter ID="gridExport" runat="server" GridViewID="dxgvLista"></dx:ASPxGridViewExporter>
 <asp:ObjectDataSource ID="odsLista" runat="server" 
     SelectMethod="ObtenerLista" InsertMethod="AgregarBASE_PROVEEDORES_MH" DeleteMethod="EliminarBASE_PROVEEDORES_MH" UpdateMethod="ActualizarBASE_PROVEEDORES_MH"
     TypeName="SISPACAL.BL.cBASE_PROVEEDORES_MH">

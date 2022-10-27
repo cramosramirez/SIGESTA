@@ -450,6 +450,10 @@ Partial Class controles_ucListaBASE_PROVEEDORES_MH
 
 #End Region
 
+
+    Public Sub ExportarExcel()
+        gridExport.WriteXlsxToResponse(New DevExpress.XtraPrinting.XlsxExportOptionsEx With {.ExportType = DevExpress.Export.ExportType.WYSIWYG})
+    End Sub
     ''' -----------------------------------------------------------------------------
     ''' <summary>
     ''' Función que Carga la información de los registros de la tabla BASE_PROVEEDORES_MH

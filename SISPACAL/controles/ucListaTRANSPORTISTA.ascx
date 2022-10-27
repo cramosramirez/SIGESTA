@@ -23,18 +23,20 @@
         </dx:GridViewDataTextColumn>
         <dx:GridViewDataTextColumn FieldName="CODTRANSPORT" ReadOnly="True" VisibleIndex="2" SortIndex="0" SortOrder="Ascending" Caption="Código" />
         <dx:GridViewDataCheckColumn FieldName="ACTIVO" VisibleIndex="3" Caption="Activo" Visible="false"  />
-        <dx:GridViewDataTextColumn FieldName="NOMBRES" VisibleIndex="4" Caption="Nombre completo" Settings-AutoFilterCondition="Contains" />
-        <dx:GridViewDataTextColumn FieldName="APELLIDOS" VisibleIndex="5" Caption="Apellidos" Visible="false" />
+        <dx:GridViewDataTextColumn FieldName="NOMBRES" VisibleIndex="4" Caption="Nombres" Settings-AutoFilterCondition="Contains" />
+        <dx:GridViewDataTextColumn FieldName="APELLIDOS" VisibleIndex="5" Caption="Apellidos" />
+        <dx:GridViewDataTextColumn FieldName="DUI" VisibleIndex="5" Caption="DUI" />
         <dx:GridViewDataTextColumn FieldName="NIT" VisibleIndex="6" Caption="NIT" Settings-AutoFilterCondition="Contains" />
-        <dx:GridViewDataTextColumn FieldName="CREDITO_FISCAL" VisibleIndex="7" Caption="NRC" Settings-AutoFilterCondition="Contains" />
+        <dx:GridViewDataTextColumn FieldName="DIRECCION" VisibleIndex="7" Caption="Direccion" />  
+        <dx:GridViewDataTextColumn FieldName="MUNICIPIO" VisibleIndex="8" Caption="Municipio" UnboundType="String" />
+        <dx:GridViewDataTextColumn FieldName="DEPARTAMENTO" VisibleIndex="8" Caption="Departamento" UnboundType="String" />
         <dx:GridViewDataTextColumn FieldName="TELEFONO" VisibleIndex="8" Caption="Telefono" Settings-AutoFilterCondition="Contains" />
-        <dx:GridViewDataTextColumn FieldName="NOMBRE_CH" VisibleIndex="9" Caption="Nombre en Cheque" Visible="false" />
-        <dx:GridViewDataTextColumn FieldName="DIRECCION" VisibleIndex="10" Caption="Direccion" Visible="false" />
+        <dx:GridViewDataTextColumn FieldName="CREDITO_FISCAL" VisibleIndex="9" Caption="NRC" Settings-AutoFilterCondition="Contains" />
+        <dx:GridViewDataTextColumn FieldName="NOMBRE_CH" VisibleIndex="9" Caption="Nombre en Cheque" Visible="false" />       
         <dx:GridViewDataTextColumn FieldName="USUARIO_CREA" VisibleIndex="11" Caption="Usuario crea" Visible="false" />
         <dx:GridViewDataTextColumn FieldName="FECHA_CREA" VisibleIndex="12" Caption="Fecha crea" Visible="false" />
         <dx:GridViewDataTextColumn FieldName="USUARIO_ACT" VisibleIndex="13" Caption="Usuario act" Visible="false" />
-        <dx:GridViewDataTextColumn FieldName="FECHA_ACT" VisibleIndex="14" Caption="Fecha act" Visible="false" />
-        <dx:GridViewDataTextColumn FieldName="DUI" VisibleIndex="15" Caption="DUI" />
+        <dx:GridViewDataTextColumn FieldName="FECHA_ACT" VisibleIndex="14" Caption="Fecha act" Visible="false" />        
         <dx:GridViewDataCheckColumn FieldName="ES_INGENIO" VisibleIndex="16" Caption="Es Ingenio" Visible="false" />
         <dx:GridViewDataTextColumn FieldName="NOCUENTA" VisibleIndex="17" Caption="N° Cuenta Contable" Settings-AutoFilterCondition="Contains" />
         <dx:GridViewDataTextColumn FieldName="COD_SIGASI" VisibleIndex="18" Caption="Cód. SIGASI" Visible="false" />
