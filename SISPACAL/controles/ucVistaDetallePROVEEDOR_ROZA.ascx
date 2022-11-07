@@ -11,7 +11,7 @@
 	</tr>
 	<tr>
 		<td><dx:ASPxLabel id="ASPxLabel2" runat="server" Text="DUI:" /></td>
-		<td><dx:ASPxTextBox ID="txtDUI" AutoPostBack="true" Font-Bold="true" runat="server">
+		<td><dx:ASPxTextBox ID="txtDUI" Font-Bold="true" runat="server">
                     <MaskSettings AllowMouseWheel="False" IncludeLiterals="None" 
                         Mask="99999999-9" /> 
 				<DisabledStyle BackColor="WhiteSmoke" />

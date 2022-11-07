@@ -157,7 +157,7 @@
                 <dx:LayoutItem Caption="Dui:" CaptionSettings-HorizontalAlign="Left">
                     <LayoutItemNestedControlCollection>
                         <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
-                            <dx:ASPxTextBox ID="txtDUI_V" AutoPostBack="true" Font-Bold="true" runat="server"  Width="100%">
+                            <dx:ASPxTextBox ID="txtDUI_V" Font-Bold="true" runat="server"  Width="100%">
                                                  <MaskSettings AllowMouseWheel="False" IncludeLiterals="None"
                                     Mask="99999999-9" />
                                 <ValidationSettings Display="Dynamic" ErrorDisplayMode="ImageWithTooltip" SetFocusOnError="true" ErrorText="DUI no valido">
@@ -275,6 +275,14 @@
                     <LayoutItemNestedControlCollection>
                         <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer14" runat="server">
                             <dx:ASPxTextBox ID="txtCORREO_V" MaxLength="200" runat="server" Width="100%">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Actividad primaria:" CaptionSettings-HorizontalAlign="Left" ColSpan="3">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer25" runat="server">
+                            <dx:ASPxTextBox ID="txtACTIVIDAD" MaxLength="1000" runat="server"  Width="100%">
                             </dx:ASPxTextBox>
                         </dx:LayoutItemNestedControlContainer>
                     </LayoutItemNestedControlCollection>

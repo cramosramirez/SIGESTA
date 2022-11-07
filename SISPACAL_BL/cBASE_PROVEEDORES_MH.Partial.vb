@@ -58,6 +58,7 @@
     Public Function ActualizarBASE_PROVEEDORES_MH(ByVal aEntidad As BASE_PROVEEDORES_MH, ByVal aTipoConcurrencia As TipoConcurrencia) As Integer
         Try
             Dim lRet As String
+            Dim lAct As Integer
             Dim esNuevo As Boolean
 
             If aEntidad.ID_BASE_PROVEE = 0 Then esNuevo = True Else esNuevo = False
@@ -67,7 +68,10 @@
                 Return -1
             End If
 
-            Return mDb.Actualizar(aEntidad, aTipoConcurrencia)
+            lAct = mDb.Actualizar(aEntidad, aTipoConcurrencia)
+            Me.ACTUALIZAR_CATALOGOS_PROVEEDORES(aEntidad.DUI, aEntidad.NIT)
+
+            Return lAct
 
         Catch ex As Exception
             ExceptionManager.Publish(ex)
@@ -145,5 +149,16 @@
             End If
         End If
         Return ""
+    End Function
+
+    Public Function ACTUALIZAR_CATALOGOS_PROVEEDORES(ByVal DUI As String, ByVal NIT As String) As Int32
+        Try
+            Return mDb.ACTUALIZAR_CATALOGOS_PROVEEDORES(DUI, NIT)
+
+        Catch ex As Exception
+            ExceptionManager.Publish(ex)
+            Me.sError = ex.Message
+            Return -1
+        End Try
     End Function
 End Class

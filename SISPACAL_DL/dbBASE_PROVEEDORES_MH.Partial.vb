@@ -65,4 +65,44 @@
 
         Return lista
     End Function
+
+    Public Function ACTUALIZAR_CATALOGOS_PROVEEDORES(ByVal DUI As String, ByVal NIT As String) As Int32
+        Dim lRet As Int32 = 0
+
+        Dim cnLocal As New SqlConnection(Me.cnnStr)
+        Dim cmd As New SqlCommand()
+        cnLocal.Open()
+        cmd.Connection = cnLocal
+
+        Dim args As New List(Of SqlParameter)
+        Dim arg As SqlParameter
+
+
+        arg = New SqlParameter("@DUI", SqlDbType.VarChar)
+        arg.Value = DUI
+        args.Add(arg)
+        cmd.Parameters.Add(arg)
+
+        arg = New SqlParameter("@NIT", SqlDbType.VarChar)
+        arg.Value = NIT
+        args.Add(arg)
+        cmd.Parameters.Add(arg)
+
+        Try
+
+            cmd.CommandText = "dbo.ACTUALIZAR_CATALOGOS_PROVEEDORES"
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandTimeout = 900000
+            cmd.ExecuteNonQuery()
+            cnLocal.Close()
+            cnLocal = Nothing
+
+            Return 1
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return lRet
+    End Function
 End Class

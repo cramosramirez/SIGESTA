@@ -291,7 +291,7 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
             Me.txtAPELLIDOS_T.ClientEnabled = False
         ElseIf Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Natural Then
             Me.txtDUI_T.ClientEnabled = edicion
-            Me.txtNIT_T.ClientEnabled = False
+            Me.txtNIT_T.ClientEnabled = edicion
             Me.txtNOMBRES_T.ClientEnabled = edicion
             Me.txtAPELLIDOS_T.ClientEnabled = edicion
         ElseIf Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Juridica Then
@@ -569,9 +569,9 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
     Private Sub ConfigurarTipoPersona()
         If Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Natural Then
             Me.txtDUI_T.ClientEnabled = True
-            Me.txtNIT_T.ClientEnabled = False
+            Me.txtNIT_T.ClientEnabled = True
             Me.txtAPELLIDOS_T.ClientEnabled = True
-            Me.txtNIT_T.Text = ""
+            'Me.txtNIT_T.Text = ""
 
         ElseIf Me.cbxTIPO_PERSONA_T.Value = TipoPersona.Juridica Then
             Me.txtDUI_T.Text = ""
@@ -591,13 +591,13 @@ Partial Class controles_ucVistaDetalleTRANSPORTISTA
         Me.cbxMUNICIPIO_T.Focus()
     End Sub
 
-    Protected Sub txtDUI_ValueChanged(sender As Object, e As EventArgs) Handles txtDUI_T.ValueChanged
-        If Me.txtDUI_T.Text.Length = 9 Then
-            Me.txtNIT_T.Text = Utilerias.RellenarIzquierda(Me.txtDUI_T.Text.Trim, 14, "0")
-        Else
-            Me.txtNIT_T.Text = ""
-        End If
-    End Sub
+    'Protected Sub txtDUI_ValueChanged(sender As Object, e As EventArgs) Handles txtDUI_T.ValueChanged
+    '    If Me.txtDUI_T.Text.Length = 9 Then
+    '        Me.txtNIT_T.Text = Utilerias.RellenarIzquierda(Me.txtDUI_T.Text.Trim, 14, "0")
+    '    Else
+    '        Me.txtNIT_T.Text = ""
+    '    End If
+    'End Sub
     Protected Sub cbxDEPARTAMENTO_V_ValueChanged(sender As Object, e As EventArgs) Handles cbxDEPARTAMENTO_T.ValueChanged
         Me.CargarMunicipios()
     End Sub

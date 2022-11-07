@@ -408,6 +408,7 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Me.txtNOMBRENIT_V.Text = mEntidad.NOMBRENIT.Trim
         Me.rdbTIPO_CONTRIBUYENTE_V.Value = mEntidad.TIPO_CONTRIBUYENTE
         Me.txtNRC_V.Text = mEntidad.CREDITFISCAL
+        Me.txtACTIVIDAD.Text = mEntidad.ACTIVIDAD
         Me.dteFECHA_NACIMIENTO_V.Date = mEntidad.FECHA_NAC
 
         Me.cbxTIPO_PERSONA_V.Value = mEntidad.ID_TIPO_PERSONA
@@ -453,7 +454,7 @@ Partial Class controles_ucVistaDetallePROVEEDOR
             Me.txtAPELLIDOS_V.ClientEnabled = False
         ElseIf Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Natural Then
             Me.txtDUI_V.ClientEnabled = edicion
-            Me.txtNIT_V.ClientEnabled = False
+            Me.txtNIT_V.ClientEnabled = edicion
             Me.txtNOMBRES_V.ClientEnabled = edicion
             Me.txtAPELLIDOS_V.ClientEnabled = edicion
         ElseIf Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Juridica Then
@@ -473,8 +474,10 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Me.txtNOMBRENIT_V.ClientEnabled = edicion
         If Me.rdbTIPO_CONTRIBUYENTE_V.Value = 1 OrElse Me.rdbTIPO_CONTRIBUYENTE_V.Value = 2 Then
             Me.txtNRC_V.ClientEnabled = edicion
+            Me.txtACTIVIDAD.ClientEnabled = edicion
         Else
             Me.txtNRC_V.ClientEnabled = False
+            Me.txtACTIVIDAD.ClientEnabled = False
         End If
         Me.dteFECHA_NACIMIENTO_V.ClientEnabled = edicion
         Me.cbxBANCO_PAGO_CTA.ClientEnabled = edicion
@@ -505,7 +508,6 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Me.txtAPELLIDOS_V.Text = ""
         Me.txtNOMBRES_V.Text = ""
         Me.txtDIRECCION_V.Text = ""
-        Me.txtDIRECCION_V.Text = ""
         Me.txtTELEFONO_V.Text = ""
         Me.txtCELULAR_V.Text = ""
         Me.txtDUI_V.Text = ""
@@ -524,7 +526,9 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Me.cbxTIPO_PERSONA_V.Value = ""
         Me.cbxDEPARTAMENTO_V.Value = ""
         Me.cbxMUNICIPIO_V.Value = ""
-        Me.txtCorreo_V.Text = ""
+        Me.txtCORREO_V.Text = ""
+        Me.txtNRC_V.Text = ""
+        Me.txtACTIVIDAD.Text = ""
     End Sub
 
     ''' -----------------------------------------------------------------------------
@@ -566,6 +570,9 @@ Partial Class controles_ucVistaDetallePROVEEDOR
             mEntidad = mComponente.ObtenerPROVEEDOR(Me.txtCODIPROVEEDOR_V.Text)
             mEntidad.FECHA_ACT = cFechaHora.ObtenerFechaHora
         End If
+        If Me.txtNRC_V.Text.Trim <> "" AndAlso Me.txtACTIVIDAD.Text.Trim = "" Then
+            Return "Ingrese la actividad economica primaria"
+        End If
 
         If Me.cbxBANCO_PAGO_CTA.Value IsNot Nothing AndAlso Me.txtNUM_CUENTA.Text.Trim = "" Then
             Return "Ingrese el No de Cuenta bancaria"
@@ -592,7 +599,8 @@ Partial Class controles_ucVistaDetallePROVEEDOR
             Return "Ingrese el Nombre del Representante Legal"
         End If
 
-        mEntidad.CREDITFISCAL = Me.txtEDAD_V.Text
+
+        mEntidad.ACTIVIDAD = Me.txtACTIVIDAD.Text.Trim.ToUpper
         mEntidad.PROFESION = Me.txtPROFESION_V.Text.ToUpper
         mEntidad.NOMBRENIT = Me.txtNOMBRENIT_V.Text.ToUpper
         mEntidad.TIPO_CONTRIBUYENTE = Me.rdbTIPO_CONTRIBUYENTE_V.Value
@@ -640,9 +648,12 @@ Partial Class controles_ucVistaDetallePROVEEDOR
     Protected Sub rdbTIPO_CONTRIBUYENTE_V_ValueChanged(sender As Object, e As System.EventArgs) Handles rdbTIPO_CONTRIBUYENTE_V.ValueChanged
         If rdbTIPO_CONTRIBUYENTE_V.Value = 0 Then
             Me.txtNRC_V.Text = ""
+            Me.txtACTIVIDAD.Text = ""
             Me.txtNRC_V.ClientEnabled = False
+            Me.txtACTIVIDAD.ClientEnabled = False
         Else
             Me.txtNRC_V.ClientEnabled = True
+            Me.txtACTIVIDAD.ClientEnabled = True
         End If
     End Sub
     Protected Sub cbxTIPO_PERSONA_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxTIPO_PERSONA_V.SelectedIndexChanged
@@ -652,9 +663,9 @@ Partial Class controles_ucVistaDetallePROVEEDOR
     Private Sub ConfigurarTipoPersona()
         If Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Natural Then
             Me.txtDUI_V.ClientEnabled = True
-            Me.txtNIT_V.ClientEnabled = False
+            Me.txtNIT_V.ClientEnabled = True
             Me.txtAPELLIDOS_V.ClientEnabled = True
-            Me.txtNIT_V.Text = ""
+            'Me.txtNIT_V.Text = ""
         ElseIf Me.cbxTIPO_PERSONA_V.Value = TipoPersona.Juridica Then
             Me.txtDUI_V.Text = ""
             Me.txtDUI_V.ClientEnabled = False
@@ -672,13 +683,13 @@ Partial Class controles_ucVistaDetallePROVEEDOR
         Me.cbxMUNICIPIO_V.Focus()
     End Sub
 
-    Protected Sub txtDUI_ValueChanged(sender As Object, e As EventArgs) Handles txtDUI_V.ValueChanged
-        If Me.txtDUI_V.Text.Length = 9 Then
-            Me.txtNIT_V.Text = Utilerias.RellenarIzquierda(Me.txtDUI_V.Text.Trim, 14, "0")
-        Else
-            Me.txtNIT_V.Text = ""
-        End If
-    End Sub
+    'Protected Sub txtDUI_ValueChanged(sender As Object, e As EventArgs) Handles txtDUI_V.ValueChanged
+    '    If Me.txtDUI_V.Text.Length = 9 Then
+    '        Me.txtNIT_V.Text = Utilerias.RellenarIzquierda(Me.txtDUI_V.Text.Trim, 14, "0")
+    '    Else
+    '        Me.txtNIT_V.Text = ""
+    '    End If
+    'End Sub
     Protected Sub cbxDEPARTAMENTO_V_ValueChanged(sender As Object, e As EventArgs) Handles cbxDEPARTAMENTO_V.ValueChanged
         Me.CargarMunicipios()
     End Sub

@@ -154,7 +154,7 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
             Me.txtAPELLIDOS.ClientEnabled = False
         ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Natural Then
             Me.txtDUI.ClientEnabled = edicion
-            Me.txtNIT.ClientEnabled = False
+            Me.txtNIT.ClientEnabled = edicion
             Me.txtNOMBRES.ClientEnabled = edicion
             Me.txtAPELLIDOS.ClientEnabled = edicion
         ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Juridica Then
@@ -275,7 +275,7 @@ Partial Class controles_ucVistaDetallePROVEEDOR_ROZA
         End If
         If Me.cbxTIPO_PERSONA.Value = TipoPersona.Natural Then
             mEntidad.DUI = Me.txtDUI.Text
-            mEntidad.NIT = Utilerias.RellenarIzquierda(Me.txtDUI.Text.Trim, 14, "0")
+            'mEntidad.NIT = Utilerias.RellenarIzquierda(Me.txtDUI.Text.Trim, 14, "0")
         ElseIf Me.cbxTIPO_PERSONA.Value = TipoPersona.Juridica Then
             mEntidad.DUI = ""
             mEntidad.NIT = Me.txtNIT.Text

@@ -13,7 +13,7 @@
 	</tr>
 	<tr>
 		<td><dx:ASPxLabel id="ASPxLabel2" runat="server" Text="DUI:" /></td>
-		<td><dx:ASPxTextBox ID="txtDUI" AutoPostBack="true" Font-Bold="true" runat="server">
+		<td><dx:ASPxTextBox ID="txtDUI" Font-Bold="true" runat="server">
                     <MaskSettings AllowMouseWheel="False" IncludeLiterals="None" 
                         Mask="99999999-9" /> 
 				<DisabledStyle BackColor="WhiteSmoke" />
@@ -73,6 +73,13 @@
 		<td><dx:ASPxTextBox ID="txtCORREO" MaxLength="200" runat="server" Width="100%" >                            
             </dx:ASPxTextBox>
 		</td>
+	</tr>
+	<tr>
+		<td><dx:ASPxLabel id="ASPxLabel12" runat="server" Text="Actividad primaria:" /></td>
+		<th colspan="3">
+			<dx:ASPxTextBox ID="txtACTIVIDAD" MaxLength="1000" runat="server" Width="100%" >                            
+            </dx:ASPxTextBox>
+		</th>		
 	</tr>
 </table>
 <asp:ObjectDataSource ID="odsDepartamento" runat="server" 
