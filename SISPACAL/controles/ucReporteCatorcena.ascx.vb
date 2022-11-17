@@ -848,7 +848,8 @@ Partial Class controles_ucReporteCatorcena
                     Dim dt As New DS_CATORCENA.DESCUENTOSDataTable
                     Dim adapter As New DS_CATORCENATableAdapters.DESCUENTOSTableAdapter
                     Select Case Me.ucCriterios1.ID_TIPO_PLANILLA
-                        Case Enumeradores.TipoPlanilla.Cañeros, Enumeradores.TipoPlanilla.AnticipoCaneros
+                        Case Enumeradores.TipoPlanilla.Cañeros, Enumeradores.TipoPlanilla.AnticipoCaneros,
+                             Enumeradores.TipoPlanilla.ComplementoValorFinalPago
                             reporte = New DescuentosCanero
                         Case Enumeradores.TipoPlanilla.Transportistas
                             reporte = New DescuentosTransportista
