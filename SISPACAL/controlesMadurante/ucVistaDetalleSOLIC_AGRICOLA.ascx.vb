@@ -474,6 +474,14 @@ Partial Class controles_ucVistaDetalleSOLIC_AGRICOLA
         Dim lista As listaPROVEEDOR_AGRICOLA = (New cPROVEEDOR_AGRICOLA).ObtenerListaPorTIPO_PROVEEDOR(True, False, -1, "NOMBRE")
         Dim lProveedor As New PROVEEDOR_AGRICOLA
 
+        If lista IsNot Nothing AndAlso lista.Count > 0 Then
+            For i As Integer = 0 To lista.Count - 1
+                If lista(i).APELLIDOS.Trim <> "" Then
+                    lista(i).NOMBRE = lista(i).NOMBRE.Trim + " " + lista(i).APELLIDOS.Trim
+                End If
+            Next
+        End If
+
         lProveedor.ID_PROVEE = -1
         lProveedor.NOMBRE = ""
         lista.Insertar(0, lProveedor)
@@ -514,6 +522,14 @@ Partial Class controles_ucVistaDetalleSOLIC_AGRICOLA
         lista = (New cPROVEEDOR_AGRICOLA).ObtenerListaPorTIPO_PROVEEDOR(False, True, idCuentaFinan, "NOMBRE")
         If Not (lista IsNot Nothing AndAlso lista.Count > 0) Then
             lista = New listaPROVEEDOR_AGRICOLA
+        End If
+
+        If lista IsNot Nothing AndAlso lista.Count > 0 Then
+            For i As Integer = 0 To lista.Count - 1
+                If lista(i).APELLIDOS.Trim <> "" Then
+                    lista(i).NOMBRE = lista(i).NOMBRE.Trim + " " + lista(i).APELLIDOS.Trim
+                End If
+            Next
         End If
 
         Me.cbxPROVEEDOR_AGRICOLAdeta.DataSource = lista

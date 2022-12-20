@@ -99,7 +99,7 @@ Partial Public Class cORDEN_COMBUSTIBLE
                 Dim nombreTransportista As String = ""
                 Dim cuenta As String = ""
                 If lTransportista IsNot Nothing Then
-                    nombreTransportista = lTransportista.NOMBRES.Trim
+                    nombreTransportista = Trim(lTransportista.NOMBRES.Trim + " " + lTransportista.APELLIDOS.Trim)
                     cuenta = lTransportista.NOCUENTA
                 End If
                 bOrdenCombustible = New cORDEN_COMBUSTIBLE

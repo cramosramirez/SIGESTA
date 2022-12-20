@@ -901,7 +901,7 @@ Partial Class controles_ucVistaDetalleCONTRATO
                     Dim sAccesLoteTraspasar As String = ""
                     lLoteContra = lLote
                     If lLotesContratados.BuscarPorColumna("ID_MAESTRO", lLote.ID_MAESTRO, True) Is Nothing Then
-                        If lLoteContra.ID_LOTE_TRASPASO <= 0 OrElse _
+                        If lLoteContra.ID_LOTE_TRASPASO <= 0 OrElse
                                 (lLoteContra.ID_LOTE_TRASPASO > 0 AndAlso Me.LoteSinEntregasZafraActiva(lLoteContra.ACCESLOTE)) Then
                             sAccesLoteTraspasar = lLoteContra.ACCESLOTE
                             lLoteContra.ACCESLOTE = ""
@@ -948,7 +948,7 @@ Partial Class controles_ucVistaDetalleCONTRATO
                     Dim lLoteContra As New LOTES
                     Dim sAccesLoteTraspasar As String = ""
                     lLoteContra = lLote
-                    If lLoteContra.ID_LOTE_TRASPASO <= 0 OrElse _
+                    If lLoteContra.ID_LOTE_TRASPASO <= 0 OrElse
                                 (lLoteContra.ID_LOTE_TRASPASO > 0 AndAlso Me.LoteSinEntregasZafraActiva(lLoteContra.ACCESLOTE)) Then
                         sAccesLoteTraspasar = lLoteContra.ACCESLOTE
                         lLoteContra.ACCESLOTE = ""
@@ -975,6 +975,8 @@ Partial Class controles_ucVistaDetalleCONTRATO
                 End If
             Next
         End If
+
+        mComponente.ACTUALIZAR_LOTES_COSECHA_DE_CONTRATOS(mEntidad.CODICONTRATO)
 
         If Me._nuevo Then ScriptManager.RegisterClientScriptBlock(Me, Page.GetType, "script", "MostrarContratoZafra('" + mEntidad.CODICONTRATO + "')", True)
 

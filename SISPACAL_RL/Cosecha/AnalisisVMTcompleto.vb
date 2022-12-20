@@ -27,7 +27,7 @@ Public Class AnalisisVMTcompleto
         End If
 
         Me.DS_SIGESTA1.Clear()
-        Me.AnalisiS_VMTTableAdapter1.SetCommandTimeOut(900000)
+        Me.AnalisiS_VMTTableAdapter1.SetCommandTimeOut(9000000)
         Me.AnalisiS_VMTTableAdapter1.FillPorCriterios(Me.DS_SIGESTA1.ANALISIS_VMT, _
                                                     ID_ZAFRA, ES_TM, VER_TIPO_QUEMA, CATORCENA, ACUMULADO, FECHA_INI, FECHA_FIN)
         Me.DisplayName = "ANALISIS CUMPLIMIENTO RESOLUCION PESOS VMT"

@@ -159,8 +159,11 @@
     <Compile Include="dbCONTRATO_ZAFRAS_LG.vb" />
     <Compile Include="dbENVIO_COSECHA_BANDA.vb" />
     <Compile Include="dbENVIO_FACT.vb" />
+    <Compile Include="dbENVIO_MONI_QQ.vb" />
     <Compile Include="dbESTICANA.Partial.vb" />
     <Compile Include="dbESTICANA.vb" />
+    <Compile Include="dbESTICANA_XLS_DETA.vb" />
+    <Compile Include="dbESTICANA_XLS_ENCA.vb" />
     <Compile Include="dbFILTRO_ORDEN_ROZA.Partial.vb" />
     <Compile Include="dbFILTRO_ORDEN_ROZA.vb" />
     <Compile Include="dbIntermedia.vb" />
@@ -170,6 +173,8 @@
     <Compile Include="dbLOTES_LG.vb" />
     <Compile Include="dbLOTES_TRASPASO.vb" />
     <Compile Include="dbLOTE_CARGADORA.vb" />
+    <Compile Include="dbMONITOR_CAL.Partial.vb" />
+    <Compile Include="dbMONITOR_CAL.vb" />
     <Compile Include="dbNumero_a_Letras.vb" />
     <Compile Include="dbOPCION_PERFIL.Partial.vb" />
     <Compile Include="dbOrdenSIGASI.vb" />
@@ -185,6 +190,8 @@
     <Compile Include="dbPRODUCTO_TIPO_TRANS.vb" />
     <Compile Include="dbPROVEEDOR_AGRICOLA.Partial.vb" />
     <Compile Include="dbPROVEEDOR_CODIGOREL.vb" />
+    <Compile Include="dbPROVEEDOR_QUERQUEO.Partial.vb" />
+    <Compile Include="dbPROVEEDOR_QUERQUEO.vb" />
     <Compile Include="dbPROVEEDOR_ROZA.Partial.vb" />
     <Compile Include="dbRANGO_COMPENSACION.vb" />
     <Compile Include="dbSOLIC_AGRICOLA_ESTADO.vb" />

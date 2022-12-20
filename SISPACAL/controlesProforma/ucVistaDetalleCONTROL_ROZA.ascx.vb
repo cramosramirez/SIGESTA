@@ -348,6 +348,14 @@ Partial Class controles_ucVistaDetalleCONTROL_ROZA
         If Me.cbxID_TIPO_ROZA.Value IsNot Nothing Then
             lProveedores = (New cPROVEEDOR_ROZA).ObtenerListaPorTIPO_ROZA(Me.cbxID_TIPO_ROZA.Value)
         End If
+        If lProveedores IsNot Nothing AndAlso lProveedores.Count > 0 Then
+            For i As Integer = 0 To lProveedores.Count - 1
+                If Not Left(lProveedores(i).NOMBRE_PROVEEDOR_ROZA, 2) = "RZ" Then
+                    lProveedores(i).NOMBRE_PROVEEDOR_ROZA = lProveedores(i).CODIGO + " - " + lProveedores(i).NOMBRE_PROVEEDOR_ROZA.Trim + " " + lProveedores(i).APELLIDOS.Trim
+                End If
+            Next
+
+        End If
         Me.cbxID_PROVEEDOR_ROZA.DataSource = lProveedores
         Me.cbxID_PROVEEDOR_ROZA.DataBind()
         Me.cbxID_PROVEEDOR_ROZA.Text = ""

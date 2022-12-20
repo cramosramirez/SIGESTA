@@ -368,6 +368,7 @@ Partial Class controlesContrato_ucVistaDetalleSOCIO
         mEntidad.CODIBANCO = -1
         mEntidad.NUM_CUENTA = ""
         mEntidad.ES_CTA_CORRIENTE = False
+        mEntidad.ID_TIPO_PERSONA = -1
 
         If (Me.rdbTIPO_CONTRIBUYENTE_V.Value = 1 OrElse Me.rdbTIPO_CONTRIBUYENTE_V.Value = 2) AndAlso (Me.txtNRC_V.Value Is Nothing OrElse Me.txtNRC_V.Value = "") Then
             Return "Ingrese el Numero de Registro de Contribuyente"

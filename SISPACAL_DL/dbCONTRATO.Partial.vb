@@ -147,4 +147,23 @@
 
         Return lRet
     End Function
+
+    Public Function ACTUALIZAR_LOTES_COSECHA_DE_CONTRATOS(ByVal CODICONTRATO As String) As String
+        Dim lRet As Int32 = 0
+        Dim args(1) As SqlParameter
+        args(0) = New SqlParameter("@CODICONTRATO", SqlDbType.VarChar)
+        args(0).Value = CODICONTRATO
+
+
+
+        Try
+            SqlHelper.ExecuteNonQuery(Me.cnnStr, "ACTUALIZAR_LOTES_COSECHA_DE_CONTRATOS", args)
+            Return ""
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return lRet
+    End Function
 End Class

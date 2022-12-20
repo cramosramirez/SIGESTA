@@ -266,7 +266,7 @@ Partial Class controlesCenso_ucReportePlanCosecha
                 Me.ucCriterios1.VerSUB_TERCIOitem = False
                 Me.ucCriterios1.VerTIPO_DETALLE = True
                 Me.ucCriterios1.VerMOLIENDA_DIARIA_AJUSTADA = True
-                Me.ucCriterios1.TIPO_DETALLE = 1
+                Me.ucCriterios1.TIPO_DETALLE = 2
                 Me.ucCriterios1.VerMULTICANTON = True
                 Me.ucCriterios1.VerFORMA_COSECHA = True
                 Me.ucCriterios1.VerEDAD_LOTE = True
@@ -296,7 +296,7 @@ Partial Class controlesCenso_ucReportePlanCosecha
                 Me.ucCriterios1.VerTERCIOitem = False
                 Me.ucCriterios1.VerSUB_TERCIOitem = False
                 Me.ucCriterios1.VerTIPO_DETALLE = True
-                Me.ucCriterios1.TIPO_DETALLE = 1
+                Me.ucCriterios1.TIPO_DETALLE = 2
                 Me.ucCriterios1.VerMULTICANTON = True
 
             Case 15
@@ -698,7 +698,7 @@ Partial Class controlesCenso_ucReportePlanCosecha
                             Me.ucVisorReporte1.CargarDatos(reporte)
                         Else
                             Select Case lSolicitud.ID_CUENTA_FINAN
-                                Case CuentaFinanciamiento.Madurantes, CuentaFinanciamiento.InhibidoresFloracion, CuentaFinanciamiento.Insecticidas
+                                Case CuentaFinanciamiento.InhibidoresFloracion, CuentaFinanciamiento.Insecticidas
                                     Dim reporte As New SolicitudMaduranteVuelo
                                     reporte.CargarSolicitud(CInt(PARAMETROS("ID_SOLICITUD")))
                                     reporte.ResumeLayout()
@@ -710,11 +710,6 @@ Partial Class controlesCenso_ucReportePlanCosecha
                                     reporte.ResumeLayout()
                                     Me.ucVisorReporte1.CargarDatos(reporte)
                             End Select
-
-                            'Dim reporte As New SolicitudInsumoAgricolaExterno
-                            'reporte.CargarDatos(CInt(PARAMETROS("ID_SOLICITUD")))
-                            'reporte.ResumeLayout()
-                            'Me.ucVisorReporte1.CargarDatos(reporte)
                         End If
 
 

@@ -938,8 +938,8 @@ Partial Public Class RozaManualResumenFrenteProductor
         Me.XrLabel4.StylePriority.UseBorders = False
         Me.XrLabel4.StylePriority.UseFont = False
         Me.XrLabel4.StylePriority.UseTextAlignment = False
-        Me.XrLabel4.Text = "LIC. JOEL ANTONIO MORAN"
         Me.XrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrLabel4.Visible = False
         '
         'XrLabel5
         '

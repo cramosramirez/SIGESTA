@@ -972,7 +972,7 @@ E.CODIPROVEEDOR_TRANSPORTISTA = D.CODIPROVEEDOR_TRANSPORTISTA</CommandText>
 							WHERE T.ID_CATORCENA = E.ID_CATORCENA
 							AND T.ID_TIPO_PLANILLA = E.ID_TIPO_PLANILLA	
 							AND T.CODIPROVEEDOR_TRANSPORTISTA = E.CODIPROVEEDOR_TRANSPORTISTA													
-							),'US DOLARES') AS MONTO_LETRAS, DUI, TELEFONO
+							),'US DOLARES') AS MONTO_LETRAS, DUI, TELEFONO, DEPARTAMENTO, MUNICIPIO
 FROM 
 (
 	SELECT 
@@ -997,7 +997,21 @@ FROM
 		WHEN 6 THEN (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
 		WHEN 9 THEN (SELECT R.TELEFONO FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)
 		ELSE (SELECT R.TELEFONO FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
-	END AS TELEFONO
+	END AS TELEFONO,
+	CASE P.ID_TIPO_PLANILLA 
+		WHEN 1 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 2 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 5 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 6 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 9 THEN (SELECT (SELECT D.NOMBRE_DEPTO FROM DEPARTAMENTO D WHERE D.CODI_DEPTO = R.CODI_DEPTO) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)
+	END AS DEPARTAMENTO,
+	CASE P.ID_TIPO_PLANILLA 
+		WHEN 1 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 2 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 5 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 6 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM PROVEEDOR R WHERE R.CODIPROVEEDOR = P.CODIPROVEEDOR_TRANSPORTISTA)
+		WHEN 9 THEN (SELECT (SELECT M.NOMBRE_MUNI FROM MUNICIPIO M WHERE M.CODI_DEPTO = R.CODI_DEPTO AND M.CODI_MUNI = R.CODI_MUNI) FROM TRANSPORTISTA R WHERE R.CODTRANSPORT = P.CODIPROVEEDOR_TRANSPORTISTA)
+	END AS MUNICIPIO
 	FROM PLANILLA P, CATORCENA_ZAFRA CZ
 	WHERE P.ID_CATORCENA = CZ.ID_CATORCENA 
 	AND P.ID_CATORCENA = @ID_CATORCENA 
@@ -1456,7 +1470,7 @@ AND E.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA</CommandText>
   <xs:element name="DS_COMPROBANTES" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_COMPROBANTES" msprop:Generator_UserDSName="DS_COMPROBANTES">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="COMPROBANTE_RETENCION" msprop:Generator_TableClassName="COMPROBANTE_RETENCIONDataTable" msprop:Generator_TableVarName="tableCOMPROBANTE_RETENCION" msprop:Generator_TablePropName="COMPROBANTE_RETENCION" msprop:Generator_RowDeletingName="COMPROBANTE_RETENCIONRowDeleting" msprop:Generator_RowChangingName="COMPROBANTE_RETENCIONRowChanging" msprop:Generator_RowEvHandlerName="COMPROBANTE_RETENCIONRowChangeEventHandler" msprop:Generator_RowDeletedName="COMPROBANTE_RETENCIONRowDeleted" msprop:Generator_UserTableName="COMPROBANTE_RETENCION" msprop:Generator_RowChangedName="COMPROBANTE_RETENCIONRowChanged" msprop:Generator_RowEvArgName="COMPROBANTE_RETENCIONRowChangeEvent" msprop:Generator_RowClassName="COMPROBANTE_RETENCIONRow">
+        <xs:element name="COMPROBANTE_RETENCION" msprop:Generator_TableClassName="COMPROBANTE_RETENCIONDataTable" msprop:Generator_TableVarName="tableCOMPROBANTE_RETENCION" msprop:Generator_RowChangedName="COMPROBANTE_RETENCIONRowChanged" msprop:Generator_TablePropName="COMPROBANTE_RETENCION" msprop:Generator_RowDeletingName="COMPROBANTE_RETENCIONRowDeleting" msprop:Generator_RowChangingName="COMPROBANTE_RETENCIONRowChanging" msprop:Generator_RowEvHandlerName="COMPROBANTE_RETENCIONRowChangeEventHandler" msprop:Generator_RowDeletedName="COMPROBANTE_RETENCIONRowDeleted" msprop:Generator_RowClassName="COMPROBANTE_RETENCIONRow" msprop:Generator_UserTableName="COMPROBANTE_RETENCION" msprop:Generator_RowEvArgName="COMPROBANTE_RETENCIONRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODIGOPROVEEDOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODIGOPROVEEDOR" msprop:Generator_ColumnPropNameInRow="CODIGOPROVEEDOR" msprop:Generator_ColumnPropNameInTable="CODIGOPROVEEDORColumn" msprop:Generator_UserColumnName="CODIGOPROVEEDOR" type="xs:int" minOccurs="0" />
@@ -1482,7 +1496,7 @@ AND E.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FACTURACION_SERVICIOS_DEL_x0020__INGENIO" msprop:Generator_TableClassName="FACTURACION_SERVICIOS_DEL__INGENIODataTable" msprop:Generator_TableVarName="tableFACTURACION_SERVICIOS_DEL__INGENIO" msprop:Generator_TablePropName="FACTURACION_SERVICIOS_DEL__INGENIO" msprop:Generator_RowDeletingName="FACTURACION_SERVICIOS_DEL__INGENIORowDeleting" msprop:Generator_RowChangingName="FACTURACION_SERVICIOS_DEL__INGENIORowChanging" msprop:Generator_RowEvHandlerName="FACTURACION_SERVICIOS_DEL__INGENIORowChangeEventHandler" msprop:Generator_RowDeletedName="FACTURACION_SERVICIOS_DEL__INGENIORowDeleted" msprop:Generator_UserTableName="FACTURACION_SERVICIOS_DEL _INGENIO" msprop:Generator_RowChangedName="FACTURACION_SERVICIOS_DEL__INGENIORowChanged" msprop:Generator_RowEvArgName="FACTURACION_SERVICIOS_DEL__INGENIORowChangeEvent" msprop:Generator_RowClassName="FACTURACION_SERVICIOS_DEL__INGENIORow">
+        <xs:element name="FACTURACION_SERVICIOS_DEL_x0020__INGENIO" msprop:Generator_TableClassName="FACTURACION_SERVICIOS_DEL__INGENIODataTable" msprop:Generator_TableVarName="tableFACTURACION_SERVICIOS_DEL__INGENIO" msprop:Generator_RowChangedName="FACTURACION_SERVICIOS_DEL__INGENIORowChanged" msprop:Generator_TablePropName="FACTURACION_SERVICIOS_DEL__INGENIO" msprop:Generator_RowDeletingName="FACTURACION_SERVICIOS_DEL__INGENIORowDeleting" msprop:Generator_RowChangingName="FACTURACION_SERVICIOS_DEL__INGENIORowChanging" msprop:Generator_RowEvHandlerName="FACTURACION_SERVICIOS_DEL__INGENIORowChangeEventHandler" msprop:Generator_RowDeletedName="FACTURACION_SERVICIOS_DEL__INGENIORowDeleted" msprop:Generator_RowClassName="FACTURACION_SERVICIOS_DEL__INGENIORow" msprop:Generator_UserTableName="FACTURACION_SERVICIOS_DEL _INGENIO" msprop:Generator_RowEvArgName="FACTURACION_SERVICIOS_DEL__INGENIORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_CATORCENA" msprop:Generator_ColumnVarNameInTable="columnID_CATORCENA" msprop:Generator_ColumnPropNameInRow="ID_CATORCENA" msprop:Generator_ColumnPropNameInTable="ID_CATORCENAColumn" msprop:Generator_UserColumnName="ID_CATORCENA" type="xs:int" />
@@ -1508,7 +1522,7 @@ AND E.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_TableClassName="FACTURACION_SERVICIOS_PROVEEDORESDataTable" msprop:Generator_TableVarName="tableFACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_TablePropName="FACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_RowDeletingName="FACTURACION_SERVICIOS_PROVEEDORESRowDeleting" msprop:Generator_RowChangingName="FACTURACION_SERVICIOS_PROVEEDORESRowChanging" msprop:Generator_RowEvHandlerName="FACTURACION_SERVICIOS_PROVEEDORESRowChangeEventHandler" msprop:Generator_RowDeletedName="FACTURACION_SERVICIOS_PROVEEDORESRowDeleted" msprop:Generator_UserTableName="FACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_RowChangedName="FACTURACION_SERVICIOS_PROVEEDORESRowChanged" msprop:Generator_RowEvArgName="FACTURACION_SERVICIOS_PROVEEDORESRowChangeEvent" msprop:Generator_RowClassName="FACTURACION_SERVICIOS_PROVEEDORESRow">
+        <xs:element name="FACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_TableClassName="FACTURACION_SERVICIOS_PROVEEDORESDataTable" msprop:Generator_TableVarName="tableFACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_RowChangedName="FACTURACION_SERVICIOS_PROVEEDORESRowChanged" msprop:Generator_TablePropName="FACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_RowDeletingName="FACTURACION_SERVICIOS_PROVEEDORESRowDeleting" msprop:Generator_RowChangingName="FACTURACION_SERVICIOS_PROVEEDORESRowChanging" msprop:Generator_RowEvHandlerName="FACTURACION_SERVICIOS_PROVEEDORESRowChangeEventHandler" msprop:Generator_RowDeletedName="FACTURACION_SERVICIOS_PROVEEDORESRowDeleted" msprop:Generator_RowClassName="FACTURACION_SERVICIOS_PROVEEDORESRow" msprop:Generator_UserTableName="FACTURACION_SERVICIOS_PROVEEDORES" msprop:Generator_RowEvArgName="FACTURACION_SERVICIOS_PROVEEDORESRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODIGOPROVEEDOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODIGOPROVEEDOR" msprop:Generator_ColumnPropNameInRow="CODIGOPROVEEDOR" msprop:Generator_ColumnPropNameInTable="CODIGOPROVEEDORColumn" msprop:Generator_UserColumnName="CODIGOPROVEEDOR" type="xs:int" minOccurs="0" />
@@ -1523,7 +1537,7 @@ AND E.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="REPO_COMPROBANTES" msprop:Generator_TableClassName="REPO_COMPROBANTESDataTable" msprop:Generator_TableVarName="tableREPO_COMPROBANTES" msprop:Generator_RowChangedName="REPO_COMPROBANTESRowChanged" msprop:Generator_TablePropName="REPO_COMPROBANTES" msprop:Generator_RowDeletingName="REPO_COMPROBANTESRowDeleting" msprop:Generator_RowChangingName="REPO_COMPROBANTESRowChanging" msprop:Generator_RowEvHandlerName="REPO_COMPROBANTESRowChangeEventHandler" msprop:Generator_RowDeletedName="REPO_COMPROBANTESRowDeleted" msprop:Generator_RowClassName="REPO_COMPROBANTESRow" msprop:Generator_UserTableName="REPO_COMPROBANTES" msprop:Generator_RowEvArgName="REPO_COMPROBANTESRowChangeEvent">
+        <xs:element name="REPO_COMPROBANTES" msprop:Generator_TableClassName="REPO_COMPROBANTESDataTable" msprop:Generator_TableVarName="tableREPO_COMPROBANTES" msprop:Generator_TablePropName="REPO_COMPROBANTES" msprop:Generator_RowDeletingName="REPO_COMPROBANTESRowDeleting" msprop:Generator_RowChangingName="REPO_COMPROBANTESRowChanging" msprop:Generator_RowEvHandlerName="REPO_COMPROBANTESRowChangeEventHandler" msprop:Generator_RowDeletedName="REPO_COMPROBANTESRowDeleted" msprop:Generator_UserTableName="REPO_COMPROBANTES" msprop:Generator_RowChangedName="REPO_COMPROBANTESRowChanged" msprop:Generator_RowEvArgName="REPO_COMPROBANTESRowChangeEvent" msprop:Generator_RowClassName="REPO_COMPROBANTESRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NOMBRE_CLIENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_CLIENTE" msprop:Generator_ColumnPropNameInRow="NOMBRE_CLIENTE" msprop:Generator_ColumnPropNameInTable="NOMBRE_CLIENTEColumn" msprop:Generator_UserColumnName="NOMBRE_CLIENTE" type="xs:string" minOccurs="0" />
@@ -1543,7 +1557,7 @@ AND E.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LISTADO_COMPROBANTES" msprop:Generator_TableClassName="LISTADO_COMPROBANTESDataTable" msprop:Generator_TableVarName="tableLISTADO_COMPROBANTES" msprop:Generator_TablePropName="LISTADO_COMPROBANTES" msprop:Generator_RowDeletingName="LISTADO_COMPROBANTESRowDeleting" msprop:Generator_RowChangingName="LISTADO_COMPROBANTESRowChanging" msprop:Generator_RowEvHandlerName="LISTADO_COMPROBANTESRowChangeEventHandler" msprop:Generator_RowDeletedName="LISTADO_COMPROBANTESRowDeleted" msprop:Generator_UserTableName="LISTADO_COMPROBANTES" msprop:Generator_RowChangedName="LISTADO_COMPROBANTESRowChanged" msprop:Generator_RowEvArgName="LISTADO_COMPROBANTESRowChangeEvent" msprop:Generator_RowClassName="LISTADO_COMPROBANTESRow">
+        <xs:element name="LISTADO_COMPROBANTES" msprop:Generator_TableClassName="LISTADO_COMPROBANTESDataTable" msprop:Generator_TableVarName="tableLISTADO_COMPROBANTES" msprop:Generator_RowChangedName="LISTADO_COMPROBANTESRowChanged" msprop:Generator_TablePropName="LISTADO_COMPROBANTES" msprop:Generator_RowDeletingName="LISTADO_COMPROBANTESRowDeleting" msprop:Generator_RowChangingName="LISTADO_COMPROBANTESRowChanging" msprop:Generator_RowEvHandlerName="LISTADO_COMPROBANTESRowChangeEventHandler" msprop:Generator_RowDeletedName="LISTADO_COMPROBANTESRowDeleted" msprop:Generator_RowClassName="LISTADO_COMPROBANTESRow" msprop:Generator_UserTableName="LISTADO_COMPROBANTES" msprop:Generator_RowEvArgName="LISTADO_COMPROBANTESRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_PLANILLA_COMPROB" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID_PLANILLA_COMPROB" msprop:Generator_ColumnPropNameInRow="ID_PLANILLA_COMPROB" msprop:Generator_ColumnPropNameInTable="ID_PLANILLA_COMPROBColumn" msprop:Generator_UserColumnName="ID_PLANILLA_COMPROB" type="xs:int" minOccurs="0" />
@@ -1559,7 +1573,7 @@ AND E.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ARCHIVOS_PH_CCF_FA" msprop:Generator_TableClassName="ARCHIVOS_PH_CCF_FADataTable" msprop:Generator_TableVarName="tableARCHIVOS_PH_CCF_FA" msprop:Generator_RowChangedName="ARCHIVOS_PH_CCF_FARowChanged" msprop:Generator_TablePropName="ARCHIVOS_PH_CCF_FA" msprop:Generator_RowDeletingName="ARCHIVOS_PH_CCF_FARowDeleting" msprop:Generator_RowChangingName="ARCHIVOS_PH_CCF_FARowChanging" msprop:Generator_RowEvHandlerName="ARCHIVOS_PH_CCF_FARowChangeEventHandler" msprop:Generator_RowDeletedName="ARCHIVOS_PH_CCF_FARowDeleted" msprop:Generator_RowClassName="ARCHIVOS_PH_CCF_FARow" msprop:Generator_UserTableName="ARCHIVOS_PH_CCF_FA" msprop:Generator_RowEvArgName="ARCHIVOS_PH_CCF_FARowChangeEvent">
+        <xs:element name="ARCHIVOS_PH_CCF_FA" msprop:Generator_TableClassName="ARCHIVOS_PH_CCF_FADataTable" msprop:Generator_TableVarName="tableARCHIVOS_PH_CCF_FA" msprop:Generator_TablePropName="ARCHIVOS_PH_CCF_FA" msprop:Generator_RowDeletingName="ARCHIVOS_PH_CCF_FARowDeleting" msprop:Generator_RowChangingName="ARCHIVOS_PH_CCF_FARowChanging" msprop:Generator_RowEvHandlerName="ARCHIVOS_PH_CCF_FARowChangeEventHandler" msprop:Generator_RowDeletedName="ARCHIVOS_PH_CCF_FARowDeleted" msprop:Generator_UserTableName="ARCHIVOS_PH_CCF_FA" msprop:Generator_RowChangedName="ARCHIVOS_PH_CCF_FARowChanged" msprop:Generator_RowEvArgName="ARCHIVOS_PH_CCF_FARowChangeEvent" msprop:Generator_RowClassName="ARCHIVOS_PH_CCF_FARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="tipofact" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntipofact" msprop:Generator_ColumnPropNameInRow="tipofact" msprop:Generator_ColumnPropNameInTable="tipofactColumn" msprop:Generator_UserColumnName="tipofact" type="xs:string" minOccurs="0" />
@@ -1580,7 +1594,7 @@ AND E.ID_TIPO_PLANILLA = @ID_TIPO_PLANILLA</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_TableClassName="ARCHIVOS_PH_CCF_FA_DETADataTable" msprop:Generator_TableVarName="tableARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_RowChangedName="ARCHIVOS_PH_CCF_FA_DETARowChanged" msprop:Generator_TablePropName="ARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_RowDeletingName="ARCHIVOS_PH_CCF_FA_DETARowDeleting" msprop:Generator_RowChangingName="ARCHIVOS_PH_CCF_FA_DETARowChanging" msprop:Generator_RowEvHandlerName="ARCHIVOS_PH_CCF_FA_DETARowChangeEventHandler" msprop:Generator_RowDeletedName="ARCHIVOS_PH_CCF_FA_DETARowDeleted" msprop:Generator_RowClassName="ARCHIVOS_PH_CCF_FA_DETARow" msprop:Generator_UserTableName="ARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_RowEvArgName="ARCHIVOS_PH_CCF_FA_DETARowChangeEvent">
+        <xs:element name="ARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_TableClassName="ARCHIVOS_PH_CCF_FA_DETADataTable" msprop:Generator_TableVarName="tableARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_TablePropName="ARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_RowDeletingName="ARCHIVOS_PH_CCF_FA_DETARowDeleting" msprop:Generator_RowChangingName="ARCHIVOS_PH_CCF_FA_DETARowChanging" msprop:Generator_RowEvHandlerName="ARCHIVOS_PH_CCF_FA_DETARowChangeEventHandler" msprop:Generator_RowDeletedName="ARCHIVOS_PH_CCF_FA_DETARowDeleted" msprop:Generator_UserTableName="ARCHIVOS_PH_CCF_FA_DETA" msprop:Generator_RowChangedName="ARCHIVOS_PH_CCF_FA_DETARowChanged" msprop:Generator_RowEvArgName="ARCHIVOS_PH_CCF_FA_DETARowChangeEvent" msprop:Generator_RowClassName="ARCHIVOS_PH_CCF_FA_DETARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="tipofact" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntipofact" msprop:Generator_ColumnPropNameInRow="tipofact" msprop:Generator_ColumnPropNameInTable="tipofactColumn" msprop:Generator_UserColumnName="tipofact" type="xs:string" minOccurs="0" />

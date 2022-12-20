@@ -116,7 +116,7 @@ Partial Public Class OrdenCompraAgricola
         Me.XrTable2.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable2.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 0.0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
         Me.XrTable2.SizeF = New System.Drawing.SizeF(789.0001!, 22.0!)
@@ -256,7 +256,7 @@ Partial Public Class OrdenCompraAgricola
         'XrPictureBox1
         '
         Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 23.35413!)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 23.35413!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(157.2917!, 55.20834!)
         Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
@@ -308,7 +308,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel10
         '
         Me.XrLabel10.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 264.6041!)
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(0!, 264.6041!)
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel10.SizeF = New System.Drawing.SizeF(178.1666!, 22.99999!)
@@ -323,7 +323,7 @@ Partial Public Class OrdenCompraAgricola
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 288.8542!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 288.8542!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(789.0001!, 22.0!)
@@ -462,7 +462,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel20
         '
         Me.XrLabel20.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 189.5833!)
+        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(0!, 189.5833!)
         Me.XrLabel20.Name = "XrLabel20"
         Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel20.SizeF = New System.Drawing.SizeF(195.875!, 22.99998!)
@@ -540,7 +540,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel14
         '
         Me.XrLabel14.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 161.5833!)
+        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(0!, 161.5833!)
         Me.XrLabel14.Name = "XrLabel14"
         Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel14.SizeF = New System.Drawing.SizeF(80.24998!, 22.99998!)
@@ -566,7 +566,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel9
         '
         Me.XrLabel9.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 108.5417!)
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(0!, 108.5417!)
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel9.SizeF = New System.Drawing.SizeF(178.1666!, 22.99999!)
@@ -578,7 +578,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel7
         '
         Me.XrLabel7.Font = New System.Drawing.Font("Arial", 8.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 78.125!)
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(0!, 78.125!)
         Me.XrLabel7.Name = "XrLabel7"
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel7.SizeF = New System.Drawing.SizeF(336.6876!, 22.99999!)
@@ -614,7 +614,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel6
         '
         Me.XrLabel6.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 23.91669!)
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(0!, 23.91669!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel6.SizeF = New System.Drawing.SizeF(178.1666!, 22.99999!)
@@ -649,7 +649,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel25
         '
         Me.XrLabel25.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 9.999974!)
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(0!, 9.999974!)
         Me.XrLabel25.Name = "XrLabel25"
         Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel25.SizeF = New System.Drawing.SizeF(157.2917!, 22.99999!)
@@ -662,7 +662,7 @@ Partial Public Class OrdenCompraAgricola
         '
         Me.XrLabel26.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel26.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 66.24998!)
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(0!, 66.24998!)
         Me.XrLabel26.Name = "XrLabel26"
         Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel26.SizeF = New System.Drawing.SizeF(298.5627!, 22.99998!)
@@ -675,7 +675,7 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel27
         '
         Me.XrLabel27.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 89.24993!)
+        Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(0!, 89.24993!)
         Me.XrLabel27.Name = "XrLabel27"
         Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel27.SizeF = New System.Drawing.SizeF(298.5627!, 17.79167!)
@@ -687,19 +687,19 @@ Partial Public Class OrdenCompraAgricola
         'XrLabel28
         '
         Me.XrLabel28.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel28.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 108.0415!)
+        Me.XrLabel28.LocationFloat = New DevExpress.Utils.PointFloat(0!, 108.0415!)
         Me.XrLabel28.Name = "XrLabel28"
         Me.XrLabel28.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel28.SizeF = New System.Drawing.SizeF(298.5627!, 22.99999!)
         Me.XrLabel28.StylePriority.UseFont = False
         Me.XrLabel28.StylePriority.UseTextAlignment = False
-        Me.XrLabel28.Text = "NOMBRE: JOEL ANTONIO MORAN OLMOS"
+        Me.XrLabel28.Text = "NOMBRE: MIGUEL RAFAEL PANIAGUA CIENFUEGO"
         Me.XrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel29
         '
         Me.XrLabel29.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrLabel29.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 131.0416!)
+        Me.XrLabel29.LocationFloat = New DevExpress.Utils.PointFloat(0!, 131.0416!)
         Me.XrLabel29.Name = "XrLabel29"
         Me.XrLabel29.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel29.SizeF = New System.Drawing.SizeF(55.85435!, 23.0!)
@@ -723,7 +723,7 @@ Partial Public Class OrdenCompraAgricola
         'xrObservaciones1
         '
         Me.xrObservaciones1.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.xrObservaciones1.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 219.375!)
+        Me.xrObservaciones1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 219.375!)
         Me.xrObservaciones1.Name = "xrObservaciones1"
         Me.xrObservaciones1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.xrObservaciones1.SizeF = New System.Drawing.SizeF(141.7083!, 23.0!)
@@ -750,7 +750,7 @@ Partial Public Class OrdenCompraAgricola
         '
         Me.xrLugarEntrega1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.xrLugarEntrega1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.xrLugarEntrega1.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 242.3749!)
+        Me.xrLugarEntrega1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 242.3749!)
         Me.xrLugarEntrega1.Name = "xrLugarEntrega1"
         Me.xrLugarEntrega1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.xrLugarEntrega1.SizeF = New System.Drawing.SizeF(125.0416!, 23.0!)
@@ -792,7 +792,7 @@ Partial Public Class OrdenCompraAgricola
         '
         Me.xrContacto1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.xrContacto1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.xrContacto1.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 265.3751!)
+        Me.xrContacto1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 265.3751!)
         Me.xrContacto1.Name = "xrContacto1"
         Me.xrContacto1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.xrContacto1.SizeF = New System.Drawing.SizeF(80.24998!, 23.00002!)
@@ -807,7 +807,7 @@ Partial Public Class OrdenCompraAgricola
         Me.XrTable3.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable3.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(545.9478!, 0.0!)
+        Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(545.9478!, 0!)
         Me.XrTable3.Name = "XrTable3"
         Me.XrTable3.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3, Me.XrTableRow4, Me.XrTableRow5})
         Me.XrTable3.SizeF = New System.Drawing.SizeF(243.0521!, 75.0!)
@@ -957,7 +957,7 @@ Partial Public Class OrdenCompraAgricola
         'GroupHeader2
         '
         Me.GroupHeader2.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("ID_ORDEN", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        Me.GroupHeader2.HeightF = 0.0!
+        Me.GroupHeader2.HeightF = 0!
         Me.GroupHeader2.Name = "GroupHeader2"
         '
         'GroupFooter2

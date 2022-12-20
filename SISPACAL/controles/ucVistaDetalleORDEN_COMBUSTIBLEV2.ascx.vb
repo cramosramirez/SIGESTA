@@ -755,7 +755,12 @@ Partial Class controles_ucVistaDetalleORDEN_COMBUSTIBLEV2
             Dim lMotorista As MOTORISTA = (New cMOTORISTA).ObtenerMOTORISTA(Me.cbxMOTORISTA.Value)
             If lMotorista IsNot Nothing Then
                 Me.txtDUI.Text = lMotorista.DUI
-                Me.txtLICENCIA.Text = lMotorista.LICENCIA
+                If lMotorista.LICENCIA.Trim.Length <> 14 Then
+                    Me.txtLICENCIA.Text = Utilerias.RellenarIzquierda(lMotorista.LICENCIA.Trim, 14, "0")
+                Else
+                    Me.txtLICENCIA.Text = lMotorista.LICENCIA
+                End If
+
             End If
         End If
     End Sub
@@ -858,5 +863,9 @@ Partial Class controles_ucVistaDetalleORDEN_COMBUSTIBLEV2
                 End If
             End If
         End If
+    End Sub
+
+    Protected Sub cbxMOTORISTA_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxMOTORISTA.SelectedIndexChanged
+
     End Sub
 End Class

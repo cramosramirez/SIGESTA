@@ -38,8 +38,8 @@
     <ProductName>Sistema de Gestión y Administración - SIGESTA</ProductName>
     <PublisherName>INJIBOA</PublisherName>
     <SuiteName>SIGESTA</SuiteName>
-    <MinimumRequiredVersion>1.0.1.187</MinimumRequiredVersion>
-    <ApplicationRevision>188</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.1.191</MinimumRequiredVersion>
+    <ApplicationRevision>192</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

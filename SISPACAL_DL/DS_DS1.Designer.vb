@@ -12994,23 +12994,15 @@ Partial Public Class DS_DS1
             MyBase.Columns.Add(Me.columnCODIPROVEE)
             Me.columnCODISOCIO.ReadOnly = true
             Me.columnCODIPROVEEDOR.AllowDBNull = false
-            Me.columnCODIPROVEEDOR.MaxLength = 10
             Me.columnCODCOOPERATIVA.ReadOnly = true
-            Me.columnCODCOOPERATIVA.MaxLength = 10
             Me.columnCOOPERATIVA.ReadOnly = true
             Me.columnCOOPERATIVA.MaxLength = 73
-            Me.columnNOMBRES_PROVEEDOR.MaxLength = 36
-            Me.columnAPELLIDOS_PROVEEDOR.MaxLength = 36
-            Me.columnCODILOTE.MaxLength = 5
-            Me.columnNOMBLOTE.MaxLength = 60
             Me.columnNETOTONEL.ReadOnly = true
             Me.columnREND_REAL.ReadOnly = true
             Me.columnAZUCAR_CATORCENA_REAL.ReadOnly = true
             Me.columnPAGO_CATORCENA_REAL.ReadOnly = true
             Me.columnVIP.ReadOnly = true
-            Me.columnNOMBRE_ZAFRA.MaxLength = 200
             Me.columnCODIPROVEE.ReadOnly = true
-            Me.columnCODIPROVEE.MaxLength = 6
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -35229,13 +35221,12 @@ Namespace DS_DS1TableAdapters
                 "ELSE B.NETOTONEL "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS TONEL_ALMIDON_JUGO,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"(B.NETOTONEL*(SELECT D.DEXTRA"& _ 
                 "NA FROM DATOS_LABORATORIO D WHERE D.ID_ANALISIS = A.ID_ANALISIS)) AS TDEXTRANA,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN (SELECT D.DEXTRANA FROM DATOS_LABORATORIO D WHERE D.ID_ANALISI"& _ 
                 "S = A.ID_ANALISIS) IS NULL THEN 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE B.NETOTONEL "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS TONEL_CON_DEXT"& _ 
-                "RANA,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"(B.NETOTONEL*E.HORAS_QUEMA) AS THORAS_QUEMA,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN E.HORA"& _ 
-                "S_QUEMA IS NULL THEN 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE B.NETOTONEL "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS TONEL_HORAS_QUEMA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"FROM "& _ 
-                "ANALISIS A, ENVIO E, BASCULA B, ZAFRA Z"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE E.ID_ENVIO = A.ID_ENVIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND E."& _ 
-                "ID_ENVIO = B.ID_ENVIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND E.ID_ZAFRA = Z.ID_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND NOT A.AZUCAR_CALC2 IS"& _ 
-                " NULL AND NOT B.NETOTONEL IS NULL AND B.NETOTONEL > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND Z.ID_ZAFRA = @ID_ZAF"& _ 
-                "RA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&") T"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE FECHA_CORTE BETWEEN @FECHA1 AND @FECHA2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY ID_ZAFRA, NOMBR"& _ 
-                "E_ZAFRA, FECHA_CORTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY FECHA_CORTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+                "RANA,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"(B.NETOTONEL*E.HORAS_QUEMA) AS THORAS_QUEMA,"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"CASE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"WHEN ISNULL"& _ 
+                "(E.HORAS_QUEMA, 0) = 0 THEN 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"ELSE B.NETOTONEL "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"END AS TONEL_HORAS_QUEMA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"FROM ANALISIS A, ENVIO E, BASCULA B, ZAFRA Z"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"WHERE E.ID_ENVIO = A.ID_ENVIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(9)&"AND E.ID_ENVIO = B.ID_ENVIO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND E.ID_ZAFRA = Z.ID_ZAFRA "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND NOT A.AZUCAR_C"& _ 
+                "ALC2 IS NULL AND NOT B.NETOTONEL IS NULL AND B.NETOTONEL > 0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(9)&"AND Z.ID_ZAFRA = "& _ 
+                "@ID_ZAFRA"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&") T"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE FECHA_CORTE BETWEEN @FECHA1 AND @FECHA2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY ID_ZAFRA"& _ 
+                ", NOMBRE_ZAFRA, FECHA_CORTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY FECHA_CORTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FECHA1", Global.System.Data.SqlDbType.[Variant], 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "FECHA_CORTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FECHA2", Global.System.Data.SqlDbType.[Variant], 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "FECHA_CORTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

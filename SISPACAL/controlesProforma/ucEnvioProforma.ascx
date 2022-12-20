@@ -484,12 +484,24 @@
                                                    <td>
                                                        <dx:ASPxCheckBox ID="chkBarrido" Text="BARRIDO"  runat="server"></dx:ASPxCheckBox>
                                                    </td>
-                                                   <td>
-                                                       <dx:ASPxCheckBox ID="chkPrimerEnvioTurno" Text="PRIMER ENVIO DEL TURNO"  runat="server"></dx:ASPxCheckBox>
-                                                   </td>
-                                                   <td>
-                                                       <dx:ASPxCheckBox ID="chkUltimoEnvioTurno" Text="ULTIMO ENVIO DEL TURNO"  runat="server"></dx:ASPxCheckBox>
-                                                   </td>
+                                                   <th colspan="7">
+                                                       <table>
+                                                           <tr>
+                                                               <td><dx:ASPxLabel ID="ASPxLabel29" runat="server" Text="COD. MONITOR:" /></td>
+                                                               <td>
+                                                                   <dx:ASPxTextBox ID="txtCOD_MONITOR" Font-Bold="true" runat="server" Width="100px">
+                                                                     <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                    </dx:ASPxTextBox>
+                                                               </td>
+                                                               <td><dx:ASPxLabel ID="ASPxLabel30" runat="server" Text="COD. FRENTE QUERQUEO:" /></td>
+                                                               <td>
+                                                                   <dx:ASPxTextBox ID="txtCOD_FRENTE_QUERQUEO" Font-Bold="true" runat="server" Width="100px">
+                                                                     <DisabledStyle BackColor="WhiteSmoke" ForeColor="Black"></DisabledStyle>
+                                                                    </dx:ASPxTextBox>
+                                                               </td>
+                                                           </tr>
+                                                       </table>
+                                                   </th>
                                                </tr>                                          
                                                <tr>
                                                    <td></td>
@@ -502,6 +514,16 @@
                                                         </dx:ASPxComboBox>                                                       
                                                    </th>
                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                       <dx:ASPxCheckBox ID="chkPrimerEnvioTurno" Text="PRIMER ENVIO DEL TURNO"  runat="server"></dx:ASPxCheckBox>
+                                                   </td>
+                                                   <td>
+                                                       <dx:ASPxCheckBox ID="chkUltimoEnvioTurno" Text="ULTIMO ENVIO DEL TURNO"  runat="server"></dx:ASPxCheckBox>
+                                                   </td>
+                                                </tr>
                                             </table>
                                     
         </td>

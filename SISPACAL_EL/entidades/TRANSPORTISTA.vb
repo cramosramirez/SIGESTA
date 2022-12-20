@@ -184,8 +184,8 @@
     End Property 
 
     Private _TELEFONO As String
-    <Column(Name:="Telefono", Storage:="TELEFONO", DbType:="VARCHAR(10)", Id:=False), _
-     DataObjectField(False, False, True, 10)> _
+    <Column(Name:="Telefono", Storage:="TELEFONO", DBType:="VARCHAR(100)", Id:=False),
+     DataObjectField(False, False, True, 100)>
     Public Property TELEFONO() As String
         Get
             Return _TELEFONO

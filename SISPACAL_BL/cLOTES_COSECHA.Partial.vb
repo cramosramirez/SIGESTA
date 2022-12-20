@@ -413,4 +413,15 @@
 
     End Function
 
+    Public Function Actualizar_LOTES_COSECHA_Import_Excel(ByVal ID_ZAFRA As Integer, ByVal ID_ENCA As Integer) As String
+        Try
+            Return mDb.Actualizar_LOTES_COSECHA_Import_Excel(ID_ZAFRA, ID_ENCA)
+
+        Catch ex As Exception
+            Me.sError = ex.Message
+            ExceptionManager.Publish(ex)
+            Return Me.sError
+        End Try
+    End Function
+
 End Class

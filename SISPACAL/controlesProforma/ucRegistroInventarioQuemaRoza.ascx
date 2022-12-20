@@ -100,7 +100,7 @@
                         VerCONTRATO="false" VerFECHA_ROZA="false" VerREND_COSECHA="false" VerMZ_CENSO="false" VerTONEL_MZ_CENSO="false" VerTONEL_CENSO="false"
                         VerTONEL_SEMILLA="false" VerTONEL_ENTREGADA="false" VerTONEL_SALDO_VAR="false" VerTONEL_ENTREGAR="false"
                         VerFIN_LOTE="false" VerULTIMO_MADURANTE="false" VerULTIMA_FECHA_MADURANTE="false"                    
-                        PermitirRowHotTrack="false" runat="server"
+                        PermitirRowHotTrack="false" runat="server" PermitirFilaDeFiltro="true"
                         PermitirEditar="false" PermitirEliminar="false" 
                         PermitirVistaControlQuema="true" PermitirVistaControlRoza="true" MostrarUnaPagina="true"
                 ></uc1:ucListaLOTES_COSECHA>                

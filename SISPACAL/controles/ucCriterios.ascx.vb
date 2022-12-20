@@ -1154,7 +1154,10 @@ Partial Class controles_ucCriterios
 
 
     Protected Sub ddlZAFRAID_ZAFRA_SelectedIndexChanged(sender As Object, e As System.EventArgs) Handles ddlZAFRAID_ZAFRA.SelectedIndexChanged
+        Dim lZafra As ZAFRA
         Dim lCatorcena As CATORCENA_ZAFRA
+
+        lZafra = (New cZAFRA).ObtenerZAFRA(ddlZAFRAID_ZAFRA.SelectedValue)
         Me.ddlCATORCENA_ZAFRA1.RecuperarPorZAFRA(ddlZAFRAID_ZAFRA.SelectedValue, True, False)
         Me.ddlPLAN_CATORCENA1.RecuperarPorZAFRA(ddlZAFRAID_ZAFRA.SelectedValue)
         Me.ddlCORTE_CATORCENA_ZAFRA.RecuperarCatorcenaActiva(ddlZAFRAID_ZAFRA.SelectedValue)
@@ -1164,6 +1167,11 @@ Partial Class controles_ucCriterios
         Me.ddlDIA_ZAFRA_INI.RecuperarPorZAFRA(ddlZAFRAID_ZAFRA.SelectedValue)
         Me.ddlDIA_ZAFRA_FIN.RecuperarPorZAFRA(ddlZAFRAID_ZAFRA.SelectedValue)
         Me.ddlDIA_ZAFRA_FIN.SelectedIndex = Me.ddlDIA_ZAFRA_FIN.Items.Count - 1
+
+        If lZafra IsNot Nothing AndAlso Not lZafra.ACTIVA Then
+            Me.txtFECHA_INICIAL.Text = Format(lZafra.FECHA_INICIO, "dd/MM/yyyy")
+            Me.txtFECHA_FINAL.Text = Format(lZafra.FECHA_FINAL, "dd/MM/yyyy")
+        End If
     End Sub
 
     Protected Sub ddlPLAN_CATORCENA1_SelectedIndexChanged(sender As Object, e As System.EventArgs) Handles ddlPLAN_CATORCENA1.SelectedIndexChanged

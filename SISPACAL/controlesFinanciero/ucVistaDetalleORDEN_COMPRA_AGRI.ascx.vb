@@ -210,7 +210,7 @@ Partial Class controles_ucVistaDetalleORDEN_COMPRA_AGRI
         Me.txtNIT.ClientEnabled = False
         Me.txtNRC.ClientEnabled = False
         Me.txtACTIVIDAD.ClientEnabled = False
-        Me.cbxZAFRA.ClientEnabled = False
+        Me.cbxZAFRA.ClientEnabled = _nuevo
         Me.speNUM_SOLICITUD.ClientEnabled = False
         Me.cbxCONDICION_COMPRA.ClientEnabled = False
     End Sub

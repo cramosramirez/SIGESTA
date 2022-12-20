@@ -169,10 +169,13 @@
     <Compile Include="cENVIO.vb" />
     <Compile Include="cENVIO_COSECHA_BANDA.vb" />
     <Compile Include="cENVIO_FACT.vb" />
+    <Compile Include="cENVIO_MONI_QQ.vb" />
     <Compile Include="cEQUIPO_MEDICION.Partial.vb" />
     <Compile Include="cEQUIPO_MEDICION.vb" />
     <Compile Include="cESTICANA.Partial.vb" />
     <Compile Include="cESTICANA.vb" />
+    <Compile Include="cESTICANA_XLS_DETA.vb" />
+    <Compile Include="cESTICANA_XLS_ENCA.vb" />
     <Compile Include="cFechaHora.vb" />
     <Compile Include="cFILTRO_CANTON.Partial.vb" />
     <Compile Include="cFILTRO_CANTON.vb" />
@@ -195,6 +198,8 @@
     <Compile Include="cMAESTRO_LOTES.Partial.vb" />
     <Compile Include="cMAESTRO_LOTES.vb" />
     <Compile Include="cMapa.vb" />
+    <Compile Include="cMONITOR_CAL.Partial.vb" />
+    <Compile Include="cMONITOR_CAL.vb" />
     <Compile Include="cMOTIVO_VARIACION.vb" />
     <Compile Include="cMOTORISTA.Partial.vb" />
     <Compile Include="cMOTORISTA.vb" />
@@ -246,6 +251,8 @@
     <Compile Include="cPROVEEDOR_CARGA.vb" />
     <Compile Include="cPROVEEDOR_CODIGOREL.vb" />
     <Compile Include="cPROVEEDOR_COMBUSTIBLE.vb" />
+    <Compile Include="cPROVEEDOR_QUERQUEO.Partial.vb" />
+    <Compile Include="cPROVEEDOR_QUERQUEO.vb" />
     <Compile Include="cPROVEEDOR_ROZA.Partial.vb" />
     <Compile Include="cPROVEEDOR_ROZA.vb" />
     <Compile Include="cRANGO_COMPENSACION.vb" />

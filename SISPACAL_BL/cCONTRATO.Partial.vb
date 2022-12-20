@@ -211,5 +211,13 @@
         End Try
     End Function
 
+    Public Function ACTUALIZAR_LOTES_COSECHA_DE_CONTRATOS(ByVal CODICONTRATO As String) As String
+        Try
+            Return mDb.ACTUALIZAR_LOTES_COSECHA_DE_CONTRATOS(CODICONTRATO)
 
+        Catch ex As Exception
+            ExceptionManager.Publish(ex)
+            Return ex.Message
+        End Try
+    End Function
 End Class

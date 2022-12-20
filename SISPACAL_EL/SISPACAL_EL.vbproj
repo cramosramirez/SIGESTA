@@ -134,7 +134,10 @@
     <Compile Include="entidades\DIA_ZAFRA.Partial.vb" />
     <Compile Include="entidades\ENVIO_COSECHA_BANDA.vb" />
     <Compile Include="entidades\ENVIO_FACT.vb" />
+    <Compile Include="entidades\ENVIO_MONI_QQ.vb" />
     <Compile Include="entidades\ESTICANA.vb" />
+    <Compile Include="entidades\ESTICANA_XLS_DETA.vb" />
+    <Compile Include="entidades\ESTICANA_XLS_ENCA.vb" />
     <Compile Include="entidades\FILTRO_ORDEN_ROZA.vb" />
     <Compile Include="entidades\Financiero\CCF_DETA.Partial.vb" />
     <Compile Include="entidades\Financiero\CCF_DETA.vb" />
@@ -211,6 +214,7 @@
     <Compile Include="entidades\LOTE_CARGADORA.vb" />
     <Compile Include="entidades\MAESTRO_LOTES.Partial.vb" />
     <Compile Include="entidades\MAESTRO_LOTES.vb" />
+    <Compile Include="entidades\MONITOR_CAL.vb" />
     <Compile Include="entidades\MOTIVO_VARIACION.vb" />
     <Compile Include="entidades\MOTORISTA.Partial.vb" />
     <Compile Include="entidades\MOTORISTA_VEHICULO.vb" />
@@ -255,6 +259,7 @@
     <Compile Include="entidades\PROVEEDOR_CARGA.vb" />
     <Compile Include="entidades\PROVEEDOR_CODIGOREL.vb" />
     <Compile Include="entidades\PROVEEDOR_COMBUSTIBLE.vb" />
+    <Compile Include="entidades\PROVEEDOR_QUERQUEO.vb" />
     <Compile Include="entidades\PROVEEDOR_ROZA.Partial.vb" />
     <Compile Include="entidades\PROVEEDOR_ROZA.vb" />
     <Compile Include="entidades\ProyFinan\PROYFIN_ING.vb" />
@@ -411,8 +416,11 @@
     <Compile Include="listas\ListaDISTRIBUCION_DESCTO.vb" />
     <Compile Include="listas\ListaENVIO_COSECHA_BANDA.vb" />
     <Compile Include="listas\ListaENVIO_FACT.vb" />
+    <Compile Include="listas\ListaENVIO_MONI_QQ.vb" />
     <Compile Include="listas\ListaEQUIPO_MEDICION.vb" />
     <Compile Include="listas\ListaESTICANA.vb" />
+    <Compile Include="listas\ListaESTICANA_XLS_DETA.vb" />
+    <Compile Include="listas\ListaESTICANA_XLS_ENCA.vb" />
     <Compile Include="listas\ListaFILTRO_CANTON.vb" />
     <Compile Include="listas\ListaFILTRO_ORDEN_ROZA.vb" />
     <Compile Include="listas\ListaGRUPO_DESCUENTOS.vb" />
@@ -424,6 +432,7 @@
     <Compile Include="listas\ListaLOTES_TRASPASO.vb" />
     <Compile Include="listas\ListaLOTE_CARGADORA.vb" />
     <Compile Include="listas\ListaMAESTRO_LOTES.vb" />
+    <Compile Include="listas\ListaMONITOR_CAL.vb" />
     <Compile Include="listas\ListaMOTIVO_VARIACION.vb" />
     <Compile Include="listas\ListaMUNICIPIO.vb" />
     <Compile Include="listas\ListaNIVEL_HUMEDAD.vb" />
@@ -449,6 +458,7 @@
     <Compile Include="listas\ListaPROVEEDOR_CARGA.vb" />
     <Compile Include="listas\ListaPROVEEDOR_CODIGOREL.vb" />
     <Compile Include="listas\ListaPROVEEDOR_COMBUSTIBLE.vb" />
+    <Compile Include="listas\ListaPROVEEDOR_QUERQUEO.vb" />
     <Compile Include="listas\ListaPROVEEDOR_ROZA.vb" />
     <Compile Include="listas\ListaRANGO_COMPENSACION.vb" />
     <Compile Include="listas\ListaRECIBO_CANA_ANULADO.vb" />

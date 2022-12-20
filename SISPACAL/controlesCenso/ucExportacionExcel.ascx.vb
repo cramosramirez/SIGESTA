@@ -267,11 +267,18 @@ Partial Class controlesCenso_ucExportacionExcel
         Dim lLotesCosecha As LOTES_COSECHA
         Dim bLotesCosecha As New cLOTES_COSECHA
         Dim sAccesLote As String
+        Dim sZona As String
         Dim lLote As LOTES
         Dim bLotes As New cLOTES
         Dim lLoteGestion As LOTES_COSECHA_GESTION
         Dim lstLoteGestion As listaLOTES_COSECHA_GESTION
         Dim bLoteGestion As New cLOTES_COSECHA_GESTION
+        Dim bEstiXlsEnca As New cESTICANA_XLS_ENCA
+        Dim bEstiXlsDeta As New cESTICANA_XLS_DETA
+        Dim lEstiXlsEnca As ESTICANA_XLS_ENCA
+        Dim lEstiXlsDeta As ESTICANA_XLS_DETA
+        Dim idEncaEstiXls As Integer
+        Dim iConta As Integer = 0
 
         Try
             libro = New XLWorkbook(archivo)
@@ -287,70 +294,87 @@ Partial Class controlesCenso_ucExportacionExcel
             listaCols = Me.ObtenerColumnasProcesar(z1, z2, filaEnca)
             iColLlave = listaCols(Variables.ACCESLOTE)
 
+            'Crear encabezado de importación
+            '*******************************
+            lEstiXlsEnca = New ESTICANA_XLS_ENCA
+            lEstiXlsEnca.ID_ENCA = 0
+            lEstiXlsEnca.FECHA_CARGA = cFechaHora.ObtenerFecha
+            lEstiXlsEnca.NOMBRE_ARCHIVO = archivo
+            lEstiXlsEnca.FECHA_CREA = cFechaHora.ObtenerFechaHora
+            lEstiXlsEnca.USUARIO_CREA = Me.ObtenerUsuario
+            If bEstiXlsEnca.ActualizarESTICANA_XLS_ENCA(lEstiXlsEnca) > 0 Then
+                idEncaEstiXls = lEstiXlsEnca.ID_ENCA
+            End If
+            '*******************************
+
             For Each fila As IXLRangeRow In hojaDatos.Rows
-                sAccesLote = fila.Cell(iColLlave).Value.ToString
-                If Not fila.IsEmpty AndAlso Not String.IsNullOrEmpty(sAccesLote) Then
-                    lLotesCosecha = bLotesCosecha.ObtenerLOTES_COSECHAPorLOTE_ZAFRA(sAccesLote, idZafra)
-                    lLote = bLotes.ObtenerLOTES(sAccesLote)
-                    If lLotesCosecha IsNot Nothing Then
-                        lLotesCosecha.MZ_CENSO = fila.Cell(listaCols(Variables.MZ_ESTICANA)).Value
-                        lLotesCosecha.TONEL_MZ_CENSO = fila.Cell(listaCols(Variables.TC_MZ_ESTICANA)).Value
-                        lLotesCosecha.TONEL_CENSO = fila.Cell(listaCols(Variables.TOTAL_TC_ESTICANA)).Value
-                        If lLotesCosecha.TONEL_CENSO > 0 Then
-                            lLotesCosecha.FIN_LOTE = False
-                        End If
-                        bLotesCosecha.ActualizarLOTES_COSECHA(lLotesCosecha)
-
-                        lLote.ZONA = fila.Cell(listaCols(Variables.ZONA)).Value
-                        bLotes.ActualizarLOTES(lLote)
-
-                        lstLoteGestion = bLoteGestion.ObtenerLOTES_COSECHA_GESTIONPorLOTE_ZAFRA(sAccesLote, idZafra)
-                        If lstLoteGestion IsNot Nothing AndAlso lstLoteGestion.Count > 0 Then
-                            For i As Integer = 0 To lstLoteGestion.Count - 1
-                                bLoteGestion.EliminarLOTES_COSECHA_GESTION(lstLoteGestion(i).ID_LOTE_COSE_GESTION)
-                            Next
-                        End If
-                        lLoteGestion = New LOTES_COSECHA_GESTION
-                        lLoteGestion.ID_LOTE_COSE_GESTION = 0
-                        lLoteGestion.ACCESLOTE = sAccesLote
-                        lLoteGestion.ID_LOTES_COSECHA = lLotesCosecha.ID_LOTES_COSECHA
-                        lLoteGestion.OB_PROD_INTERNA = fila.Cell(listaCols(Variables.OBSERVACIONES_PRODUCCION_INTERNA_GRUPO_JD)).Value
-                        lLoteGestion.OB_PERSO_TEC = fila.Cell(listaCols(Variables.OBSERVACIONES_PERSONAL_TECNICO)).Value
-                        If IsNumeric(fila.Cell(listaCols(Variables.AREA_PERDIDA)).Value) Then
-                            lLoteGestion.MZ_PERDIDA = Convert.ToDecimal(fila.Cell(listaCols(Variables.AREA_PERDIDA)).Value)
-                        End If
-                        If IsNumeric(fila.Cell(listaCols(Variables.TC_PERDIDAS)).Value) Then
-                            lLoteGestion.TC_PERDIDA = Convert.ToDecimal(fila.Cell(listaCols(Variables.TC_PERDIDAS)).Value)
-                        End If
-                        If IsNumeric(fila.Cell(listaCols(Variables.RENOVACION)).Value) Then
-                            lLoteGestion.RENOVACION = Convert.ToDecimal(fila.Cell(listaCols(Variables.RENOVACION)).Value)
-                        End If
-                        If IsNumeric(fila.Cell(listaCols(Variables.SIEMBRAS_NUEVAS)).Value) Then
-                            lLoteGestion.SIEMBRA_NUEVA = Convert.ToDecimal(fila.Cell(listaCols(Variables.SIEMBRAS_NUEVAS)).Value)
-                        End If
-                        If IsNumeric(fila.Cell(listaCols(Variables.PROYECCION_DE_SIEMBRA)).Value) Then
-                            lLoteGestion.SIEMBRA_PROYE = Convert.ToDecimal(fila.Cell(listaCols(Variables.PROYECCION_DE_SIEMBRA)).Value)
-                        End If
-                        If IsNumeric(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_MZ)).Value) Then
-                            lLoteGestion.MZ_PENDIENTE = Convert.ToDecimal(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_MZ)).Value)
-                        End If
-                        If IsNumeric(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_TC)).Value) Then
-                            lLoteGestion.TC_PENDIENTE = Convert.ToDecimal(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_TC)).Value)
-                        End If
-                        lLoteGestion.TIPO_ROZA = fila.Cell(listaCols(Variables.TIPO_ROZA)).Value.ToString
-                        lLoteGestion.TIPO_TRANSPORTE = fila.Cell(listaCols(Variables.TIPO_TRANSPORTE)).Value.ToString
-                        lLoteGestion.TIPO_QUEMA = fila.Cell(listaCols(Variables.TIPO_QUEMA)).Value.ToString
-                        lLoteGestion.MAD_APLICAR = fila.Cell(listaCols(Variables.MADURANTE_APLICADO)).Value.ToString
-                        If IsNumeric(fila.Cell(listaCols(Variables.MADURANTE_APLICADO_DOSIS)).Value) Then
-                            lLoteGestion.MAD_DOSIS = Convert.ToDecimal(fila.Cell(listaCols(Variables.MADURANTE_APLICADO_DOSIS)).Value)
-                        End If
-                        If IsDate(fila.Cell(listaCols(Variables.FECHA_APLICACION)).Value) Then
-                            lLoteGestion.MAD_FECHA_APLI = Convert.ToDateTime(fila.Cell(listaCols(Variables.FECHA_APLICACION)).Value)
-                        End If
-                        bLoteGestion.ActualizarLOTES_COSECHA_GESTION(lLoteGestion)
+                iConta = iConta + 1
+                sAccesLote = fila.Cell(iColLlave).Value.ToString.Trim
+                sZona = fila.Cell(listaCols(Variables.ZONA)).Value.ToString.Trim
+                If Not fila.IsEmpty AndAlso (Not String.IsNullOrEmpty(sZona)) AndAlso iConta > 1 Then
+                    lEstiXlsDeta = New ESTICANA_XLS_DETA
+                    lEstiXlsDeta.ID_DETA = 0
+                    lEstiXlsDeta.ID_ENCA = idEncaEstiXls
+                    lEstiXlsDeta.ACCESLOTE = sAccesLote
+                    lEstiXlsDeta.ZONA = sZona
+                    If IsNumeric(fila.Cell(listaCols(Variables.MZ_ESTICANA)).Value) Then
+                        lEstiXlsDeta.MZ = Convert.ToDecimal(fila.Cell(listaCols(Variables.MZ_ESTICANA)).Value)
+                    Else
+                        lEstiXlsDeta.MZ = 0
                     End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.TC_MZ_ESTICANA)).Value) Then
+                        lEstiXlsDeta.TC_MZ = Convert.ToDecimal(fila.Cell(listaCols(Variables.TC_MZ_ESTICANA)).Value)
+                    Else
+                        lEstiXlsDeta.TC_MZ = 0
+                    End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.TOTAL_TC_ESTICANA)).Value) Then
+                        lEstiXlsDeta.TC = Convert.ToDecimal(fila.Cell(listaCols(Variables.TOTAL_TC_ESTICANA)).Value)
+                    Else
+                        lEstiXlsDeta.TC = 0
+                    End If
+                    lEstiXlsDeta.OB_PROD_INTERNA = fila.Cell(listaCols(Variables.OBSERVACIONES_PRODUCCION_INTERNA_GRUPO_JD)).Value.ToString.Trim
+                    lEstiXlsDeta.OB_PERSO_TEC = fila.Cell(listaCols(Variables.OBSERVACIONES_PERSONAL_TECNICO)).Value.ToString.Trim
+                    If IsNumeric(fila.Cell(listaCols(Variables.AREA_PERDIDA)).Value) Then
+                        lEstiXlsDeta.MZ_PERDIDA = Convert.ToDecimal(fila.Cell(listaCols(Variables.AREA_PERDIDA)).Value)
+                    End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.TC_PERDIDAS)).Value) Then
+                        lEstiXlsDeta.TC_PERDIDA = Convert.ToDecimal(fila.Cell(listaCols(Variables.TC_PERDIDAS)).Value)
+                    End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.RENOVACION)).Value) Then
+                        lEstiXlsDeta.RENOVACION = Convert.ToDecimal(fila.Cell(listaCols(Variables.RENOVACION)).Value)
+                    End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.SIEMBRAS_NUEVAS)).Value) Then
+                        lEstiXlsDeta.SIEMBRA_NUEVA = Convert.ToDecimal(fila.Cell(listaCols(Variables.SIEMBRAS_NUEVAS)).Value)
+                    End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.PROYECCION_DE_SIEMBRA)).Value) Then
+                        lEstiXlsDeta.SIEMBRA_PROYE = Convert.ToDecimal(fila.Cell(listaCols(Variables.PROYECCION_DE_SIEMBRA)).Value)
+                    End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_MZ)).Value) Then
+                        lEstiXlsDeta.MZ_PENDIENTE = Convert.ToDecimal(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_MZ)).Value)
+                    End If
+                    If IsNumeric(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_TC)).Value) Then
+                        lEstiXlsDeta.TC_PENDIENTE = Convert.ToDecimal(fila.Cell(listaCols(Variables.PENDIENTE_DE_CONTRATAR_TC)).Value)
+                    End If
+                    lEstiXlsDeta.TIPO_ROZA = fila.Cell(listaCols(Variables.TIPO_ROZA)).Value.ToString.Trim
+                    lEstiXlsDeta.TIPO_TRANSPORTE = fila.Cell(listaCols(Variables.TIPO_TRANSPORTE)).Value.ToString.Trim
+                    lEstiXlsDeta.TIPO_QUEMA = fila.Cell(listaCols(Variables.TIPO_QUEMA)).Value.ToString.Trim
+                    lEstiXlsDeta.MAD_APLICAR = fila.Cell(listaCols(Variables.MADURANTE_APLICADO)).Value.ToString.Trim
+                    If IsNumeric(fila.Cell(listaCols(Variables.MADURANTE_APLICADO_DOSIS)).Value) Then
+                        lEstiXlsDeta.MAD_DOSIS = Convert.ToDecimal(fila.Cell(listaCols(Variables.MADURANTE_APLICADO_DOSIS)).Value)
+                    End If
+                    If IsDate(fila.Cell(listaCols(Variables.FECHA_APLICACION)).Value) Then
+                        lEstiXlsDeta.MAD_FECHA_APLI = Convert.ToDateTime(fila.Cell(listaCols(Variables.FECHA_APLICACION)).Value)
+                    End If
+                    bEstiXlsDeta.ActualizarESTICANA_XLS_DETA(lEstiXlsDeta)
                 End If
             Next
+
+            Dim lRet As String = bLotesCosecha.Actualizar_LOTES_COSECHA_Import_Excel(idZafra, idEncaEstiXls)
+            If lRet <> "" Then
+                lRet = "Error en SP ACTUALIZAR_LOTES_COSECHA_IMPORT_EXCEL: " + lRet
+                lResultado = New KeyValuePair(Of Integer, String)(-1, lRet)
+                Return lResultado
+            End If
 
             lResultado = New KeyValuePair(Of Integer, String)(0, "Información subida al sistema exitosamente")
             Return lResultado

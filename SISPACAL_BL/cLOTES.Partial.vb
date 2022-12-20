@@ -333,9 +333,9 @@
             End If
 
             'Agrega o Actualiza registro en tabla Lotes Cosecha
-            If lRet <> -1 Then
-                lRet = GenerarLoteDeCosecha(aEntidad, EsTraspaso)
-            End If
+            'If lRet <> -1 Then
+            '    lRet = GenerarLoteDeCosecha(aEntidad, EsTraspaso)
+            'End If
             Return lRet
 
         Catch ex As Exception

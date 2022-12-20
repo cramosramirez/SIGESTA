@@ -132,6 +132,8 @@ Partial Class controlesProforma_ucEnvioProforma
             Me.hfucEnvioProforma.Add("ID_TIPOVEHIC", -1)
             Me.hfucEnvioProforma.Add("ES_QUERQUEO", False)
             Me.hfucEnvioProforma.Add("ES_BARRIDA", False)
+            Me.hfucEnvioProforma.Add("COD_MONITOR", "")
+            Me.hfucEnvioProforma.Add("COD_FRENTE_QUERQUEO", "")
 
             Me.ViewState("TIPO_OPERACION") = value
             If value = TipoOperacion.EmisionProforma Then
@@ -435,11 +437,16 @@ Partial Class controlesProforma_ucEnvioProforma
         Me.txtNOMBRE_MOCHADOR.ClientEnabled = False
         Me.txtNOMBRE_CHEQUERO.ClientEnabled = False
         Me.chkAUTOVOLTEO.ClientEnabled = False
+
+        Me.txtCOD_MONITOR.ClientEnabled = edicionRecepcionEdicion
+        Me.txtCOD_FRENTE_QUERQUEO.ClientEnabled = edicionRecepcionEdicion
     End Sub
 
     Public Function Actualizar() As String
         Dim sError As New StringBuilder
         Dim alDatos As New ArrayList
+        Dim idMonitor As Integer = -1
+        Dim idQR As Integer = -1
 
         mENVIO = New ENVIO
         If Me._nuevo Then
@@ -549,6 +556,22 @@ Partial Class controlesProforma_ucEnvioProforma
             End If
             If Me.cbxOPERADOR_TRACTOR1.Value IsNot Nothing AndAlso Me.cbxOPERADOR_TRACTOR2.Value IsNot Nothing AndAlso (Me.cbxOPERADOR_TRACTOR1.Value = Me.cbxOPERADOR_TRACTOR2.Value) Then
                 sError.AppendLine(" * El operador de tractor uno y dos no pueden ser el mismo.")
+            End If
+        End If
+        If Me.txtCOD_MONITOR.Text.Trim <> "" Then
+            Dim lstMonitor As listaMONITOR_CAL = (New cMONITOR_CAL).ObtenerListaPorCODISIS(Me.txtCOD_MONITOR.Text.Trim.ToUpper)
+            If lstMonitor IsNot Nothing AndAlso lstMonitor.Count > 0 Then
+                idMonitor = lstMonitor(0).ID_MONITOR
+            Else
+                sError.AppendLine(" * El codigo de monitor de calidad no existe.")
+            End If
+        End If
+        If Me.txtCOD_FRENTE_QUERQUEO.Text.Trim <> "" Then
+            Dim lstFrenteQR As listaPROVEEDOR_QUERQUEO = (New cPROVEEDOR_QUERQUEO).ObtenerListaPorCODISIS(Me.txtCOD_FRENTE_QUERQUEO.Text.Trim.ToString)
+            If lstFrenteQR IsNot Nothing AndAlso lstFrenteQR.Count > 0 Then
+                idQR = lstFrenteQR(0).ID_PROVEE_QQ
+            Else
+                sError.AppendLine(" * El codigo de frente de querqueo no existe.")
             End If
         End If
 
@@ -723,6 +746,25 @@ Partial Class controlesProforma_ucEnvioProforma
             End If
         End If
 
+        '*********************************************************************
+        'Generar registro de servicio: MONITOR DE CALIDAD Y FRENTE DE QUERQUEO
+
+        Dim listaSerMoniQQ As listaENVIO_MONI_QQ = (New cENVIO_MONI_QQ).ObtenerListaPorENVIO(mENVIO.ID_ENVIO)
+        Dim bSerMoniQQ As New cENVIO_MONI_QQ
+
+        If listaSerMoniQQ IsNot Nothing AndAlso listaSerMoniQQ.Count > 0 Then
+            For i As Integer = 0 To listaSerMoniQQ.Count - 1
+                bSerMoniQQ.EliminarENVIO_MONI_QQ(listaSerMoniQQ(i).ID_ENVIO_MQQ)
+            Next
+        End If
+        If idMonitor <> -1 OrElse idQR <> -1 Then
+            Dim lEntidadMoniQQ As New ENVIO_MONI_QQ
+            lEntidadMoniQQ.ID_ENVIO_MQQ = 0
+            lEntidadMoniQQ.ID_ENVIO = mENVIO.ID_ENVIO
+            lEntidadMoniQQ.ID_MONITOR = idMonitor
+            lEntidadMoniQQ.ID_PROVEE_QQ = idQR
+            bSerMoniQQ.ActualizarENVIO_MONI_QQ(lEntidadMoniQQ)
+        End If
 
         If Me.txtNOPROFORMA.Text <> "" Then
             If lProforma IsNot Nothing AndAlso lProforma.ID_ENVIO <> mENVIO.ID_ENVIO Then
@@ -940,6 +982,18 @@ Partial Class controlesProforma_ucEnvioProforma
             Me.chkAUTOVOLTEO.Checked = True
         Else
             Me.chkAUTOVOLTEO.Checked = False
+        End If
+
+        Dim lstEnvioMoniCalQQ As listaENVIO_MONI_QQ = (New cENVIO_MONI_QQ).ObtenerListaPorENVIO(mENVIO.ID_ENVIO)
+        If lstEnvioMoniCalQQ IsNot Nothing AndAlso lstEnvioMoniCalQQ.Count > 0 Then
+            If lstEnvioMoniCalQQ(0).ID_MONITOR > 0 Then
+                Dim lMonitor As MONITOR_CAL = (New cMONITOR_CAL).ObtenerMONITOR_CAL(lstEnvioMoniCalQQ(0).ID_MONITOR)
+                If lMonitor IsNot Nothing Then Me.txtCOD_MONITOR.Text = lMonitor.CODISIS
+            End If
+            If lstEnvioMoniCalQQ(0).ID_PROVEE_QQ > 0 Then
+                Dim lProveeQQ As PROVEEDOR_QUERQUEO = (New cPROVEEDOR_QUERQUEO).ObtenerPROVEEDOR_QUERQUEO(lstEnvioMoniCalQQ(0).ID_PROVEE_QQ)
+                If lProveeQQ IsNot Nothing Then Me.txtCOD_FRENTE_QUERQUEO.Text = lProveeQQ.CODISIS
+            End If
         End If
 
         lProformas = (New cPROFORMA).ObtenerListaPorENVIO(mENVIO.ID_ENVIO)
@@ -1874,6 +1928,8 @@ Partial Class controlesProforma_ucEnvioProforma
         Me.cbxOPERADOR_TRACTOR1.ClientEnabled = False
         Me.cbxOPERADOR_TRACTOR2.ClientEnabled = False
         Me.chkAUTOVOLTEO.ClientEnabled = False
+        Me.txtCOD_MONITOR.Text = ""
+        Me.txtCOD_FRENTE_QUERQUEO.Text = ""
     End Sub
 
     Protected Sub txtNROBOLETA_ValueChanged(sender As Object, e As System.EventArgs) Handles txtNROBOLETA.ValueChanged
@@ -2202,6 +2258,15 @@ Partial Class controlesProforma_ucEnvioProforma
                 lProveedores = New listaPROVEEDOR_ROZA
                 lProveedores.Add(lEntidad)
             End If
+        End If
+
+        If lProveedores IsNot Nothing AndAlso lProveedores.Count > 0 Then
+            For i As Integer = 0 To lProveedores.Count - 1
+                If Not Left(lProveedores(i).NOMBRE_PROVEEDOR_ROZA, 2) = "RZ" Then
+                    lProveedores(i).NOMBRE_PROVEEDOR_ROZA = lProveedores(i).CODIGO + " - " + lProveedores(i).NOMBRE_PROVEEDOR_ROZA.Trim + " " + lProveedores(i).APELLIDOS.Trim
+                End If
+            Next
+
         End If
 
         Me.cbxID_PROVEEDOR_ROZA.DataSource = lProveedores

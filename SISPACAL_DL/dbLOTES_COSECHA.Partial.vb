@@ -21,8 +21,15 @@
         Dim lEntidad As LOTES_COSECHA
         lEntidad = CType(aEntidad, LOTES_COSECHA)
 
+        Dim strSQL As New StringBuilder
 
-        Return ACTUALIZAR_LOTES_COSECHA_APP(lEntidad)
+
+        Dim args(0) As SqlParameter
+
+        strSQL.Append(Me.QueryUpdate(aEntidad, args, aTipoConcurrencia))
+
+        Return SqlHelper.ExecuteNonQuery(Me.cnnStr, CommandType.Text, strSQL.ToString(), args)
+        'Return ACTUALIZAR_LOTES_COSECHA_APP(lEntidad)
     End Function
 
     ''' -----------------------------------------------------------------------------
@@ -992,4 +999,25 @@
         Return ds
 
     End Function
+
+    Public Function Actualizar_LOTES_COSECHA_Import_Excel(ByVal ID_ZAFRA As Integer, ByVal ID_ENCA As Integer) As String
+        Dim lRet As Int32 = 0
+        Dim args(1) As SqlParameter
+        args(0) = New SqlParameter("@ID_ZAFRA", SqlDbType.Int)
+        args(0).Value = ID_ZAFRA
+
+        args(1) = New SqlParameter("@ID_ENCA", SqlDbType.Int)
+        args(1).Value = ID_ENCA
+
+        Try
+            SqlHelper.ExecuteNonQuery(Me.cnnStr, "ACTUALIZAR_LOTES_COSECHA_IMPORT_EXCEL", args)
+            Return ""
+
+        Catch ex As Exception
+            Return ex.Message.ToString
+        End Try
+
+        Return lRet
+    End Function
+
 End Class

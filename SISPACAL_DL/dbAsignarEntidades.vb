@@ -1,5 +1,103 @@
 Friend Module dbAsignarEntidades
 
+    Public Sub AsignarESTICANA_XLS_ENCA(ByVal dr As IDataReader, ByRef e As ESTICANA_XLS_ENCA, Optional ByVal aliasTabla As String = "")
+        If IsNothing(e) Then
+            e = New ESTICANA_XLS_ENCA
+        End If
+        If aliasTabla <> "" Then
+            aliasTabla = String.Format("{0}.", aliasTabla)
+        End If
+        e.ID_ENCA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_ENCA", aliasTabla))))
+        e.FECHA_CARGA = Convert.ToDateTime(ObtenerValor(dr.Item(String.Format("{0}FECHA_CARGA", aliasTabla))))
+        e.NOMBRE_ARCHIVO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NOMBRE_ARCHIVO", aliasTabla))))
+        e.USUARIO_CREA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}USUARIO_CREA", aliasTabla))))
+        e.FECHA_CREA = Convert.ToDateTime(ObtenerValor(dr.Item(String.Format("{0}FECHA_CREA", aliasTabla))))
+    End Sub
+
+    Public Sub AsignarESTICANA_XLS_DETA(ByVal dr As IDataReader, ByRef e As ESTICANA_XLS_DETA, Optional ByVal aliasTabla As String = "")
+        If IsNothing(e) Then
+            e = New ESTICANA_XLS_DETA
+        End If
+        If aliasTabla <> "" Then
+            aliasTabla = String.Format("{0}.", aliasTabla)
+        End If
+        e.ID_DETA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_DETA", aliasTabla))))
+        e.ID_ENCA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_ENCA", aliasTabla))))
+        e.ACCESLOTE = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}ACCESLOTE", aliasTabla))))
+        e.ZONA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}ZONA", aliasTabla))))
+        e.MZ = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}MZ", aliasTabla)), -1))
+        e.TC_MZ = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}TC_MZ", aliasTabla)), -1))
+        e.TC = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}TC", aliasTabla)), -1))
+        e.OB_PROD_INTERNA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}OB_PROD_INTERNA", aliasTabla))))
+        e.OB_PERSO_TEC = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}OB_PERSO_TEC", aliasTabla))))
+        e.MZ_PERDIDA = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}MZ_PERDIDA", aliasTabla)), -1))
+        e.TC_PERDIDA = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}TC_PERDIDA", aliasTabla)), -1))
+        e.RENOVACION = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}RENOVACION", aliasTabla)), -1))
+        e.SIEMBRA_NUEVA = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}SIEMBRA_NUEVA", aliasTabla)), -1))
+        e.SIEMBRA_PROYE = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}SIEMBRA_PROYE", aliasTabla)), -1))
+        e.MZ_PENDIENTE = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}MZ_PENDIENTE", aliasTabla)), -1))
+        e.TC_PENDIENTE = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}TC_PENDIENTE", aliasTabla)), -1))
+        e.TIPO_ROZA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TIPO_ROZA", aliasTabla))))
+        e.TIPO_TRANSPORTE = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TIPO_TRANSPORTE", aliasTabla))))
+        e.TIPO_QUEMA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TIPO_QUEMA", aliasTabla))))
+        e.MAD_APLICAR = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}MAD_APLICAR", aliasTabla))))
+        e.MAD_DOSIS = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}MAD_DOSIS", aliasTabla)), -1))
+        e.MAD_FECHA_APLI = Convert.ToDateTime(ObtenerValor(dr.Item(String.Format("{0}MAD_FECHA_APLI", aliasTabla))))
+    End Sub
+
+    Public Sub AsignarENVIO_MONI_QQ(ByVal dr As IDataReader, ByRef e As ENVIO_MONI_QQ, Optional ByVal aliasTabla As String = "")
+        If IsNothing(e) Then
+            e = New ENVIO_MONI_QQ
+        End If
+        If aliasTabla <> "" Then
+            aliasTabla = String.Format("{0}.", aliasTabla)
+        End If
+        e.ID_ENVIO_MQQ = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_ENVIO_MQQ", aliasTabla))))
+        e.ID_ENVIO = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_ENVIO", aliasTabla)), -1))
+        e.ID_MONITOR = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_MONITOR", aliasTabla)), -1))
+        e.ID_PROVEE_QQ = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_PROVEE_QQ", aliasTabla)), -1))
+    End Sub
+
+    Public Sub AsignarPROVEEDOR_QUERQUEO(ByVal dr As IDataReader, ByRef e As PROVEEDOR_QUERQUEO, Optional ByVal aliasTabla As String = "")
+        If IsNothing(e) Then
+            e = New PROVEEDOR_QUERQUEO
+        End If
+        If aliasTabla <> "" Then
+            aliasTabla = String.Format("{0}.", aliasTabla)
+        End If
+        e.ID_PROVEE_QQ = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_PROVEE_QQ", aliasTabla))))
+        e.ID_TIPO_PERSONA = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_TIPO_PERSONA", aliasTabla)), -1))
+        e.CODISIS = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODISIS", aliasTabla))))
+        e.NOMBRES = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NOMBRES", aliasTabla))))
+        e.APELLIDOS = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}APELLIDOS", aliasTabla))))
+        e.NIT = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NIT", aliasTabla))))
+        e.DUI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DUI", aliasTabla))))
+        e.NRC = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NRC", aliasTabla))))
+        e.DIRECCION = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DIRECCION", aliasTabla))))
+        e.TELEFONO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}TELEFONO", aliasTabla))))
+        e.CORREO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CORREO", aliasTabla))))
+        e.CODI_DEPTO = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_DEPTO", aliasTabla))))
+        e.CODI_MUNI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODI_MUNI", aliasTabla))))
+        e.USUARIO_CREA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}USUARIO_CREA", aliasTabla))))
+        e.FECHA_CREA = Convert.ToDateTime(ObtenerValor(dr.Item(String.Format("{0}FECHA_CREA", aliasTabla))))
+        e.USUARIO_ACT = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}USUARIO_ACT", aliasTabla))))
+        e.FECHA_ACT = Convert.ToDateTime(ObtenerValor(dr.Item(String.Format("{0}FECHA_ACT", aliasTabla))))
+    End Sub
+
+    Public Sub AsignarMONITOR_CAL(ByVal dr As IDataReader, ByRef e As MONITOR_CAL, Optional ByVal aliasTabla As String = "")
+        If IsNothing(e) Then
+            e = New MONITOR_CAL
+        End If
+        If aliasTabla <> "" Then
+            aliasTabla = String.Format("{0}.", aliasTabla)
+        End If
+        e.ID_MONITOR = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_MONITOR", aliasTabla))))
+        e.NOMBRES = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}NOMBRES", aliasTabla))))
+        e.DUI = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DUI", aliasTabla))))
+        e.DIRECCION = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}DIRECCION", aliasTabla))))
+        e.CODIEMP = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODIEMP", aliasTabla))))
+        e.CODISIS = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CODISIS", aliasTabla))))
+    End Sub
     Public Sub AsignarTIPO_PERSONA(ByVal dr As IDataReader, ByRef e As TIPO_PERSONA, Optional ByVal aliasTabla As String = "")
         If IsNothing(e) Then
             e = New TIPO_PERSONA
