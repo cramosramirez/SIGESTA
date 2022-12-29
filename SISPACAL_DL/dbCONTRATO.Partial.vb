@@ -154,6 +154,7 @@
         Dim arg As SqlParameter
         arg = New SqlParameter("@CODICONTRATO", SqlDbType.VarChar)
         arg.Value = CODICONTRATO
+        args.Add(arg)
 
         Try
             SqlHelper.ExecuteNonQuery(Me.cnnStr, CommandType.StoredProcedure, "ACTUALIZAR_LOTES_COSECHA_DE_CONTRATOS", args.ToArray)
@@ -172,6 +173,7 @@
         Dim arg As SqlParameter
         arg = New SqlParameter("@CODICONTRATO", SqlDbType.VarChar)
         arg.Value = CODICONTRATO
+        args.Add(arg)
 
         Try
             SqlHelper.ExecuteNonQuery(Me.cnnStr, CommandType.StoredProcedure, "ELIMINAR_LOTES_COSECHA_DE_CONTRATOS", args.ToArray)
