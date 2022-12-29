@@ -63,6 +63,8 @@ Partial Class frmPrincipalRibbon
         Me.btnImpresionComprobantePlanilla = New DevExpress.XtraBars.BarButtonItem()
         Me.btnArchivoComprobantesExcel = New DevExpress.XtraBars.BarButtonItem()
         Me.btnBRIX_POLPreCosecha = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnBRIX_POLZafra = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnPesoNetoTaraBascula2 = New DevExpress.XtraBars.BarButtonItem()
         Me.rbpcMantenimiento = New DevExpress.XtraBars.Ribbon.RibbonPageCategory()
         Me.rbpMantenimiento = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -78,7 +80,6 @@ Partial Class frmPrincipalRibbon
         Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.btnOtrosAnalisis = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnBRIX_POLZafra = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -87,9 +88,9 @@ Partial Class frmPrincipalRibbon
         Me.RibbonControl.AllowMinimizeRibbon = False
         Me.RibbonControl.ApplicationIcon = Global.SISPACAL.My.Resources.Resources.cana
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnPesoMuestraPreCosecha, Me.btnAnalisisPolBrixPreCosecha, Me.btnPesoNetoTaraBascula, Me.btnPesoMuestraCosecha, Me.btnAnalisisPolBrixCosecha, Me.btnDextranaCosecha, Me.btnMateriaExtranaCosecha, Me.btnReportesBascula, Me.btnEntregaCanaBasculaCorte, Me.btnEntregaCanaBascula, Me.btnReportesPlanilla, Me.btnDescuentosPlanilla, Me.btnGenerarPlantillaPlanilla, Me.btnCargarPlantillaPlanilla, Me.btnGenerarPHPlanilla, Me.btnImpresionesPlanilla, Me.btnChequesPlanilla, Me.btnArchivoEntregaCana, Me.btnReportesPreCosecha, Me.btnRegistroOrden, Me.btnNuevaOrdenPrecosecha, Me.btnGuardar, Me.btnEditar, Me.btnImprimir, Me.btnEliminar, Me.btnOrdenAnalisis, Me.btnNuevo, Me.btnFormulaDextrana, Me.btnObservaciones, Me.btnAcidezJugo, Me.btnObservaCategorias, Me.btnObservaResultadosPorCat, Me.BarButtonItem1, Me.btnAnalisisComplementarios, Me.btnRepPreCosechaDextrana, Me.btnRepPreCosechaAlmidon, Me.btnAnalisisAlmidonCosecha, Me.btnEmitirComprobantes, Me.btnControlComprobantes, Me.btnImpresionComprobantePlanilla, Me.btnArchivoComprobantesExcel, Me.btnBRIX_POLPreCosecha, Me.btnBRIX_POLZafra})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnPesoMuestraPreCosecha, Me.btnAnalisisPolBrixPreCosecha, Me.btnPesoNetoTaraBascula, Me.btnPesoMuestraCosecha, Me.btnAnalisisPolBrixCosecha, Me.btnDextranaCosecha, Me.btnMateriaExtranaCosecha, Me.btnReportesBascula, Me.btnEntregaCanaBasculaCorte, Me.btnEntregaCanaBascula, Me.btnReportesPlanilla, Me.btnDescuentosPlanilla, Me.btnGenerarPlantillaPlanilla, Me.btnCargarPlantillaPlanilla, Me.btnGenerarPHPlanilla, Me.btnImpresionesPlanilla, Me.btnChequesPlanilla, Me.btnArchivoEntregaCana, Me.btnReportesPreCosecha, Me.btnRegistroOrden, Me.btnNuevaOrdenPrecosecha, Me.btnGuardar, Me.btnEditar, Me.btnImprimir, Me.btnEliminar, Me.btnOrdenAnalisis, Me.btnNuevo, Me.btnFormulaDextrana, Me.btnObservaciones, Me.btnAcidezJugo, Me.btnObservaCategorias, Me.btnObservaResultadosPorCat, Me.BarButtonItem1, Me.btnAnalisisComplementarios, Me.btnRepPreCosechaDextrana, Me.btnRepPreCosechaAlmidon, Me.btnAnalisisAlmidonCosecha, Me.btnEmitirComprobantes, Me.btnControlComprobantes, Me.btnImpresionComprobantePlanilla, Me.btnArchivoComprobantesExcel, Me.btnBRIX_POLPreCosecha, Me.btnBRIX_POLZafra, Me.btnPesoNetoTaraBascula2})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 35
+        Me.RibbonControl.MaxItemId = 36
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.PageCategories.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageCategory() {Me.rbpcMantenimiento})
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rbpPreCosecha, Me.rbpCosecha, Me.rbpBascula, Me.rbpPlanilla})
@@ -409,6 +410,21 @@ Partial Class frmPrincipalRibbon
         Me.btnBRIX_POLPreCosecha.Name = "btnBRIX_POLPreCosecha"
         Me.btnBRIX_POLPreCosecha.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
         '
+        'btnBRIX_POLZafra
+        '
+        Me.btnBRIX_POLZafra.Caption = "Análisis POL/BRIX"
+        Me.btnBRIX_POLZafra.Id = 34
+        Me.btnBRIX_POLZafra.LargeGlyph = Global.SISPACAL.My.Resources.Resources.Measurement
+        Me.btnBRIX_POLZafra.Name = "btnBRIX_POLZafra"
+        '
+        'btnPesoNetoTaraBascula2
+        '
+        Me.btnPesoNetoTaraBascula2.Caption = "Peso Neto y Tara - BASCULA AUXILIAR"
+        Me.btnPesoNetoTaraBascula2.Id = 35
+        Me.btnPesoNetoTaraBascula2.ItemAppearance.Normal.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.btnPesoNetoTaraBascula2.ItemAppearance.Normal.Options.UseFont = True
+        Me.btnPesoNetoTaraBascula2.Name = "btnPesoNetoTaraBascula2"
+        '
         'rbpcMantenimiento
         '
         Me.rbpcMantenimiento.Name = "rbpcMantenimiento"
@@ -481,6 +497,7 @@ Partial Class frmPrincipalRibbon
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnPesoNetoTaraBascula)
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnReportesBascula)
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.btnPesoNetoTaraBascula2)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         Me.RibbonPageGroup3.ShowCaptionButton = False
         Me.RibbonPageGroup3.Text = "Bascula"
@@ -533,13 +550,6 @@ Partial Class frmPrincipalRibbon
         Me.btnOtrosAnalisis.Id = 22
         Me.btnOtrosAnalisis.LargeGlyph = Global.SISPACAL.My.Resources.Resources._1381525126_laboratory
         Me.btnOtrosAnalisis.Name = "btnOtrosAnalisis"
-        '
-        'btnBRIX_POLZafra
-        '
-        Me.btnBRIX_POLZafra.Caption = "Análisis POL/BRIX"
-        Me.btnBRIX_POLZafra.Id = 34
-        Me.btnBRIX_POLZafra.LargeGlyph = Global.SISPACAL.My.Resources.Resources.Measurement
-        Me.btnBRIX_POLZafra.Name = "btnBRIX_POLZafra"
         '
         'frmPrincipalRibbon
         '
@@ -617,4 +627,5 @@ Partial Class frmPrincipalRibbon
     Friend WithEvents btnArchivoComprobantesExcel As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnBRIX_POLPreCosecha As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnBRIX_POLZafra As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnPesoNetoTaraBascula2 As DevExpress.XtraBars.BarButtonItem
 End Class

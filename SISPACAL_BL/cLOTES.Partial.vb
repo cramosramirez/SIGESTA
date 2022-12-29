@@ -246,7 +246,18 @@
                     lLoteTraspaso.ID_MAESTRO = lLoteOld.ID_MAESTRO
                     lLoteTraspaso.TIPO_DERECHO = lLoteOld.TIPO_DERECHO
                     lLoteTraspaso.SUB_ZONA = lLoteOld.SUB_ZONA
+                    lLoteTraspaso.ID_ZAFRA_TRASPASO = -1
 
+                    'Código agregado para asignar la zafra activa en el traspaso
+                    '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    Dim lZafraActiva As ZAFRA = (New cZAFRA).ObtenerZafraActiva
+                    If lZafraActiva IsNot Nothing Then
+                        Dim lZafraContra As CONTRATO_ZAFRAS = (New cCONTRATO_ZAFRAS).ObtenerCONTRATO_ZAFRASPorZAFRA_CONTRATO(lZafraActiva.ID_ZAFRA, aEntidad.CODICONTRATO)
+                        If lZafraContra IsNot Nothing Then
+                            lLoteTraspaso.ID_ZAFRA_TRASPASO = lZafraActiva.ID_ZAFRA
+                        End If
+                    End If
+                    '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     If bLotesTraspaso.ActualizarLOTES_TRASPASO(lLoteTraspaso) > 0 Then
                         aEntidad.ID_LOTE_TRASPASO = lLoteTraspaso.ID_LOTE_TRASPASO
                     End If
@@ -320,7 +331,18 @@
                     lLoteTraspaso.ID_MAESTRO = lLoteOld.ID_MAESTRO
                     lLoteTraspaso.TIPO_DERECHO = lLoteOld.TIPO_DERECHO
                     lLoteTraspaso.SUB_ZONA = lLoteOld.SUB_ZONA
-                    'lLoteTraspaso.ID_LOTE_TRASPASO_PADRE = 0
+                    lLoteTraspaso.ID_ZAFRA_TRASPASO = -1
+
+                    'Código agregado para asignar la zafra activa en el traspaso
+                    '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    Dim lZafraActiva As ZAFRA = (New cZAFRA).ObtenerZafraActiva
+                    If lZafraActiva IsNot Nothing Then
+                        Dim lZafraContra As CONTRATO_ZAFRAS = (New cCONTRATO_ZAFRAS).ObtenerCONTRATO_ZAFRASPorZAFRA_CONTRATO(lZafraActiva.ID_ZAFRA, aEntidad.CODICONTRATO)
+                        If lZafraContra IsNot Nothing Then
+                            lLoteTraspaso.ID_ZAFRA_TRASPASO = lZafraActiva.ID_ZAFRA
+                        End If
+                    End If
+                    '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
                     If bLotesTraspaso.ActualizarLOTES_TRASPASO(lLoteTraspaso) > 0 Then
                         aEntidad.ID_LOTE_TRASPASO = lLoteTraspaso.ID_LOTE_TRASPASO

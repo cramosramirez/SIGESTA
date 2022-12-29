@@ -983,6 +983,32 @@ Partial Class controles_ucListaCONTRATO
         If e.CommandArgs.CommandName = "Editar" Then
             RaiseEvent Editando(e.KeyValue)
         End If
+        If e.CommandArgs.CommandName = "ActualizarContratoParaEsticana" Then
+            Dim bContrato As New cCONTRATO
+            Dim lContrato As CONTRATO
+            Dim s As String
+
+            lContrato = bContrato.ObtenerCONTRATO(e.KeyValue.ToString.Trim)
+            If lContrato IsNot Nothing Then
+                s = bContrato.ACTUALIZAR_LOTES_COSECHA_DE_CONTRATOS(e.KeyValue.ToString.Trim)
+                If s = "" Then AsignarMensaje("Proceso realizado con exito para contrato: " + lContrato.NO_CONTRATO.ToString + " (" + lContrato.CODICONTRATO + ") Productor: " + Utilerias.RecuperarCODIPROVEE(lContrato.CODIPROVEEDOR), False, True, True) Else AsignarMensaje(s, False, True, True)
+            Else
+                AsignarMensaje("Contrato no existe", False, True, True)
+            End If
+        End If
+        If e.CommandArgs.CommandName = "EliminarContratoParaEsticana" Then
+            Dim bContrato As New cCONTRATO
+            Dim lContrato As CONTRATO
+            Dim s As String
+
+            lContrato = bContrato.ObtenerCONTRATO(e.KeyValue.ToString.Trim)
+            If lContrato IsNot Nothing Then
+                s = bContrato.ELIMINAR_LOTES_COSECHA_DE_CONTRATOS(e.KeyValue.ToString.Trim)
+                If s = "" Then AsignarMensaje("Proceso realizado con exito para contrato: " + lContrato.NO_CONTRATO.ToString + " (" + lContrato.CODICONTRATO + ") Productor: " + Utilerias.RecuperarCODIPROVEE(lContrato.CODIPROVEEDOR), False, True, True) Else AsignarMensaje(s, False, True, True)
+            Else
+                AsignarMensaje("Contrato no existe", False, True, True)
+            End If
+        End If
     End Sub
 
     Protected Sub dxgvLista_HtmlRowCreated(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewTableRowEventArgs) Handles dxgvLista.HtmlRowCreated

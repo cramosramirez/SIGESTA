@@ -2122,6 +2122,7 @@ Friend Module dbAsignarEntidades
         e.ID_MAESTRO = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_MAESTRO", aliasTabla)), -1))
         e.TIPO_DERECHO = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}TIPO_DERECHO", aliasTabla)), -1))
         e.SUB_ZONA = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}SUB_ZONA", aliasTabla))))
+        e.ID_ZAFRA_TRASPASO = Convert.ToInt32(ObtenerValor(dr.Item(String.Format("{0}ID_ZAFRA_TRASPASO", aliasTabla)), -1))
     End Sub
 
     Public Sub AsignarPROFORMA(ByVal dr As IDataReader, ByRef e As PROFORMA, Optional ByVal aliasTabla As String = "")

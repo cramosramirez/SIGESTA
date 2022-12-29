@@ -54,6 +54,18 @@
                     </dx:GridViewCommandColumnCustomButton>                                        
             </CustomButtons>
         </dx:GridViewCommandColumn> 
+        <dx:GridViewDataTextColumn VisibleIndex="2" Name="colActualizarContratoParaEsticana" Caption="Generar en esticaña" HeaderStyle-Wrap="True" Width="40px" CellStyle-HorizontalAlign="Center" >
+            <DataItemTemplate>
+                <asp:ImageButton ID="lbtnActualizarContratoParaEsticana" runat="server" AlternateText="Generar lotes en esticaña para zafra activa" ToolTip="Generar lotes en esticaña para zafra activa" CommandName="ActualizarContratoParaEsticana" ImageUrl="~/imagenes/plus-icon.png"  CommandArgument='<%# Bind("CODICONTRATO")%>'></asp:ImageButton>                               
+            </DataItemTemplate>
+            <CellStyle HorizontalAlign="Center"></CellStyle>
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn VisibleIndex="2" Name="colVistaControlQuema" Caption="Eliminar traspasados en esticaña" HeaderStyle-Wrap="True" Width="40px" CellStyle-HorizontalAlign="Center" >
+            <DataItemTemplate>
+                <asp:ImageButton ID="lbtnEliminarConstratoParaEsticana" runat="server" AlternateText="Eliminar lotes traspasados en esticaña para zafra activa" ToolTip="Eliminar lotes traspasados en esticaña para zafra activa" CommandName="EliminarContratoParaEsticana" ImageUrl="~/imagenes/less-icon.png"  CommandArgument='<%# Bind("CODICONTRATO")%>'></asp:ImageButton>                               
+            </DataItemTemplate>
+            <CellStyle HorizontalAlign="Center"></CellStyle>
+        </dx:GridViewDataTextColumn>
         <dx:GridViewDataTextColumn FieldName="CODICONTRATO" Visible="false" ReadOnly="True" VisibleIndex="2" Caption="Codicontrato" />
         <dx:GridViewDataTextColumn FieldName="NOMBRE_ZAFRA" VisibleIndex="3" UnboundType="String" Caption="Zafra en que Ingreso Contrato" />
         <dx:GridViewDataTextColumn FieldName="NO_CONTRATO" ReadOnly="True" VisibleIndex="4" Caption="N° Contrato" />        

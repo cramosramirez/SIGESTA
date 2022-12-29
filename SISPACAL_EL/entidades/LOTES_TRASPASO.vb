@@ -22,7 +22,7 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(aID_LOTE_TRASPASO As Int32, aACCESLOTE As String, aANIOZAFRA As String, aCODIPROVEEDOR As String, aCODILOTE As String, aCODIVARIEDA As String, aCODICONTRATO As String, aNOMBLOTE As String, aAREA As Decimal, aTONELADAS As Decimal, aTONEL_TC As Decimal, aZONA As String, aEDAD_LOTE As Decimal, aUSUARIO_CREA As String, aFECHA_CREA As DateTime, aID_MAESTRO As Int32, aTIPO_DERECHO As Int32, aSUB_ZONA As String)
+    Public Sub New(aID_LOTE_TRASPASO As Int32, aACCESLOTE As String, aANIOZAFRA As String, aCODIPROVEEDOR As String, aCODILOTE As String, aCODIVARIEDA As String, aCODICONTRATO As String, aNOMBLOTE As String, aAREA As Decimal, aTONELADAS As Decimal, aTONEL_TC As Decimal, aZONA As String, aEDAD_LOTE As Decimal, aUSUARIO_CREA As String, aFECHA_CREA As DateTime, aID_MAESTRO As Int32, aTIPO_DERECHO As Int32, aSUB_ZONA As String, aID_ZAFRA_TRASPASO As Int32)
         Me._ID_LOTE_TRASPASO = aID_LOTE_TRASPASO
         Me._ACCESLOTE = aACCESLOTE
         Me._ANIOZAFRA = aANIOZAFRA
@@ -41,6 +41,7 @@
         Me._ID_MAESTRO = aID_MAESTRO
         Me._TIPO_DERECHO = aTIPO_DERECHO
         Me._SUB_ZONA = aSUB_ZONA
+        Me._ID_ZAFRA_TRASPASO = aID_ZAFRA_TRASPASO
     End Sub
 
 #Region " Properties "
@@ -457,7 +458,30 @@
         Set(ByVal Value As String)
             _SUB_ZONAOld = Value
         End Set
-    End Property 
+    End Property
+
+    Private _ID_ZAFRA_TRASPASO As Int32
+    <Column(Name:="Id zafra traspaso", Storage:="ID_ZAFRA_TRASPASO", DBType:="INT NULL", Id:=False),
+     DataObjectField(False, False, False), Precision(Precision:=10, Scale:=255)>
+    Public Property ID_ZAFRA_TRASPASO() As Int32
+        Get
+            Return _ID_ZAFRA_TRASPASO
+        End Get
+        Set(ByVal Value As Int32)
+            _ID_ZAFRA_TRASPASO = Value
+            OnPropertyChanged("ID_ZAFRA_TRASPASO")
+        End Set
+    End Property
+
+    Private _ID_ZAFRA_TRASPASOOld As Int32
+    Public Property ID_ZAFRA_TRASPASOOld() As Int32
+        Get
+            Return _ID_ZAFRA_TRASPASOOld
+        End Get
+        Set(ByVal Value As Int32)
+            _ID_ZAFRA_TRASPASOOld = Value
+        End Set
+    End Property
 
 #End Region
 

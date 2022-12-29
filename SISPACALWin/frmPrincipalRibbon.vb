@@ -44,9 +44,11 @@ Public Class frmPrincipalRibbon
                     Case TipoLectura.BASCULA_PESO_BRUTO
                         Me.rbpBascula.Visible = True
                         Me.btnPesoNetoTaraBascula.Visibility = BarItemVisibility.Always
+                        Me.btnPesoNetoTaraBascula2.Visibility = BarItemVisibility.Always
                     Case TipoLectura.BASCULA_PESO_TARA
                         Me.rbpBascula.Visible = True
                         Me.btnPesoNetoTaraBascula.Visibility = BarItemVisibility.Always
+                        Me.btnPesoNetoTaraBascula2.Visibility = BarItemVisibility.Always
                     Case TipoLectura.DEXTRANA
                         Me.rbpCosecha.Visible = True
                         Me.btnDextranaCosecha.Visibility = BarItemVisibility.Always
@@ -195,6 +197,16 @@ Public Class frmPrincipalRibbon
                 frmPrincipal.CargarTiposLectura(lecturas)
                 frmPrincipal.lblTitulo.Text = "CAPTURA DE PESO NETO Y TARA"
                 frmPrincipal.ActualizarTonelasdasRecibidas()
+            Case "btnPesoNetoTaraBascula2"
+                lectura = blectura.ObtenerTIPO_LECTURA(TipoLectura.BASCULA_PESO_BRUTO)
+                lecturas.Add(lectura)
+                lectura = blectura.ObtenerTIPO_LECTURA(TipoLectura.BASCULA_PESO_TARA)
+                lecturas.Add(lectura)
+                frmPrincipal_bascula2.MdiParent = Me
+                frmPrincipal_bascula2.Show()
+                frmPrincipal_bascula2.CargarTiposLectura(lecturas)
+                frmPrincipal_bascula2.lblTitulo.Text = "CAPTURA DE PESO NETO Y TARA"
+                frmPrincipal_bascula2.ActualizarTonelasdasRecibidas()
             Case "btnPesoMuestraPreCosecha"
                  lectura = blectura.ObtenerTIPO_LECTURA(TipoLectura.PESO_BAGAZO)
                 lecturas.Add(lectura)

@@ -399,7 +399,8 @@ Public Class dbLOTES_TRASPASO
         strSQL.AppendLine(" LOTES_TRASPASO.FECHA_CREA, ")
         strSQL.AppendLine(" LOTES_TRASPASO.ID_MAESTRO, ")
         strSQL.AppendLine(" LOTES_TRASPASO.TIPO_DERECHO, ")
-        strSQL.AppendLine(" LOTES_TRASPASO.SUB_ZONA ")
+        strSQL.AppendLine(" LOTES_TRASPASO.SUB_ZONA, ")
+        strSQL.AppendLine(" LOTES_TRASPASO.ID_ZAFRA_TRASPASO ")
         strSQL.AppendLine(" FROM LOTES_TRASPASO ")
 
     End Sub

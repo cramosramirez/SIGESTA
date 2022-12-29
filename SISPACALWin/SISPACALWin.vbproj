@@ -38,8 +38,8 @@
     <ProductName>Sistema de Gestión y Administración - SIGESTA</ProductName>
     <PublisherName>INJIBOA</PublisherName>
     <SuiteName>SIGESTA</SuiteName>
-    <MinimumRequiredVersion>1.0.1.191</MinimumRequiredVersion>
-    <ApplicationRevision>192</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.1.192</MinimumRequiredVersion>
+    <ApplicationRevision>193</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -210,10 +210,22 @@
     <Compile Include="frmBaseMtto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPrincipalRibbon.Designer.vb">
       <DependentUpon>frmPrincipalRibbon.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipalRibbon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal_bascula2.Designer.vb">
+      <DependentUpon>frmPrincipal_bascula2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal_bascula2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmReporteDevExpress.Designer.vb">
@@ -311,13 +323,6 @@
     <Compile Include="frmGenerarPlantilla.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrincipal.Designer.vb">
-      <DependentUpon>frmPrincipal.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -386,6 +391,12 @@
     <EmbeddedResource Include="frmControlComprobantes.resx">
       <DependentUpon>frmControlComprobantes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal_bascula2.resx">
+      <DependentUpon>frmPrincipal_bascula2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteDevExpress.resx">
       <DependentUpon>frmReporteDevExpress.vb</DependentUpon>
     </EmbeddedResource>
@@ -441,9 +452,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerarPlantilla.resx">
       <DependentUpon>frmGenerarPlantilla.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReciboBascula.resx">
       <DependentUpon>frmReciboBascula.vb</DependentUpon>
