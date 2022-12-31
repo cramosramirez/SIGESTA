@@ -279,6 +279,7 @@ Partial Class controlesCenso_ucExportacionExcel
         Dim lEstiXlsDeta As ESTICANA_XLS_DETA
         Dim idEncaEstiXls As Integer
         Dim iConta As Integer = 0
+        Dim esAmarillo As Boolean = False
 
         Try
             libro = New XLWorkbook(archivo)
@@ -317,6 +318,8 @@ Partial Class controlesCenso_ucExportacionExcel
                     lEstiXlsDeta.ID_ENCA = idEncaEstiXls
                     lEstiXlsDeta.ACCESLOTE = sAccesLote
                     lEstiXlsDeta.ZONA = sZona
+
+                    'esAmarillo = hojaDatos.FirstRow.Cell(listaCols(Variables.MZ_ESTICANA)).Style.Fill.BackgroundColor = XLColor.Yellow
                     If IsNumeric(fila.Cell(listaCols(Variables.MZ_ESTICANA)).Value) Then
                         lEstiXlsDeta.MZ = Convert.ToDecimal(fila.Cell(listaCols(Variables.MZ_ESTICANA)).Value)
                     Else

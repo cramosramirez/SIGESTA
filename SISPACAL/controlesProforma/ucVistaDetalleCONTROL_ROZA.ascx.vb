@@ -496,8 +496,8 @@ Partial Class controles_ucVistaDetalleCONTROL_ROZA
             End If
         End If
 
-        If DateDiff(DateInterval.Day, Me.dteFECHA_HORA_ROZA.Date, cFechaHora.ObtenerFechaHora) > 15 Then
-            Return "* Fecha de roza no puede ser mayor a 15 dias"
+        If Math.Abs(DateDiff(DateInterval.Day, Me.dteFECHA_HORA_ROZA.Date, cFechaHora.ObtenerFechaHora)) > 7 Then
+            Return "* Fecha de roza no puede ser menor a 7 dias"
         End If
         If Me.cbxID_TIPO_CANA.Value Is Nothing Then
             Return "* Seleccione la forma de cosecha"

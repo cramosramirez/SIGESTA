@@ -348,8 +348,8 @@ Partial Class controles_ucVistaDetalleCONTROL_QUEMA
             End If
         End If
 
-        If DateDiff(DateInterval.Day, Me.dteFECHA_HORA_QUEMA.Date, cFechaHora.ObtenerFechaHora) > 15 Then
-            Return "* Fecha de quema no puede ser mayor a 15 dias"
+        If DateDiff(DateInterval.Day, Me.dteFECHA_HORA_QUEMA.Date, cFechaHora.ObtenerFechaHora) > 7 Then
+            Return "* Fecha de quema no puede ser menor a 7 dias"
         End If
         If rblTIPO_QUEMA.Value Is Nothing Then
             Return "* Seleccione el tipo de quema"

@@ -512,9 +512,9 @@ Partial Class controlesProforma_ucEnvioProforma
         If Me.dteFECHA_QUEMA.Value Is Nothing AndAlso (Me.rblTIPO_QUEMA.Value = 1 OrElse Me.rblTIPO_QUEMA.Value = 2) Then
             sError.AppendLine(" * Ingrese fecha de quema.")
         End If
-        If Me.rblTIPO_QUEMA.Value <> 3 Then
-            If dteFECHA_QUEMA.Date < DateAdd(DateInterval.Day, -30, cFechaHora.ObtenerFechaHora) Then
-                sError.AppendLine(" * Fecha de quema no puede ser menor a 30 dias de la fecha de ingreso al sistema.")
+        If Me.dteFECHA_QUEMA.Value IsNot Nothing AndAlso (Me.rblTIPO_QUEMA.Value = 1 OrElse Me.rblTIPO_QUEMA.Value = 2) Then
+            If dteFECHA_QUEMA.Date < DateAdd(DateInterval.Day, -7, mENVIO.FECHA_CREA) Then
+                sError.AppendLine(" * Fecha de quema no puede ser menor a 7 dias de la fecha de ingreso al sistema.")
             End If
         End If
         If Me.dteFECHA_CORTE.Value Is Nothing Then
@@ -530,20 +530,20 @@ Partial Class controlesProforma_ucEnvioProforma
             If Me.dteFECHA_QUEMA.Date > Me.dteFECHA_CORTE.Date Then
                 sError.AppendLine(" * Fecha de quema no puede ser mayor a fecha de corta.")
             End If
-            If Me.dteFECHA_QUEMA.Date > cFechaHora.ObtenerFechaHora Then
-                sError.AppendLine(" * Fecha de quema no puede ser mayor a la fecha del sistema.")
+            If Me.dteFECHA_QUEMA.Date > mENVIO.FECHA_CREA Then
+                sError.AppendLine(" * Fecha de quema no puede ser mayor a la fecha de ingreso al sistema.")
             End If
         End If
         If Me.dteFECHA_CORTE.Date > Me.dteFECHA_CARGA.Date Then
             sError.AppendLine(" * Fecha de corta no puede ser mayor a fecha de carga.")
         End If
-        If Me.dteFECHA_CORTE.Date > cFechaHora.ObtenerFechaHora Then
-            sError.AppendLine(" * Fecha de corta no puede ser mayor a la fecha del sistema.")
+        If Me.dteFECHA_CORTE.Date > mENVIO.FECHA_CREA Then
+            sError.AppendLine(" * Fecha de corta no puede ser mayor a la fecha de ingreso al sistema.")
         End If
         If Me.dteFECHA_CARGA.Date > Me.dteFECHA_PATIO.Date Then
             sError.AppendLine(" * Fecha de carga no puede ser mayor a fecha de ingreso JIBOA.")
         End If
-        If Me.dteFECHA_PATIO.Date > cFechaHora.ObtenerFechaHora Then
+        If Me.dteFECHA_PATIO.Date > mENVIO.FECHA_CREA Then
             sError.AppendLine(" * Fecha de carga patio no puede ser mayor a la fecha del sistema.")
         End If
         'If EsCargadoraJIBOA(Convert.ToInt32(Me.cbxCARGADORA.Value)) AndAlso (Me.txtCODIGO_MOCHADOR.Text = "" OrElse Me.txtCODIGO_CHEQUERO.Text = "") Then
