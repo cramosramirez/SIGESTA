@@ -24,6 +24,7 @@ Partial Public Class ProyeccionFinanciera
         Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow10 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell19 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.AplicarSoloNegrita = New DevExpress.XtraReports.UI.FormattingRule()
         Me.FormattingRule1 = New DevExpress.XtraReports.UI.FormattingRule()
         Me.xrDetaTotal = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell15 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -141,7 +142,7 @@ Partial Public Class ProyeccionFinanciera
         '
         Me.XrTable2.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
         Me.XrTable2.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 0.0!)
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow10})
         Me.XrTable2.SizeF = New System.Drawing.SizeF(808.0002!, 18.0!)
@@ -160,12 +161,24 @@ Partial Public Class ProyeccionFinanciera
         '
         Me.XrTableCell19.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.DESCRIPCION")})
         Me.XrTableCell19.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell19.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.XrTableCell19.FormattingRules.Add(Me.FormattingRule1)
         Me.XrTableCell19.Name = "XrTableCell19"
         Me.XrTableCell19.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 100.0!)
         Me.XrTableCell19.StylePriority.UseFont = False
         Me.XrTableCell19.StylePriority.UsePadding = False
         Me.XrTableCell19.Weight = 0.8815408815543504R
+        '
+        'AplicarSoloNegrita
+        '
+        Me.AplicarSoloNegrita.Condition = "StartsWith([DESCRIPCION], 'F.')"
+        '
+        '
+        '
+        Me.AplicarSoloNegrita.Formatting.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.AplicarSoloNegrita.Formatting.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.AplicarSoloNegrita.Name = "AplicarSoloNegrita"
         '
         'FormattingRule1
         '
@@ -185,6 +198,7 @@ Partial Public Class ProyeccionFinanciera
         Me.xrDetaTotal.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.TOTAL", "{0:#,###,##0.00##}")})
         Me.xrDetaTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.xrDetaTotal.FormattingRules.Add(Me.FormattingRule1)
+        Me.xrDetaTotal.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.xrDetaTotal.Name = "xrDetaTotal"
         Me.xrDetaTotal.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100.0!)
         Me.xrDetaTotal.StylePriority.UseFont = False
@@ -198,6 +212,7 @@ Partial Public Class ProyeccionFinanciera
         Me.XrTableCell15.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.MONTO1", "{0:#,###,##0.00##}")})
         Me.XrTableCell15.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell15.FormattingRules.Add(Me.FormattingRule1)
+        Me.XrTableCell15.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.XrTableCell15.Name = "XrTableCell15"
         Me.XrTableCell15.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100.0!)
         Me.XrTableCell15.StylePriority.UseFont = False
@@ -211,6 +226,7 @@ Partial Public Class ProyeccionFinanciera
         Me.xrDetaZafra1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.MONTO2", "{0:#,###,##0.00##}")})
         Me.xrDetaZafra1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.xrDetaZafra1.FormattingRules.Add(Me.FormattingRule1)
+        Me.xrDetaZafra1.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.xrDetaZafra1.Name = "xrDetaZafra1"
         Me.xrDetaZafra1.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100.0!)
         Me.xrDetaZafra1.StylePriority.UseFont = False
@@ -224,6 +240,7 @@ Partial Public Class ProyeccionFinanciera
         Me.XrTableCell21.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.MONTO3", "{0:#,###,##0.00##}")})
         Me.XrTableCell21.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell21.FormattingRules.Add(Me.FormattingRule1)
+        Me.XrTableCell21.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.XrTableCell21.Name = "XrTableCell21"
         Me.XrTableCell21.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100.0!)
         Me.XrTableCell21.StylePriority.UseFont = False
@@ -237,6 +254,7 @@ Partial Public Class ProyeccionFinanciera
         Me.XrTableCell23.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.MONTO4", "{0:#,###,##0.00##}")})
         Me.XrTableCell23.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell23.FormattingRules.Add(Me.FormattingRule1)
+        Me.XrTableCell23.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.XrTableCell23.Name = "XrTableCell23"
         Me.XrTableCell23.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100.0!)
         Me.XrTableCell23.StylePriority.UseFont = False
@@ -250,6 +268,7 @@ Partial Public Class ProyeccionFinanciera
         Me.XrTableCell22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.MONTO5", "{0:#,###,##0.00##}")})
         Me.XrTableCell22.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell22.FormattingRules.Add(Me.FormattingRule1)
+        Me.XrTableCell22.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.XrTableCell22.Name = "XrTableCell22"
         Me.XrTableCell22.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100.0!)
         Me.XrTableCell22.StylePriority.UseFont = False
@@ -263,6 +282,7 @@ Partial Public Class ProyeccionFinanciera
         Me.xrDetaZafra2.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "PROYECCION_FINANCIERA.MONTO6", "{0:#,###,##0.00##}")})
         Me.xrDetaZafra2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.xrDetaZafra2.FormattingRules.Add(Me.FormattingRule1)
+        Me.xrDetaZafra2.FormattingRules.Add(Me.AplicarSoloNegrita)
         Me.xrDetaZafra2.Name = "xrDetaZafra2"
         Me.xrDetaZafra2.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 5, 0, 0, 100.0!)
         Me.xrDetaZafra2.StylePriority.UseFont = False
@@ -478,7 +498,7 @@ Partial Public Class ProyeccionFinanciera
         'XrTable1
         '
         Me.XrTable1.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(56.4793!, 0.0!)
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(56.4793!, 0!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1, Me.XrTableRow3, Me.XrTableRow2, Me.XrTableRow5, Me.XrTableRow4})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(707.0624!, 90.0!)
@@ -595,7 +615,7 @@ Partial Public Class ProyeccionFinanciera
         '
         'XrLine1
         '
-        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 0.0!)
+        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 0!)
         Me.XrLine1.Name = "XrLine1"
         Me.XrLine1.SizeF = New System.Drawing.SizeF(808.0003!, 5.374954!)
         '
@@ -659,7 +679,7 @@ Partial Public Class ProyeccionFinanciera
         'pnlAutorizacionOIP_SolicAgricola
         '
         Me.pnlAutorizacionOIP_SolicAgricola.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel35, Me.XrLabel32, Me.XrLabel33, Me.XrLabel36, Me.XrLabel37, Me.XrLabel34})
-        Me.pnlAutorizacionOIP_SolicAgricola.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 170.5833!)
+        Me.pnlAutorizacionOIP_SolicAgricola.LocationFloat = New DevExpress.Utils.PointFloat(0!, 170.5833!)
         Me.pnlAutorizacionOIP_SolicAgricola.Name = "pnlAutorizacionOIP_SolicAgricola"
         Me.pnlAutorizacionOIP_SolicAgricola.SizeF = New System.Drawing.SizeF(818.0!, 72.70837!)
         Me.pnlAutorizacionOIP_SolicAgricola.Visible = False
@@ -667,7 +687,7 @@ Partial Public Class ProyeccionFinanciera
         'XrLabel35
         '
         Me.XrLabel35.Font = New System.Drawing.Font("Arial", 7.0!)
-        Me.XrLabel35.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 16.99997!)
+        Me.XrLabel35.LocationFloat = New DevExpress.Utils.PointFloat(0!, 16.99997!)
         Me.XrLabel35.Name = "XrLabel35"
         Me.XrLabel35.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel35.SizeF = New System.Drawing.SizeF(204.3959!, 22.99997!)
@@ -1111,7 +1131,7 @@ Partial Public Class ProyeccionFinanciera
         '
         'sbrSaldosInsolutos
         '
-        Me.sbrSaldosInsolutos.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 25.99996!)
+        Me.sbrSaldosInsolutos.LocationFloat = New DevExpress.Utils.PointFloat(0!, 25.99996!)
         Me.sbrSaldosInsolutos.Name = "sbrSaldosInsolutos"
         Me.sbrSaldosInsolutos.ReportSource = New SISPACAL.RL.ProyeccionFinancieraSubSaldosInsolutos()
         Me.sbrSaldosInsolutos.SizeF = New System.Drawing.SizeF(821.9999!, 45.62503!)
@@ -1137,7 +1157,7 @@ Partial Public Class ProyeccionFinanciera
         '
         'sbrDetalleOrdenTramite
         '
-        Me.sbrDetalleOrdenTramite.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 21.99999!)
+        Me.sbrDetalleOrdenTramite.LocationFloat = New DevExpress.Utils.PointFloat(0!, 21.99999!)
         Me.sbrDetalleOrdenTramite.Name = "sbrDetalleOrdenTramite"
         Me.sbrDetalleOrdenTramite.ReportSource = New SISPACAL.RL.ProyeccionFinancieraSubOrdenTramite()
         Me.sbrDetalleOrdenTramite.SizeF = New System.Drawing.SizeF(821.9999!, 45.62504!)
@@ -1151,7 +1171,7 @@ Partial Public Class ProyeccionFinanciera
         '
         'sbrSaldosMutuos
         '
-        Me.sbrSaldosMutuos.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 15.9167!)
+        Me.sbrSaldosMutuos.LocationFloat = New DevExpress.Utils.PointFloat(0!, 15.9167!)
         Me.sbrSaldosMutuos.Name = "sbrSaldosMutuos"
         Me.sbrSaldosMutuos.ReportSource = New SISPACAL.RL.ProyeccionFinancieraSubSaldosMutuos()
         Me.sbrSaldosMutuos.SizeF = New System.Drawing.SizeF(821.9999!, 45.62503!)
@@ -1162,7 +1182,7 @@ Partial Public Class ProyeccionFinanciera
         Me.DataAdapter = Me.PROYECCION_FINANCIERATableAdapter1
         Me.DataMember = "PROYECCION_FINANCIERA"
         Me.DataSource = Me.DS_SIFAG1
-        Me.FormattingRuleSheet.AddRange(New DevExpress.XtraReports.UI.FormattingRule() {Me.FormattingRule1})
+        Me.FormattingRuleSheet.AddRange(New DevExpress.XtraReports.UI.FormattingRule() {Me.FormattingRule1, Me.AplicarSoloNegrita})
         Me.Margins = New System.Drawing.Printing.Margins(12, 16, 6, 9)
         Me.Version = "14.2"
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1274,4 +1294,5 @@ Partial Public Class ProyeccionFinanciera
     Friend WithEvents xrZAFRA02 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents xrZAFRA04 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents xrZAFRA05 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents AplicarSoloNegrita As DevExpress.XtraReports.UI.FormattingRule
 End Class

@@ -193,6 +193,8 @@ Partial Class controlesCenso_ucExportacionExcel
             dt.Columns("NO_CONTRATO_Z").ColumnName = z2 & " No CONTRATO"
             dt.Columns("CODILOTE_Z").ColumnName = z2 & " CODILOTE"
             dt.Columns("NOMBLOTE_Z").ColumnName = z2 & " NOMBLOTE"
+            dt.Columns("ESTADO_LOTE_Z").ColumnName = z2 & " ESTADO"
+            dt.Columns("FECHA_CIERRE_Z").ColumnName = z2 & " FECHA CIERRE"
             dt.Columns("OB_PROD_INTERNA").ColumnName = "OBSERVACIONES PRODUCCION INTERNA GRUPO JD"
             dt.Columns("OB_PERSO_TEC").ColumnName = "OBSERVACIONES PERSONAL TECNICO"
             dt.Columns("MZ_PERDIDA").ColumnName = "AREA PERDIDA"
@@ -368,6 +370,7 @@ Partial Class controlesCenso_ucExportacionExcel
                     If IsDate(fila.Cell(listaCols(Variables.FECHA_APLICACION)).Value) Then
                         lEstiXlsDeta.MAD_FECHA_APLI = Convert.ToDateTime(fila.Cell(listaCols(Variables.FECHA_APLICACION)).Value)
                     End If
+                    lEstiXlsDeta.CANA_VARIEDAD = fila.Cell(listaCols(Variables.CANA_VARIEDAD)).Value.ToString.Trim
                     bEstiXlsDeta.ActualizarESTICANA_XLS_DETA(lEstiXlsDeta)
                 End If
             Next
@@ -434,6 +437,8 @@ Partial Class controlesCenso_ucExportacionExcel
         Variables.TIPO_TRANSPORTE = listaNomColu(listaNomColu.Count - 1)
         listaNomColu.Add("TIPO QUEMA")
         Variables.TIPO_QUEMA = listaNomColu(listaNomColu.Count - 1)
+        listaNomColu.Add("CAÑA VARIEDAD")
+        Variables.CANA_VARIEDAD = listaNomColu(listaNomColu.Count - 1)
 
         For Each celda As IXLCell In filaEncabezado.Cells
             i += 1
@@ -482,6 +487,7 @@ Partial Class controlesCenso_ucExportacionExcel
         Public TIPO_ROZA As String
         Public TIPO_TRANSPORTE As String
         Public TIPO_QUEMA As String
+        Public CANA_VARIEDAD As String
     End Structure
 
     Protected Sub btnDescargarCosecha_Click(sender As Object, e As EventArgs) Handles btnDescargarCosecha.Click

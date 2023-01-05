@@ -509,21 +509,21 @@ Partial Class controlesProforma_ucEnvioProforma
         If Me.cbxTIPO_TRANS.Value Is Nothing OrElse Me.cbxTIPO_TRANS.Text = "" Then
             sError.AppendLine(" * Seleccione el tipo de transporte.")
         End If
-        If Me.dteFECHA_QUEMA.Value Is Nothing AndAlso (Me.rblTIPO_QUEMA.Value = 1 OrElse Me.rblTIPO_QUEMA.Value = 2) Then
+        If Me.dteFECHA_QUEMA.Value = Nothing AndAlso (Me.rblTIPO_QUEMA.Value = 1 OrElse Me.rblTIPO_QUEMA.Value = 2) Then
             sError.AppendLine(" * Ingrese fecha de quema.")
         End If
-        If Me.dteFECHA_QUEMA.Value IsNot Nothing AndAlso (Me.rblTIPO_QUEMA.Value = 1 OrElse Me.rblTIPO_QUEMA.Value = 2) Then
+        If Me.dteFECHA_QUEMA.Value <> Nothing AndAlso (Me.rblTIPO_QUEMA.Value = 1 OrElse Me.rblTIPO_QUEMA.Value = 2) Then
             If dteFECHA_QUEMA.Date < DateAdd(DateInterval.Day, -7, mENVIO.FECHA_CREA) Then
                 sError.AppendLine(" * Fecha de quema no puede ser menor a 7 dias de la fecha de ingreso al sistema.")
             End If
         End If
-        If Me.dteFECHA_CORTE.Value Is Nothing Then
+        If Me.dteFECHA_CORTE.Value = Nothing Then
             sError.AppendLine(" * Ingrese fecha de corta.")
         End If
-        If Me.dteFECHA_CARGA.Value Is Nothing Then
+        If Me.dteFECHA_CARGA.Value = Nothing Then
             sError.AppendLine(" * Ingrese fecha de carga.")
         End If
-        If Me.dteFECHA_PATIO.Value Is Nothing Then
+        If Me.dteFECHA_PATIO.Value = Nothing Then
             sError.AppendLine(" * Ingrese fecha de ingreso JIBOA.")
         End If
         If (Me.rblTIPO_QUEMA.Value = 1 OrElse Me.rblTIPO_QUEMA.Value = 2) Then

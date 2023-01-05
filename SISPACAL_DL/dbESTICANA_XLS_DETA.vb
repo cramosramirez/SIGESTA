@@ -403,7 +403,9 @@ Public Class dbESTICANA_XLS_DETA
         strSQL.AppendLine(" ESTICANA_XLS_DETA.TIPO_QUEMA, ")
         strSQL.AppendLine(" ESTICANA_XLS_DETA.MAD_APLICAR, ")
         strSQL.AppendLine(" ESTICANA_XLS_DETA.MAD_DOSIS, ")
-        strSQL.AppendLine(" ESTICANA_XLS_DETA.MAD_FECHA_APLI ")
+        strSQL.AppendLine(" ESTICANA_XLS_DETA.MAD_FECHA_APLI, ")
+        strSQL.AppendLine(" ESTICANA_XLS_DETA.OBSERVACIONES, ")
+        strSQL.AppendLine(" ESTICANA_XLS_DETA.CANA_VARIEDAD ")
         strSQL.AppendLine(" FROM ESTICANA_XLS_DETA ")
 
     End Sub

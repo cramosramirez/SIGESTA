@@ -698,7 +698,7 @@ Partial Class controlesCenso_ucReportePlanCosecha
                             Me.ucVisorReporte1.CargarDatos(reporte)
                         Else
                             Select Case lSolicitud.ID_CUENTA_FINAN
-                                Case CuentaFinanciamiento.InhibidoresFloracion, CuentaFinanciamiento.Insecticidas
+                                Case CuentaFinanciamiento.InhibidoresFloracion
                                     Dim reporte As New SolicitudMaduranteVuelo
                                     reporte.CargarSolicitud(CInt(PARAMETROS("ID_SOLICITUD")))
                                     reporte.ResumeLayout()

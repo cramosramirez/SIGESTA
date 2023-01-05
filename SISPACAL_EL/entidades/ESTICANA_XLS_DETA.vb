@@ -553,7 +553,55 @@
         Set(ByVal Value As DateTime)
             _MAD_FECHA_APLIOld = Value
         End Set
-    End Property 
+    End Property
+
+
+    Private _OBSERVACIONES As String
+    <Column(Name:="Observaciones", Storage:="OBSERVACIONES", DBType:="VARCHAR(1000)", Id:=False),
+     DataObjectField(False, False, True, 1000)>
+    Public Property OBSERVACIONES() As String
+        Get
+            Return _OBSERVACIONES
+        End Get
+        Set(ByVal Value As String)
+            _OBSERVACIONES = Value
+            OnPropertyChanged("OBSERVACIONES")
+        End Set
+    End Property
+
+    Private _OBSERVACIONESOld As String
+    Public Property OBSERVACIONESOld() As String
+        Get
+            Return _OBSERVACIONESOld
+        End Get
+        Set(ByVal Value As String)
+            _OBSERVACIONESOld = Value
+        End Set
+    End Property
+
+
+    Private _CANA_VARIEDAD As String
+    <Column(Name:="Cana variedad", Storage:="CANA_VARIEDAD", DBType:="VARCHAR(200)", Id:=False),
+     DataObjectField(False, False, True, 200)>
+    Public Property CANA_VARIEDAD() As String
+        Get
+            Return _CANA_VARIEDAD
+        End Get
+        Set(ByVal Value As String)
+            _CANA_VARIEDAD = Value
+            OnPropertyChanged("CANA_VARIEDAD")
+        End Set
+    End Property
+
+    Private _CANA_VARIEDADOld As String
+    Public Property CANA_VARIEDADOld() As String
+        Get
+            Return _CANA_VARIEDADOld
+        End Get
+        Set(ByVal Value As String)
+            _CANA_VARIEDADOld = Value
+        End Set
+    End Property
 
 #End Region
 

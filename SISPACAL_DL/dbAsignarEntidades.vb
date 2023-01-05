@@ -43,6 +43,8 @@ Friend Module dbAsignarEntidades
         e.MAD_APLICAR = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}MAD_APLICAR", aliasTabla))))
         e.MAD_DOSIS = Convert.ToDecimal(ObtenerValor(dr.Item(String.Format("{0}MAD_DOSIS", aliasTabla)), -1))
         e.MAD_FECHA_APLI = Convert.ToDateTime(ObtenerValor(dr.Item(String.Format("{0}MAD_FECHA_APLI", aliasTabla))))
+        e.OBSERVACIONES = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}OBSERVACIONES", aliasTabla))))
+        e.CANA_VARIEDAD = Convert.ToString(ObtenerValor(dr.Item(String.Format("{0}CANA_VARIEDAD", aliasTabla))))
     End Sub
 
     Public Sub AsignarENVIO_MONI_QQ(ByVal dr As IDataReader, ByRef e As ENVIO_MONI_QQ, Optional ByVal aliasTabla As String = "")
